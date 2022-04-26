@@ -13,6 +13,8 @@ module.exports = {
     extend: {
       colors: {
         primary: 'var(--el-color-primary, #409eff)',
+        'primary-hover': 'var(--el-color-primary-light-3, #79bbff)',
+        'primary-active': 'var(--el-color-primary-dark-2, #337ecc)',
         'primary-lighten-1': 'var(--el-color-primary-light-1, #53a8ff)',
         'primary-light-1': 'var(--el-color-primary-light-1, #53a8ff)',
         'primary-darken-1': 'var(--el-color-primary-dark-1, #3a8ee6)',
@@ -51,6 +53,8 @@ module.exports = {
         'primary-dark-9': 'var(--el-color-primary-dark-9, #061019)',
 
         success: 'var(--el-color-success, #67c23a)',
+        'success-hover': 'var(--el-color-success-light-3, #95d475)',
+        'success-active': 'var(--el-color-success-dark-2, #529b2e)',
         'success-lighten-1': 'var(--el-color-success-light-1, #76c84e)',
         'success-light-1': 'var(--el-color-success-light-1, #76c84e)',
         'success-darken-1': 'var(--el-color-success-dark-1, #5daf34)',
@@ -89,6 +93,8 @@ module.exports = {
         'success-dark-9': 'var(--el-color-success-dark-9, #0a1306)',
 
         warning: 'var(--el-color-warning, #e6a23c)',
+        'warning-hover': 'var(--el-color-warning-light-3, #eebe77)',
+        'warning-active': 'var(--el-color-warning-dark-2, #b88230)',
         'warning-lighten-1': 'var(--el-color-warning-light-1, #e9ab50)',
         'warning-light-1': 'var(--el-color-warning-light-1, #e9ab50)',
         'warning-darken-1': 'var(--el-color-warning-dark-1, #cf9236)',
@@ -127,6 +133,8 @@ module.exports = {
         'warning-dark-9': 'var(--el-color-warning-dark-9, #171006)',
 
         error: 'var(--el-color-error, #f56c6c)',
+        'error-hover': 'var(--el-color-error-light-3, #f89898)',
+        'error-active': 'var(--el-color-error-dark-2, #c45656)',
         'error-lighten-1': 'var(--el-color-error-light-1, #f67b7b)',
         'error-light-1': 'var(--el-color-error-light-1, #f67b7b)',
         'error-darken-1': 'var(--el-color-error-dark-1, #dd6161)',
@@ -165,6 +173,8 @@ module.exports = {
         'error-dark-9': 'var(--el-color-error-dark-9, #180b0b)',
 
         danger: 'var(--el-color-danger, #f56c6c)',
+        'danger-hover': 'var(--el-color-danger-light-3, #f89898)',
+        'danger-active': 'var(--el-color-danger-dark-2, #c45656)',
         'danger-lighten-1': 'var(--el-color-danger-light-1, #f67b7b)',
         'danger-light-1': 'var(--el-color-danger-light-1, #f67b7b)',
         'danger-darken-1': 'var(--el-color-danger-dark-1, #dd6161)',
@@ -203,6 +213,8 @@ module.exports = {
         'danger-dark-9': 'var(--el-color-danger-dark-9, #180b0b)',
 
         info: 'var(--el-color-info, #909399)',
+        'info-hover': 'var(--el-color-info-light-3, #b1b3b8)',
+        'info-active': 'var(--el-color-info-dark-2, #73767a)',
         'info-lighten-1': 'var(--el-color-info-light-1, #9b9ea3)',
         'info-light-1': 'var(--el-color-info-light-1, #9b9ea3)',
         'info-darken-1': 'var(--el-color-info-dark-1, #82848a)',
@@ -254,6 +266,7 @@ module.exports = {
         'text-placeholder': 'var(--el-text-color-placeholder, #a8abb2)',
         'text-disabled': 'var(--el-text-color-disabled, #c0c4cc)',
 
+        bg: '#ffffff',
         'bg-popup-modal': 'var(--el-color-black, #000000)',
         'bg-disabled': 'var(--el-fill-color-light, #f5f7fa)',
 
