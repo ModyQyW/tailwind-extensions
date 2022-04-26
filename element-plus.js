@@ -1,48 +1,3 @@
-// const Color = require('color');
-
-// const white = Color('white');
-// const getLightenColorCssVariableName = (name, index) =>
-//   index === 0 ? `--el-color-${name}` : `--el-color-${name}-light-${index}`;
-// const getLightenColorKeys = (name, index) =>
-//   index === 0 ? [name] : [`${name}-lighten-${index}`, `${name}-light-${index}`];
-// const getLightenColorValue = (name, color, index) =>
-//   `var(${getLightenColorCssVariableName(name, index)}, ${Color(color)
-//     .mix(white, index / 10)
-//     .hex()})`.toLowerCase();
-
-// const black = Color('black');
-// const getDarkenColorCssVariableName = (name, index) =>
-//   index === 0 ? `--el-color-${name}` : `--el-color-${name}-dark-${index}`;
-// const getDarkenColorKeys = (name, index) =>
-//   index === 0 ? [name] : [`${name}-darken-${index}`, `${name}-dark-${index}`];
-// const getDarkenColorValue = (name, color, index) =>
-//   `var(${getDarkenColorCssVariableName(name, index)}, ${Color(color)
-//     .mix(black, index / 10)
-//     .hex()})`.toLowerCase();
-
-// const colors = Object.fromEntries(
-//   Object.entries({
-//     primary: '#409eff',
-//     success: '#67c23a',
-//     warning: '#e6a23c',
-//     error: '#f56c6c',
-//     danger: '#f56c6c',
-//     info: '#909399',
-//   }).flatMap(([name, color]) =>
-//     Array.from({ length: 10 }).flatMap((_, index) => {
-//       const lightenKeys = getLightenColorKeys(name, index);
-//       const lightenValue = getLightenColorValue(name, color, index);
-//       const darkenKeys = getDarkenColorKeys(name, index);
-//       const darkenValue = getDarkenColorValue(name, color, index);
-
-//       return [
-//         lightenKeys.map((key) => [key, lightenValue]),
-//         darkenKeys.map((key) => [key, darkenValue]),
-//       ].flat();
-//     }),
-//   ),
-// );
-
 /** @type {import('@types/tailwindcss/tailwind-config').TailwindConfig} */
 module.exports = {
   corePlugins: {
@@ -94,6 +49,7 @@ module.exports = {
         'primary-light-9': 'var(--el-color-primary-light-9, #ecf5ff)',
         'primary-darken-9': 'var(--el-color-primary-dark-9, #061019)',
         'primary-dark-9': 'var(--el-color-primary-dark-9, #061019)',
+
         success: 'var(--el-color-success, #67c23a)',
         'success-lighten-1': 'var(--el-color-success-light-1, #76c84e)',
         'success-light-1': 'var(--el-color-success-light-1, #76c84e)',
@@ -131,6 +87,7 @@ module.exports = {
         'success-light-9': 'var(--el-color-success-light-9, #f0f9eb)',
         'success-darken-9': 'var(--el-color-success-dark-9, #0a1306)',
         'success-dark-9': 'var(--el-color-success-dark-9, #0a1306)',
+
         warning: 'var(--el-color-warning, #e6a23c)',
         'warning-lighten-1': 'var(--el-color-warning-light-1, #e9ab50)',
         'warning-light-1': 'var(--el-color-warning-light-1, #e9ab50)',
@@ -168,6 +125,7 @@ module.exports = {
         'warning-light-9': 'var(--el-color-warning-light-9, #fdf6ec)',
         'warning-darken-9': 'var(--el-color-warning-dark-9, #171006)',
         'warning-dark-9': 'var(--el-color-warning-dark-9, #171006)',
+
         error: 'var(--el-color-error, #f56c6c)',
         'error-lighten-1': 'var(--el-color-error-light-1, #f67b7b)',
         'error-light-1': 'var(--el-color-error-light-1, #f67b7b)',
@@ -205,6 +163,7 @@ module.exports = {
         'error-light-9': 'var(--el-color-error-light-9, #fef0f0)',
         'error-darken-9': 'var(--el-color-error-dark-9, #180b0b)',
         'error-dark-9': 'var(--el-color-error-dark-9, #180b0b)',
+
         danger: 'var(--el-color-danger, #f56c6c)',
         'danger-lighten-1': 'var(--el-color-danger-light-1, #f67b7b)',
         'danger-light-1': 'var(--el-color-danger-light-1, #f67b7b)',
@@ -242,6 +201,7 @@ module.exports = {
         'danger-light-9': 'var(--el-color-danger-light-9, #fef0f0)',
         'danger-darken-9': 'var(--el-color-danger-dark-9, #180b0b)',
         'danger-dark-9': 'var(--el-color-danger-dark-9, #180b0b)',
+
         info: 'var(--el-color-info, #909399)',
         'info-lighten-1': 'var(--el-color-info-light-1, #9b9ea3)',
         'info-light-1': 'var(--el-color-info-light-1, #9b9ea3)',
@@ -279,6 +239,7 @@ module.exports = {
         'info-light-9': 'var(--el-color-info-light-9, #f4f4f5)',
         'info-darken-9': 'var(--el-color-info-dark-9, #0e0f0f)',
         'info-dark-9': 'var(--el-color-info-dark-9, #0e0f0f)',
+
         fill: 'var(--el-fill-color, #f0f2f5)',
         'fill-light': 'var(--el-fill-color-light, #f5f7fa)',
         'fill-lighter': 'var(--el-fill-color-lighter, #fafafa)',
@@ -286,24 +247,29 @@ module.exports = {
         'fill-dark': 'var(--el-fill-color-dark, #ebedf0)',
         'fill-darker': 'var(--el-fill-color-darker, #e6e8eb)',
         'fill-blank': 'var(--el-fill-color-blank, #ffffff)',
-        'primary-text': 'var(--el-text-color-primary, #303133)',
-        'regular-text': 'var(--el-text-color-regular, #606266)',
-        'secondary-text': 'var(--el-text-color-secondary, #909399)',
-        'placeholder-text': 'var(--el-text-color-placeholder, #a8abb2)',
-        'disabled-text': 'var(--el-text-color-disabled, #c0c4cc)',
-        'popup-modal-bg': 'var(--el-color-black, #000000)',
-        'disabled-bg': 'var(--el-fill-color-light, #f5f7fa)',
+
+        'text-primary': 'var(--el-text-color-primary, #303133)',
+        'text-regular': 'var(--el-text-color-regular, #606266)',
+        'text-secondary': 'var(--el-text-color-secondary, #909399)',
+        'text-placeholder': 'var(--el-text-color-placeholder, #a8abb2)',
+        'text-disabled': 'var(--el-text-color-disabled, #c0c4cc)',
+
+        'bg-popup-modal': 'var(--el-color-black, #000000)',
+        'bg-disabled': 'var(--el-fill-color-light, #f5f7fa)',
+
         border: 'var(--el-border-color, #dcdfe6)',
         'border-light': 'var(--el-border-color-light, #e4e7ed)',
         'border-lighter': 'var(--el-border-color-lighter, #ebeef5)',
         'border-extra-light': 'var(--el-border-color-extra-light, #f2f6fc)',
         'border-dark': 'var(--el-border-color-dark, #d4d7de)',
         'border-darker': 'var(--el-border-color-darker, #cdd0d6)',
-        'hover-border': 'var(--el-border-color-hover, #c0c4cc)',
-        'disabled-border': 'var(--el-border-color-light, #e4e7ed)',
+        'border-hover': 'var(--el-border-color-hover, #c0c4cc)',
+        'border-disabled': 'var(--el-border-color-light, #e4e7ed)',
+
         overlay: 'var(--el-overlay-color, rgba(0, 0, 0, .8))',
         'overlay-light': 'var(--el-overlay-color-light, rgba(0, 0, 0, .7))',
         'overlay-lighter': 'var(--el-overlay-color-lighter, rgba(0, 0, 0, .5))',
+
         mask: 'var(--el-mask-color, rgba(255, 255, 255, .9))',
         'mask-extra-light': 'var(--el-mask-color-extra-light, rgba(255, 255, 255, .3))',
       },
