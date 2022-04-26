@@ -1,0 +1,83 @@
+{
+  "name": "@modyqyw/tailwind-presets",
+  "version": "0.0.0",
+  "description": "Tailwind presets.",
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "preset",
+    "antd",
+    "element-plus",
+    "mui",
+    "vuetify",
+    "miniprogram",
+    "miniprogram-preflight"
+  ],
+  "homepage": "https://github.com/ModyQyW/tailwind-presets#readme",
+  "bugs": {
+    "url": "https://github.com/ModyQyW/tailwind-presets/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ModyQyW/tailwind-presets.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ModyQyW",
+    "email": "wurui-dev@foxmail.com",
+    "url": "https://modyqyw.github.io"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./antd": "./antd.js",
+    "./element-plus": "./element-plus.js",
+    "./mui": "./mui.js",
+    "./vuetify": "./vuetify.js",
+    "./miniprogram": "./miniprogram.js",
+    "./miniprogram-preflight.css": "./miniprogram-preflight.css"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "ant-design.js",
+    "element-plus.js",
+    "mui.js",
+    "vuetify.js",
+    "miniprogram.js",
+    "miniprogram-preflight.css"
+  ],
+  "scripts": {
+    "commit": "git-cz",
+    "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint && sort-package-json",
+    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue,.svelte --ignore-path=.gitignore",
+    "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
+    "prepare": "is-ci || husky install",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "@ant-design/colors": "^6.0.0",
+    "@babel/core": "^7.17.9",
+    "@babel/eslint-parser": "^7.17.0",
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@commitlint/prompt": "^16.2.3",
+    "@types/color": "^3.0.3",
+    "@types/tailwindcss": "^3.0.10",
+    "color": "^4.2.3",
+    "commitizen": "^4.2.4",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^12.4.0",
+    "markdownlint-cli": "^0.31.1",
+    "prettier": "^2.6.2",
+    "prettier-plugin-packagejson": "^2.2.17",
+    "release-it": "^14.14.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
