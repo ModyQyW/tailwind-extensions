@@ -16,8 +16,6 @@ npm install @modyqyw/tailwind-presets
 
 ### antd
 
-**WIP**
-
 ```js
 module.exports {
   presets: [require('@modyqyw/tailwind-presets/antd')],
@@ -26,6 +24,10 @@ module.exports {
 ```
 
 - 样式预检已经被禁用，因为 `antd` 本身带有样式预检。
+- 替换 `screens` 为 `{ xs: '480px', sm: '576px', md: '768px', lg: '992px', xl: '1200px', xxl: '1600px', '2xl': '1600px' }`。
+- 扩展 `colors`、`fontFamily` 和 `boxShadow`。
+
+查看 [antd.js](./antd.js) 获取细节。
 
 ### element-plus
 

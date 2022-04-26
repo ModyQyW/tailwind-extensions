@@ -16,8 +16,6 @@ Then update your tailwind config.
 
 ### antd
 
-**WIP**
-
 ```js
 module.exports {
   presets: [require('@modyqyw/tailwind-presets/antd')],
@@ -26,6 +24,8 @@ module.exports {
 ```
 
 - Preflight is disabled because `antd` already includes preflight.
+- Replace `screens` with `{ xs: '480px', sm: '576px', md: '768px', lg: '992px', xl: '1200px', xxl: '1600px', '2xl': '1600px' }`.
+- Extend `colors`, `fontFamily` and `boxShadow`.
 
 ### element-plus
 
