@@ -14,20 +14,20 @@ npm install @modyqyw/tailwind-presets
 
 然后更新你的 tailwind 配置。
 
-### antd
+### ant-design
 
 ```js
 module.exports {
-  presets: [require('@modyqyw/tailwind-presets/antd')],
+  presets: [require('@modyqyw/tailwind-presets/ant-design')],
 };
 
 ```
 
-- 样式预检已经被禁用，因为 `antd` 本身带有样式预检。
+- 样式预检已经被禁用，因为 `antd` 和 `ant-design-vue` 本身带有样式预检。
 - 替换 `screens` 为 `{ xs: '480px', sm: '576px', md: '768px', lg: '992px', xl: '1200px', xxl: '1600px', '2xl': '1600px' }`。
 - 扩展 `colors`、`fontFamily` 和 `boxShadow`。
 
-查看 [antd.js](./antd.js) 获取细节。
+查看 [ant-design.js](./ant-design.js) 获取细节。
 
 ### element-plus
 
@@ -43,32 +43,6 @@ module.exports {
 - 扩展 `colors`、`fontFamily`、`fontSize`、`borderRadius`、`boxShadow` 和 `opacity`。
 
 查看 [element-plus.js](./element-plus.js) 获取细节。
-
-### mui
-
-**WIP**
-
-```js
-module.exports {
-  presets: [require('@modyqyw/tailwind-presets/mui')],
-};
-
-```
-
-- 样式预检已经被禁用，因为 `mui` 本身带有样式预检。
-
-### vuetify
-
-**WIP**
-
-```js
-module.exports {
-  presets: [require('@modyqyw/tailwind-presets/vuetify')],
-};
-
-```
-
-- 样式预检已经被禁用，因为 `vuetify` 本身带有样式预检。
 
 ### miniprogram
 
@@ -87,103 +61,4 @@ module.exports {
 
 #### 额外配置
 
-**不要** 使用 `@tailwind base;`，因为它使用了小程序不支持的 `*` 选择器。
-
-作为替代，你可以使用下面的代码替换 `@tailwind base;`。
-
-```css
-html,
-body,
-page,
-cover-image,
-cover-view,
-match-media,
-movable-area,
-movable-view,
-scroll-view,
-swiper,
-swiper-item,
-view,
-icon,
-progress,
-rich-text,
-text,
-button,
-checkbox,
-checkbox-group,
-editor,
-form,
-input,
-label,
-picker,
-picker-view,
-picker-view-column,
-radio,
-radio-group,
-slider,
-switch,
-textarea,
-functional-page-navigator,
-navigator,
-audio,
-camera,
-image,
-live-player,
-live-pusher,
-video,
-voip-room,
-map,
-canvas,
-ad,
-ad-custom,
-official-account,
-open-data,
-web-view,
-navigation-bar,
-page-meta,
-::before,
-::after {
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x: ;
-  --tw-pan-y: ;
-  --tw-pinch-zoom: ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal: ;
-  --tw-slashed-zero: ;
-  --tw-numeric-figure: ;
-  --tw-numeric-spacing: ;
-  --tw-numeric-fraction: ;
-  --tw-ring-inset: ;
-  --tw-ring-offset-width: 0;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 50%);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur: ;
-  --tw-brightness: ;
-  --tw-contrast: ;
-  --tw-grayscale: ;
-  --tw-hue-rotate: ;
-  --tw-invert: ;
-  --tw-saturate: ;
-  --tw-sepia: ;
-  --tw-drop-shadow: ;
-  --tw-backdrop-blur: ;
-  --tw-backdrop-brightness: ;
-  --tw-backdrop-contrast: ;
-  --tw-backdrop-grayscale: ;
-  --tw-backdrop-hue-rotate: ;
-  --tw-backdrop-invert: ;
-  --tw-backdrop-opacity: ;
-  --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia: ;
-}
-```
+**不要** 使用 `@tailwind base;`，因为它使用了小程序不支持的 `*` 选择器。如果你需要类似的样式，请参考 [miniprogram-base.css](./miniprogram-base.css)。

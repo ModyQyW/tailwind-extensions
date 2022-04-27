@@ -14,18 +14,20 @@ npm install @modyqyw/tailwind-presets
 
 Then update your tailwind config.
 
-### antd
+### ant-design
 
 ```js
 module.exports {
-  presets: [require('@modyqyw/tailwind-presets/antd')],
+  presets: [require('@modyqyw/tailwind-presets/ant-design')],
 };
 
 ```
 
-- Preflight is disabled because `antd` already includes preflight.
+- Preflight is disabled because `antd` and `ant-design-vue` already includes preflight.
 - Replace `screens` with `{ xs: '480px', sm: '576px', md: '768px', lg: '992px', xl: '1200px', xxl: '1600px', '2xl': '1600px' }`.
 - Extend `colors`, `fontFamily` and `boxShadow`.
+
+See [ant-design.js](./ant-design.js) for details.
 
 ### element-plus
 
@@ -41,32 +43,6 @@ module.exports {
 - Extend `colors`, `fontFamily`, `fontSize`, `borderRadius`, `boxShadow` and `opacity`.
 
 See [element-plus.js](./element-plus.js) for details.
-
-### mui
-
-**WIP**
-
-```js
-module.exports {
-  presets: [require('@modyqyw/tailwind-presets/mui')],
-};
-
-```
-
-- Preflight is disabled because `mui` already includes preflight.
-
-### vuetify
-
-**WIP**
-
-```js
-module.exports {
-  presets: [require('@modyqyw/tailwind-presets/vuetify')],
-};
-
-```
-
-- Preflight is disabled because `vuetify` already includes preflight.
 
 ### miniprogram
 
@@ -85,103 +61,4 @@ See [miniprogram.js](./miniprogram.js) for details.
 
 #### Extra Configs
 
-Should **NOT** use `@tailwind base;` because it uses selector `*` which is unsupported in miniprogram.
-
-Instead, replace `@tailwind base;` with codes below.
-
-```css
-html,
-body,
-page,
-cover-image,
-cover-view,
-match-media,
-movable-area,
-movable-view,
-scroll-view,
-swiper,
-swiper-item,
-view,
-icon,
-progress,
-rich-text,
-text,
-button,
-checkbox,
-checkbox-group,
-editor,
-form,
-input,
-label,
-picker,
-picker-view,
-picker-view-column,
-radio,
-radio-group,
-slider,
-switch,
-textarea,
-functional-page-navigator,
-navigator,
-audio,
-camera,
-image,
-live-player,
-live-pusher,
-video,
-voip-room,
-map,
-canvas,
-ad,
-ad-custom,
-official-account,
-open-data,
-web-view,
-navigation-bar,
-page-meta,
-::before,
-::after {
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x: ;
-  --tw-pan-y: ;
-  --tw-pinch-zoom: ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal: ;
-  --tw-slashed-zero: ;
-  --tw-numeric-figure: ;
-  --tw-numeric-spacing: ;
-  --tw-numeric-fraction: ;
-  --tw-ring-inset: ;
-  --tw-ring-offset-width: 0;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 50%);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur: ;
-  --tw-brightness: ;
-  --tw-contrast: ;
-  --tw-grayscale: ;
-  --tw-hue-rotate: ;
-  --tw-invert: ;
-  --tw-saturate: ;
-  --tw-sepia: ;
-  --tw-drop-shadow: ;
-  --tw-backdrop-blur: ;
-  --tw-backdrop-brightness: ;
-  --tw-backdrop-contrast: ;
-  --tw-backdrop-grayscale: ;
-  --tw-backdrop-hue-rotate: ;
-  --tw-backdrop-invert: ;
-  --tw-backdrop-opacity: ;
-  --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia: ;
-}
-```
+Should **NOT** use `@tailwind base;` because it uses selector `*` which is unsupported in miniprogram. Check [miniprogram-base.css](./miniprogram-base.css) if you need similar styles.
