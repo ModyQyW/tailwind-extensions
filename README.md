@@ -40,7 +40,7 @@ module.exports {
 
 - Preflight is disabled because it may breaks `element-plus` styles. Recommend [modern-normalize](https://github.com/sindresorhus/modern-normalize) for preflight.
 - Replace `screens` with `{ sm: '768px', md: '992px', lg: '1200px', xl: '1920px' }`.
-- Extend `colors`, `fontFamily`, `fontSize`, `borderRadius`, `boxShadow` and `opacity`.
+- Extend `colors`, `fontFamily`, `fontSize`, `borderRadius`, `boxShadow` and `opacity`. Examples: `w-0.5` -> `w-0-dot-5` / `w-0--5`, `w-1/2` -> `w-1-div-2` / `w-1-2`.
 
 See [element-plus.js](./element-plus.js) for details.
 

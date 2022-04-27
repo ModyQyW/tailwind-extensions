@@ -55,7 +55,7 @@ module.exports {
 
 - 样式预检已经被禁用，因为可能会破坏小程序代码。如果你需要样式预检，请参考 [miniprogram-preflight.css](./miniprogram-preflight.css)。
 - 替换 `separator` 为 `_`，因为小程序不支持 `:`。
-- 扩展 `spacing`、`flexBasis`、`height`、`inset`、`translate` 和 `width`。
+- 扩展 `spacing`、`flexBasis`、`height`、`inset`、`translate` 和 `width`。例子：`w-0.5` -> `w-0-dot-5` / `w-0--5`，`w-1/2` -> `w-1-div-2` / `w-1-2`。
 
 查看 [miniprogram.js](./miniprogram.js) 获取细节。
 
