@@ -6,10 +6,8 @@
     "tailwind",
     "tailwindcss",
     "preset",
-    "antd",
+    "ant-design",
     "element-plus",
-    "mui",
-    "vuetify",
     "miniprogram",
     "miniprogram-preflight"
   ],
@@ -29,11 +27,10 @@
   },
   "exports": {
     ".": "./index.js",
-    "./antd": "./antd.js",
+    "./ant-design": "./ant-design.js",
     "./element-plus": "./element-plus.js",
-    "./mui": "./mui.js",
-    "./vuetify": "./vuetify.js",
     "./miniprogram": "./miniprogram.js",
+    "./miniprogram-base.css": "./miniprogram-base.css",
     "./miniprogram-preflight.css": "./miniprogram-preflight.css"
   },
   "main": "index.js",
@@ -41,9 +38,8 @@
     "index.js",
     "ant-design.js",
     "element-plus.js",
-    "mui.js",
-    "vuetify.js",
     "miniprogram.js",
+    "miniprogram-base.css",
     "miniprogram-preflight.css"
   ],
   "scripts": {
