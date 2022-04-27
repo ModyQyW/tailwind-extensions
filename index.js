@@ -1,13 +1,9 @@
-const antd = require('./antd');
+const antDesign = require('./ant-design');
 const elementPlus = require('./element-plus');
-const mui = require('./mui');
-const vuetify = require('./vuetify');
 const miniprogram = require('./miniprogram');
 
 module.exports = {
-  antd,
+  antDesign,
   elementPlus,
-  mui,
-  vuetify,
   miniprogram,
 };
