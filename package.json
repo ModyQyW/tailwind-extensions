@@ -27,6 +27,7 @@
   },
   "exports": {
     ".": "./index.js",
+    "./base": "./base.js",
     "./ant-design": "./ant-design.js",
     "./element-plus": "./element-plus.js",
     "./miniprogram": "./miniprogram.js",
@@ -36,6 +37,7 @@
   "main": "index.js",
   "files": [
     "index.js",
+    "base.js",
     "ant-design.js",
     "element-plus.js",
     "miniprogram.js",
