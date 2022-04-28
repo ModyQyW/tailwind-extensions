@@ -310,6 +310,9 @@ module.exports = {
           'extra-light': 'var(--el-mask-color-extra-light, rgba(255, 255, 255, .3))',
         },
       },
+      borderColor: ({ theme }) => ({
+        DEFAULT: theme('colors.border.DEFAULT', 'currentColor'),
+      }),
       fontFamily: {
         font: "var(--el-font-family, 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif)",
       },

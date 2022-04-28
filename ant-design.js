@@ -685,6 +685,9 @@ module.exports = {
 
         mask: 'rgba(0, 0, 0, .45)',
       },
+      borderColor: ({ theme }) => ({
+        DEFAULT: theme('colors.border', 'currentColor'),
+      }),
       fontFamily: {
         font: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
       },
