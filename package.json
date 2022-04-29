@@ -52,6 +52,9 @@
     "prepare": "is-ci || husky install",
     "release": "release-it"
   },
+  "dependencies": {
+    "tailwindcss-theme-swapper": "^0.6.2"
+  },
   "devDependencies": {
     "@ant-design/colors": "^6.0.0",
     "@babel/core": "^7.17.9",
@@ -78,8 +81,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "dependencies": {
-    "tailwindcss-theme-swapper": "^0.6.2"
   }
 }
