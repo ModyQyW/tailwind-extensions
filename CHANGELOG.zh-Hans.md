@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 (2022-04-29)
+
+- feat: 更新 `ant-design` 和 `element-plus` 两个预设的颜色
+
 ## 0.2.0 (2022-04-28)
 
 - feat: 增加 `base` 预设

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 (2022-04-29)
+
+- feat: update `ant-design` and `element-plus` presets' colors
+
 ## 0.2.0 (2022-04-28)
 
 - feat: add `base` preset
