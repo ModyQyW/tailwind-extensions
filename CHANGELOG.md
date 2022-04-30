@@ -1,8 +1,16 @@
 # Changelog
 
+## 0.4.0 (2022-04-30)
+
+- feat: update `ant-design` and `element-plus` presets, using `tailwindcss-theme-swapper` to support CSS variables for different themes
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.3.0 (2022-04-29)
 
 - feat: update `ant-design` and `element-plus` presets' colors
+
+**This is an early access. Use it at your own risk.**
 
 ## 0.2.0 (2022-04-28)
 
