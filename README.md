@@ -34,51 +34,51 @@ module.exports = {
 <details>
   <summary>I would like to know what this preset has probably done.</summary>
   <ul>
-    <li>Extend <code>columns</code>。</li>
-    <li>Extend <code>spacing</code>。</li>
-    <li>Extend <code>blur</code>。</li>
-    <li>Extend <code>brightness</code>。</li>
-    <li>Extend <code>borderRadius</code>。</li>
-    <li>Extend <code>borderWidth</code>。</li>
-    <li>Extend <code>contrast</code>。</li>
-    <li>Extend <code>hueRotate</code>。</li>
-    <li>Extend <code>flexBasis</code>。</li>
-    <li>Extend <code>flexGrow</code>。</li>
-    <li>Extend <code>flexShrink</code>。</li>
-    <li>Extend <code>fontSize</code>。</li>
-    <li>Extend <code>fontWeight</code>。</li>
-    <li>Extend <code>gridColumn</code>。</li>
-    <li>Extend <code>gridColumnEnd</code>。</li>
-    <li>Extend <code>gridColumnStart</code>。</li>
-    <li>Extend <code>gridRow</code>。</li>
-    <li>Extend <code>gridRowStart</code>。</li>
-    <li>Extend <code>gridRowEnd</code>。</li>
-    <li>Extend <code>gridTemplateColumns</code>。</li>
-    <li>Extend <code>gridTemplateRows</code>。</li>
-    <li>Extend <code>height</code>。</li>
-    <li>Extend <code>inset</code>。</li>
-    <li>Extend <code>lineHeight</code>。</li>
-    <li>Extend <code>maxHeight</code>。</li>
-    <li>Extend <code>maxWidth</code>。</li>
-    <li>Extend <code>minHeight</code>。</li>
-    <li>Extend <code>minWidth</code>。</li>
-    <li>Extend <code>opacity</code>。</li>
-    <li>Extend <code>order</code>。</li>
-    <li>Extend <code>outlineOffset</code>。</li>
-    <li>Extend <code>outlineWidth</code>。</li>
-    <li>Extend <code>ringOffsetWidth</code>。</li>
-    <li>Extend <code>ringWidth</code>。</li>
-    <li>Extend <code>rotate</code>。</li>
-    <li>Extend <code>saturate</code>。</li>
-    <li>Extend <code>scale</code>。</li>
-    <li>Extend <code>skew</code>。</li>
-    <li>Extend <code>textDecorationThickness</code>。</li>
-    <li>Extend <code>textUnderlineOffset</code>。</li>
-    <li>Extend <code>transitionDelay</code>。</li>
-    <li>Extend <code>transitionDuration</code>。</li>
-    <li>Extend <code>translate</code>。</li>
-    <li>Extend <code>width</code>。</li>
-    <li>Extend <code>zIndex</code>。</li>
+    <li>Extend <code>columns</code>.</li>
+    <li>Extend <code>spacing</code>.</li>
+    <li>Extend <code>blur</code>.</li>
+    <li>Extend <code>brightness</code>.</li>
+    <li>Extend <code>borderRadius</code>.</li>
+    <li>Extend <code>borderWidth</code>.</li>
+    <li>Extend <code>contrast</code>.</li>
+    <li>Extend <code>hueRotate</code>.</li>
+    <li>Extend <code>flexBasis</code>.</li>
+    <li>Extend <code>flexGrow</code>.</li>
+    <li>Extend <code>flexShrink</code>.</li>
+    <li>Extend <code>fontSize</code>.</li>
+    <li>Extend <code>fontWeight</code>.</li>
+    <li>Extend <code>gridColumn</code>.</li>
+    <li>Extend <code>gridColumnEnd</code>.</li>
+    <li>Extend <code>gridColumnStart</code>.</li>
+    <li>Extend <code>gridRow</code>.</li>
+    <li>Extend <code>gridRowStart</code>.</li>
+    <li>Extend <code>gridRowEnd</code>.</li>
+    <li>Extend <code>gridTemplateColumns</code>.</li>
+    <li>Extend <code>gridTemplateRows</code>.</li>
+    <li>Extend <code>height</code>.</li>
+    <li>Extend <code>inset</code>.</li>
+    <li>Extend <code>lineHeight</code>.</li>
+    <li>Extend <code>maxHeight</code>.</li>
+    <li>Extend <code>maxWidth</code>.</li>
+    <li>Extend <code>minHeight</code>.</li>
+    <li>Extend <code>minWidth</code>.</li>
+    <li>Extend <code>opacity</code>.</li>
+    <li>Extend <code>order</code>.</li>
+    <li>Extend <code>outlineOffset</code>.</li>
+    <li>Extend <code>outlineWidth</code>.</li>
+    <li>Extend <code>ringOffsetWidth</code>.</li>
+    <li>Extend <code>ringWidth</code>.</li>
+    <li>Extend <code>rotate</code>.</li>
+    <li>Extend <code>saturate</code>.</li>
+    <li>Extend <code>scale</code>.</li>
+    <li>Extend <code>skew</code>.</li>
+    <li>Extend <code>textDecorationThickness</code>.</li>
+    <li>Extend <code>textUnderlineOffset</code>.</li>
+    <li>Extend <code>transitionDelay</code>.</li>
+    <li>Extend <code>transitionDuration</code>.</li>
+    <li>Extend <code>translate</code>.</li>
+    <li>Extend <code>width</code>.</li>
+    <li>Extend <code>zIndex</code>.</li>
   </ul>
 </details>
 
@@ -103,12 +103,12 @@ module.exports = {
 <details>
   <summary>I would like to know what this preset has probably done.</summary>
   <ul>
-    <li>Disable <code>preflight</code>。</li>
-    <li>Replace <code>screens</code>。</li>
-    <li>Extends <code>colors</code>。</li>
-    <li>Replace <code>borderColor.DEFAULT</code>。</li>
-    <li>Extends <code>fontFamily</code>。</li>
-    <li>Extends <code>boxShadow</code>。</li>
+    <li>Disable <code>preflight</code>.</li>
+    <li>Replace <code>screens</code>.</li>
+    <li>Extend <code>colors</code>.</li>
+    <li>Extend <code>borderColor</code>.</li>
+    <li>Extend <code>fontFamily</code>.</li>
+    <li>Extend <code>boxShadow</code>.</li>
   </ul>
 </details>
 
@@ -134,14 +134,14 @@ module.exports = {
   <summary>I would like to know what this preset has probably done.</summary>
   <ul>
     <li>Disable <code>preflight</code>. Recommend <a href="https://github.com/sindresorhus/modern-normalize" target="_blank">modern-normalize</a>.</li>
-    <li>Replace <code>screens</code>。</li>
-    <li>Extends <code>colors</code>。</li>
-    <li>Replace <code>borderColor.DEFAULT</code>。</li>
-    <li>Extends <code>fontFamily</code>。</li>
-    <li>Extends <code>fontSize</code>。</li>
-    <li>Extends <code>borderRadius</code>。</li>
-    <li>Extends <code>boxShadow</code>。</li>
-    <li>Extends <code>opacity</code>。</li>
+    <li>Replace <code>screens</code>.</li>
+    <li>Extend <code>colors</code>.</li>
+    <li>Extend <code>borderColor</code>.</li>
+    <li>Extend <code>fontFamily</code>.</li>
+    <li>Extend <code>fontSize</code>.</li>
+    <li>Extend <code>borderRadius</code>.</li>
+    <li>Extend <code>boxShadow</code>.</li>
+    <li>Extend <code>opacity</code>.</li>
   </ul>
 </details>
 
@@ -166,16 +166,16 @@ module.exports = {
 <details>
   <summary>I would like to know what this preset has probably done.</summary>
   <ul>
-    <li>Disable <code>preflight</code>。</li>
-    <li>Replace <code>separator</code>。</li>
-    <li>Extends <code>spacing</code>。</li>
-    <li>Extends <code>borderRadius</code>。</li>
-    <li>Extends <code>borderWidth</code>。</li>
-    <li>Extends <code>flexBasis</code>。</li>
-    <li>Extends <code>height</code>。</li>
-    <li>Extends <code>inset</code>。</li>
-    <li>Extends <code>translate</code>。</li>
-    <li>Extends <code>width</code>。</li>
+    <li>Disable <code>preflight</code>.</li>
+    <li>Replace <code>separator</code>.</li>
+    <li>Extend <code>spacing</code>.</li>
+    <li>Extend <code>borderRadius</code>.</li>
+    <li>Extend <code>borderWidth</code>.</li>
+    <li>Extend <code>flexBasis</code>.</li>
+    <li>Extend <code>height</code>.</li>
+    <li>Extend <code>inset</code>.</li>
+    <li>Extend <code>translate</code>.</li>
+    <li>Extend <code>width</code>.</li>
   </ul>
 </details>
 

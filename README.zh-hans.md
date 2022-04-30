@@ -106,7 +106,7 @@ module.exports = {
     <li>禁用了 <code>preflight</code>。</li>
     <li>替换了 <code>screens</code>。</li>
     <li>扩展了 <code>colors</code>。</li>
-    <li>替换了 <code>borderColor.DEFAULT</code>。</li>
+    <li>扩展了 <code>borderColor</code>。</li>
     <li>扩展了 <code>fontFamily</code>。</li>
     <li>扩展了 <code>boxShadow</code>。</li>
   </ul>
@@ -136,7 +136,7 @@ module.exports = {
     <li>禁用了 <code>preflight</code>。建议使用 <a href="https://github.com/sindresorhus/modern-normalize" target="_blank">modern-normalize</a>。</li>
     <li>替换了 <code>screens</code>。</li>
     <li>扩展了 <code>colors</code>。</li>
-    <li>替换了 <code>borderColor.DEFAULT</code>。</li>
+    <li>扩展了 <code>borderColor</code>。</li>
     <li>扩展了 <code>fontFamily</code>。</li>
     <li>扩展了 <code>fontSize</code>。</li>
     <li>扩展了 <code>borderRadius</code>。</li>
