@@ -26,6 +26,8 @@ specifiers:
 
 dependencies:
   '@ant-design/colors': 6.0.0
+  '@types/color': 3.0.3
+  '@types/tailwindcss': 3.0.10
   color: 4.2.3
   tailwindcss-theme-swapper: 0.6.2
 
@@ -36,8 +38,6 @@ devDependencies:
   '@commitlint/config-conventional': 16.2.4
   '@commitlint/prompt': 16.2.4
   '@release-it/conventional-changelog': 5.0.0_release-it@15.0.0
-  '@types/color': 3.0.3
-  '@types/tailwindcss': 3.0.10
   commitizen: 4.2.4
   eslint: 8.14.0
   eslint-config-prettier: 8.5.0_eslint@8.14.0
@@ -722,17 +722,15 @@ packages:
     resolution: {integrity: sha512-m7GG7IKKGuJUXvkZ1qqG3ChccdIM/qBBo913z+Xft0nKCX4hAU/IxKwZBU4cpRZ7GS5kV4vOblUkILtSShCPXQ==}
     dependencies:
       '@types/color-name': 1.1.1
-    dev: true
 
   /@types/color-name/1.1.1:
     resolution: {integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==}
-    dev: true
 
   /@types/color/3.0.3:
     resolution: {integrity: sha512-X//qzJ3d3Zj82J9sC/C18ZY5f43utPbAJ6PhYt/M7uG6etcF6MRpKdN880KBy43B0BMzSfeT96MzrsNjFI3GbA==}
     dependencies:
       '@types/color-convert': 2.0.0
-    dev: true
+    dev: false
 
   /@types/glob/7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
@@ -783,7 +781,7 @@ packages:
 
   /@types/tailwindcss/3.0.10:
     resolution: {integrity: sha512-1UnZIHO0NOPyPlPFV0HuMjki2SHkvG9uBA1ZehWj/OQMSROk503nuNyyfmJSIT289yewxTbKoPG+KLxYRvfIIg==}
-    dev: true
+    dev: false
 
   /JSONStream/1.3.5:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
