@@ -62,7 +62,7 @@
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
     "@commitlint/prompt": "^16.2.4",
-    "@release-it/conventional-changelog": "^4.3.0",
+    "@release-it/conventional-changelog": "^5.0.0",
     "@types/color": "^3.0.3",
     "@types/tailwindcss": "^3.0.10",
     "color": "^4.2.3",
