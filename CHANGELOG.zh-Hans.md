@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0 (2022-05-01)
+
+- fix: 修复文档
+
+**这是一个早期版本。请小心使用。**
+
 ## 0.4.0 (2022-04-30)
 
 - feat: 更新 `ant-design` 和 `element-plus` 两个预设，使用 `tailwindcss-theme-swapper` 以支持不同主题的 CSS 变量
