@@ -138,10 +138,7 @@ module.exports = {
     <li>Extend <code>colors</code>.</li>
     <li>Extend <code>borderColor</code>.</li>
     <li>Extend <code>fontFamily</code>.</li>
-    <li>Extend <code>fontSize</code>.</li>
-    <li>Extend <code>borderRadius</code>.</li>
     <li>Extend <code>boxShadow</code>.</li>
-    <li>Extend <code>opacity</code>.</li>
   </ul>
 </details>
 

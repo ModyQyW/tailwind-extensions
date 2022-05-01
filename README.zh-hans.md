@@ -138,10 +138,7 @@ module.exports = {
     <li>扩展了 <code>colors</code>。</li>
     <li>扩展了 <code>borderColor</code>。</li>
     <li>扩展了 <code>fontFamily</code>。</li>
-    <li>扩展了 <code>fontSize</code>。</li>
-    <li>扩展了 <code>borderRadius</code>。</li>
     <li>扩展了 <code>boxShadow</code>。</li>
-    <li>扩展了 <code>opacity</code>。</li>
   </ul>
 </details>
 
