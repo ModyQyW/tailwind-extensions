@@ -19,8 +19,10 @@ npm install @modyqyw/tailwind-presets
 这个预设扩展了 TailwindCSS 的默认配置。[查看预设](./base.js)
 
 ```js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+
 module.exports = {
-  presets: [require('@modyqyw/tailwind-presets/base')],
+  presets: [basePreset],
 };
 ```
 
@@ -87,10 +89,52 @@ module.exports = {
 这个预设提供了 `Ant Design` 相关的配置。[查看预设](./ant-design.js)
 
 ```js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+
 module.exports = {
   presets: [
-    require('@modyqyw/tailwind-presets/base'),
-    require('@modyqyw/tailwind-presets/ant-design'),
+    basePreset,
+    getAntDesignPreset({
+      selectors: [':root'],
+      mediaQuery: [],
+      primary: '#1890ff',
+      secondary: '#666666',
+      success: '#52c41a',
+      warning: '#faad14',
+      error: '#f5222d',
+      danger: '#f5222d',
+      info: '#1890ff',
+      text: 'rgba(0, 0, 0, 0.85)',
+      primaryText: 'rgba(0, 0, 0, 0.85)',
+      secondaryText: 'rgba(0, 0, 0, 0.45)',
+      disabledText: 'rgba(0, 0, 0, 0.25)',
+      bg: '#ffffff',
+      disabledBg: '#f5f5f5',
+      border: '#d9d9d9',
+      mask: 'rgba(0, 0, 0, 0.45)',
+      boxShadow:
+        '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
+      darkSelectors: ['.dark', '[dark]', '[data-theme="dark"]', '.is-dark', '[is-dark]'],
+      darkMediaQuery: '@media (prefers-color-scheme: dark)',
+      darkPrimary: '#177ddc',
+      darkSecondary: '#5a5a5a',
+      darkSuccess: '#49aa19',
+      darkWarning: '#d89614',
+      darkError: '#d32029',
+      darkDanger: '#d32029',
+      darkInfo: '#177ddc',
+      darkText: 'rgba(255, 255, 255, 0.85)',
+      darkPrimaryText: 'rgba(255, 255, 255, 0.85)',
+      darkSecondaryText: 'rgba(255, 255, 255, 0.45)',
+      darkDisabledText: 'rgba(255, 255, 255, 0.3)',
+      darkBg: '#141414',
+      darkDisabledBg: 'rgba(255, 255, 255, 0.08)',
+      darkBorder: '#434343',
+      darkMask: 'rgba(0, 0, 0, 0.45)',
+      darkBoxShadow:
+        '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
+    }),
   ],
 };
 ```
@@ -117,10 +161,34 @@ module.exports = {
 这个预设提供了 `element-plus` 相关的配置。[查看预设](./element-plus.js)
 
 ```js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
+
 module.exports = {
   presets: [
-    require('@modyqyw/tailwind-presets/base'),
-    require('@modyqyw/tailwind-presets/element-plus'),
+    basePreset,
+    getElementPlusPreset({
+      selectors: [':root'],
+      mediaQuery: [],
+      primary: '#409eff',
+      secondary: '#909399',
+      success: '#67c23a',
+      warning: '#e6a23c',
+      error: '#f56c6c',
+      danger: '#f56c6c',
+      info: '#909399',
+      text: '#303133',
+      primaryText: '#303133',
+      regularText: '#606266',
+      secondaryText: '#909399',
+      placeholderText: '#a8abb2',
+      disabledText: '#c0c4cc',
+      bg: '#ffffff',
+      disabledBg: '#f5f7fa',
+      border: '#dcdfe6',
+      mask: 'rgba(255, 255, 255, .9)',
+      boxShadow: '0px 12px 32px 4px rgba(0, 0, 0, .04), 0px 8px 20px rgba(0, 0, 0, .08)',
+    }),
   ],
 };
 ```
@@ -147,10 +215,17 @@ module.exports = {
 这个预设提供了小程序相关的配置。[查看预设](./miniprogram.js)
 
 ```js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
+const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
+
 module.exports = {
   presets: [
-    require('@modyqyw/tailwind-presets/base'),
-    require('@modyqyw/tailwind-presets/miniprogram'),
+    basePreset,
+    // getAntDesignPreset({ ... }),
+    // getElementPlusPreset({ ... }),
+    miniprogramPreset,
   ],
 };
 ```
@@ -176,10 +251,6 @@ module.exports = {
   </ul>
 </details>
 
-#### preflight
-
-有需要请参考 [miniprogram-preflight.css](./miniprogram-preflight.css)。
-
 #### 额外配置
 
-**不要** 使用 `@tailwind base;`，因为其生成的样式中包含小程序不支持的 `*` 选择器。有需要请参考 [miniprogram-base.css](./miniprogram-base.css)。
+**不要** 使用 `@tailwind base;` 和 `preflight`，因为其生成的样式中包含小程序不支持的 `*` 选择器和无效标签。有需要请参考 [miniprogram-base.css](./miniprogram-base.css)。
