@@ -1,5 +1,6 @@
-/** @type {import('@types/tailwindcss/tailwind-config').TailwindConfig} */
-module.exports = {
+import type { TailwindConfig } from 'tailwindcss/tailwind-config';
+
+const config: TailwindConfig = {
   corePlugins: {
     preflight: false,
   },
@@ -1149,6 +1150,7 @@ module.exports = {
         '15rpx': '15rpx',
         '16rpx': '16rpx',
       },
+      // @ts-ignore
       flexBasis: {
         '1-2': '50%',
         '1-3': '33.333333%',
@@ -1320,3 +1322,5 @@ module.exports = {
     },
   },
 };
+
+export default config;

@@ -1,5 +1,6 @@
-/** @type {import('@types/tailwindcss/tailwind-config').TailwindConfig} */
-module.exports = {
+import type { TailwindConfig } from 'tailwindcss/tailwind-config';
+
+const config: TailwindConfig = {
   theme: {
     extend: {
       columns: {
@@ -1298,6 +1299,7 @@ module.exports = {
         359: '359deg',
         360: '360deg',
       },
+      // @ts-ignore
       flexBasis: {
         half: '50%',
       },
@@ -2864,3 +2866,5 @@ module.exports = {
     },
   },
 };
+
+export default config;

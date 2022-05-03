@@ -1,9 +1,11 @@
-const themeSwapper = require('tailwindcss-theme-swapper');
-const { generate, presetPalettes, presetDarkPalettes } = require('@ant-design/colors');
+// @ts-ignore
+import themeSwapper from 'tailwindcss-theme-swapper';
+import { generate, presetPalettes, presetDarkPalettes } from '@ant-design/colors';
+import type { TailwindConfig } from 'tailwindcss/tailwind-config';
 
-const convert = (colors) => {
+const convert = (colors: string[]) => {
   return {
-    DEFAULT: colors.primary || colors[5],
+    DEFAULT: colors[5],
     1: colors[0],
     2: colors[1],
     3: colors[2],
@@ -37,10 +39,9 @@ const convert = (colors) => {
   };
 };
 
-/** @type {import('@types/tailwindcss/tailwind-config').TailwindConfig} */
-module.exports = ({
+export default ({
   selectors = [':root'],
-  mediaQuery = [],
+  mediaQuery = [] as string[],
   primary = '#1890ff',
   secondary = '#666666',
   success = '#52c41a',
@@ -75,7 +76,7 @@ module.exports = ({
   darkBorder = '#434343',
   darkMask = 'rgba(0, 0, 0, 0.45)',
   darkBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
-} = {}) => ({
+} = {}): TailwindConfig => ({
   corePlugins: {
     preflight: false,
   },
@@ -316,7 +317,20 @@ module.exports = ({
         DEFAULT: 'var(--colors-border, currentColor)',
       },
       fontFamily: {
-        font: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+        font: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'Noto Sans',
+          'sans-serif',
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol',
+          'Noto Color Emoji',
+        ],
       },
     },
   },
