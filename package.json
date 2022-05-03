@@ -26,25 +26,39 @@
     "url": "https://modyqyw.github.io"
   },
   "exports": {
-    ".": "./index.js",
-    "./base": "./base.js",
-    "./ant-design": "./ant-design.js",
-    "./element-plus": "./element-plus.js",
-    "./miniprogram": "./miniprogram.js",
-    "./miniprogram-base.css": "./miniprogram-base.css",
-    "./miniprogram-preflight.css": "./miniprogram-preflight.css"
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./base": {
+      "require": "./dist/base.js",
+      "import": "./dist/base.mjs",
+      "types": "./dist/base.d.ts"
+    },
+    "./ant-design": {
+      "require": "./dist/ant-design.js",
+      "import": "./dist/ant-design.mjs",
+      "types": "./dist/ant-design.d.ts"
+    },
+    "./element-plus": {
+      "require": "./dist/element-plus.js",
+      "import": "./dist/element-plus.mjs",
+      "types": "./dist/element-plus.d.ts"
+    },
+    "./miniprogram": {
+      "require": "./dist/miniprogram.js",
+      "import": "./dist/miniprogram.mjs",
+      "types": "./dist/miniprogram.d.ts"
+    },
+    "./miniprogram-base.css": "./dist/miniprogram-base.css"
   },
-  "main": "index.js",
+  "main": "./dist/index.js",
   "files": [
-    "index.js",
-    "base.js",
-    "ant-design.js",
-    "element-plus.js",
-    "miniprogram.js",
-    "miniprogram-base.css",
-    "miniprogram-preflight.css"
+    "dist"
   ],
   "scripts": {
+    "build": "tsup-node && cp src/*.css dist/",
     "commit": "git-cz",
     "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint && sort-package-json",
     "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue,.svelte --ignore-path=.gitignore",
@@ -60,12 +74,12 @@
     "tailwindcss-theme-swapper": "^0.6.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/eslint-parser": "^7.17.0",
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
     "@commitlint/prompt": "^16.2.4",
     "@release-it/conventional-changelog": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
     "commitizen": "^4.2.4",
     "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
@@ -76,7 +90,9 @@
     "markdownlint-cli": "^0.31.1",
     "prettier": "^2.6.2",
     "prettier-plugin-packagejson": "^2.2.17",
-    "release-it": "^15.0.0"
+    "release-it": "^15.0.0",
+    "tsup": "^5.12.6",
+    "typescript": "^4.6.4"
   },
   "publishConfig": {
     "access": "public",
