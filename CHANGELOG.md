@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.5.1 (2022-05-03)
+## 0.6.0 (2022-05-03)
 
 - chore: use `tsup` to build and migrate to TypeScript
 - fix: fix config
