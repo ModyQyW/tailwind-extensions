@@ -58,7 +58,7 @@ export default ({
   border = '#d9d9d9',
   mask = 'rgba(0, 0, 0, 0.45)',
   boxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
-  darkSelectors = ['.dark', '[dark]', '[data-theme="dark"]', '.is-dark', '[is-dark]'],
+  darkSelectors = ['.dark'],
   darkMediaQuery = '@media (prefers-color-scheme: dark)',
   darkPrimary = '#177ddc',
   darkSecondary = '#5a5a5a',
