@@ -5,6 +5,7 @@ module.exports = {
   },
   plugins: {
     '@release-it/conventional-changelog': {
+      header: '# Changelog',
       preset: 'conventionalcommits',
     },
   },
