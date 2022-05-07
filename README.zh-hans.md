@@ -16,7 +16,7 @@ npm install @modyqyw/tailwind-presets
 
 ### base
 
-这个预设扩展了 TailwindCSS 的默认配置。[查看预设](./base.js)
+这个预设扩展了 TailwindCSS 的默认配置。[查看预设](./src/base.ts)
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
@@ -86,7 +86,7 @@ module.exports = {
 
 ### ant-design
 
-这个预设提供了 `Ant Design` 相关的配置。[查看预设](./ant-design.js)
+这个预设提供了 `Ant Design` 相关的配置。[查看预设](./src/ant-design.ts)
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
@@ -158,7 +158,7 @@ module.exports = {
 
 ### element-plus
 
-这个预设提供了 `element-plus` 相关的配置。[查看预设](./element-plus.js)
+这个预设提供了 `element-plus` 相关的配置。[查看预设](./src/element-plus.ts)
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
@@ -232,12 +232,12 @@ module.exports = {
 
 ### miniprogram
 
-这个预设提供了小程序相关的配置。[查看预设](./miniprogram.js)
+这个预设提供了小程序相关的配置。[查看预设](./src/miniprogram.ts)
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
-const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
+// const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+// const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
 const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
 
 module.exports = {
@@ -274,3 +274,61 @@ module.exports = {
 #### 额外配置
 
 **不要** 使用 `@tailwind base;` 和 `preflight`，因为其生成的样式中包含小程序不支持的 `*` 选择器和无效标签。有需要请参考 [miniprogram-base.css](./miniprogram-base.css)。
+
+### easy
+
+这个预设提供了关怀模式相关的配置。[查看预设](./src/easy.ts)
+
+```js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+// const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+// const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
+// const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
+const easyPreset = require('@modyqyw/tailwind-presets/easy').default;
+
+module.exports = {
+  presets: [
+    basePreset,
+    // getAntDesignPreset({ ... }),
+    // getElementPlusPreset({ ... }),
+    // miniprogramPreset,
+    easyPreset({
+      selectors: ['.easy'],
+      mediaQuery: '',
+      fontSize: '24px',
+    }),
+  ],
+};
+```
+
+<details>
+  <summary>我可能会在什么时候用到这个预设？</summary>
+  <p>如果你在开发关怀模式，又想使用 TailwindCSS，这个预设很有用。</p>
+</details>
+
+<details>
+  <summary>我想知道这个预设大概做了什么。</summary>
+  <ul>
+    <li>扩展了 <code>fontSize</code>。</li>
+  </ul>
+</details>
+
+#### 额外配置
+
+在使用这个预设时，需要在页面容器元素添加 `class="easy"`，并为页面容器元素添加 `font-size` 相应样式。
+
+假定页面容器元素是 `html`，代码如下所示。
+
+```html
+<html class="easy">
+  ...
+</html>
+```
+
+```css
+html {
+  font-size: var(--font-size, 16px);
+}
+```
+
+如果做了自定义，需要自行做相应调整。

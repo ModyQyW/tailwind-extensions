@@ -16,7 +16,7 @@ Then update your TailwindCSS config.
 
 ### base
 
-This preset extends the default configuration of TailwindCSS. [View Preset](./base.js)
+This preset extends the default configuration of TailwindCSS. [View Preset](./src/base.ts)
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
@@ -86,7 +86,7 @@ module.exports = {
 
 ### ant-design
 
-This preset provides configurations related to `Ant Design`. [View Preset](./base.js)
+This preset provides configurations related to `Ant Design`. [View Preset](./src/base.ts)
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
@@ -158,7 +158,7 @@ module.exports = {
 
 ### element-plus
 
-This preset provides configurations related to `element-plus`. [View Preset](./base.js)
+This preset provides configurations related to `element-plus`. [View Preset](./src/base.ts)
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
@@ -232,12 +232,12 @@ module.exports = {
 
 ### miniprogram
 
-This preset provides configurations related to miniprogram. [View Preset](./miniprogram.js)
+This preset provides configurations related to miniprogram. [View Preset](./src/miniprogram.ts)
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
-const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
+// const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+// const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
 const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
 
 module.exports = {
@@ -274,3 +274,61 @@ module.exports = {
 #### `@tailwind base;`
 
 **DO NOT** use `@tailwind base;` and `preflight` because the generated styles contain `*` selectors and useless tags that are not supported by miniprogram. View [miniprogram-base.css](./miniprogram-base.css) if you need.
+
+### easy
+
+This preset provides configurations related to miniprogram. [View Preset](./src/easy.ts)
+
+```js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+// const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+// const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
+// const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
+const easyPreset = require('@modyqyw/tailwind-presets/easy').default;
+
+module.exports = {
+  presets: [
+    basePreset,
+    // getAntDesignPreset({ ... }),
+    // getElementPlusPreset({ ... }),
+    // miniprogramPreset,
+    easyPreset({
+      selectors: ['.easy'],
+      mediaQuery: '',
+      fontSize: '24px',
+    }),
+  ],
+};
+```
+
+<details>
+  <summary>When might I use this preset?</summary>
+  <p>This preset will be useful if you are developing easy mode with TailwindCSS.</p>
+</details>
+
+<details>
+  <summary>I would like to know what this preset has probably done.</summary>
+  <ul>
+    <li>Extend <code>fontSize</code>.</li>
+  </ul>
+</details>
+
+#### 额外配置
+
+You need to add `class="easy"` to the page container element and add `font-size` to the page container element with the corresponding style when using this preset.
+
+Assuming that the page container element is `html`, the code is shown below.
+
+```html
+<html class="easy">
+  ...
+</html>
+```
+
+```css
+html {
+  font-size: var(--font-size, 16px);
+}
+```
+
+You need to adjust it accordingly if customized.
