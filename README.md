@@ -271,7 +271,7 @@ module.exports = {
   </ul>
 </details>
 
-#### `@tailwind base;`
+#### Extra Configs
 
 **DO NOT** use `@tailwind base;` and `preflight` because the generated styles contain `*` selectors and useless tags that are not supported by miniprogram. View [miniprogram-base.css](./miniprogram-base.css) if you need.
 
@@ -313,7 +313,7 @@ module.exports = {
   </ul>
 </details>
 
-#### 额外配置
+#### Extra Configs
 
 You need to add `class="easy"` to the page container element and add `font-size` to the page container element with the corresponding style when using this preset.
 
