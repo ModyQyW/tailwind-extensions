@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 (2022-05-07)
+
+- fix: 设置 `ant-design` `darkSelectors` 默认值为 `[.dark]`
+- feat: 支持 `element-plus` 深色模式
+- feat: 增加 `easy` 预设，即关怀模式预设
+
+**这是一个早期版本。请小心使用。**
+
 ## 0.6.0 (2022-05-03)
 
 - chore: 使用 `tsup` 构建并迁移到 TypeScript

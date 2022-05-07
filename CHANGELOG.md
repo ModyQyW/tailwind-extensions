@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0 (2022-05-07)
+
+- fix: set `ant-design` `darkSelectors` default value to `[.dark]`
+- feat: support `element-plus` dark mode
+- feat: add `easy` preset
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.6.0 (2022-05-03)
 
 - chore: use `tsup` to build and migrate to TypeScript
