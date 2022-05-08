@@ -15,7 +15,7 @@ specifiers:
   eslint: ^8.15.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.0.0
-  husky: ^7.0.4
+  husky: ^8.0.0
   is-ci: ^3.0.1
   lint-staged: ^12.4.1
   markdownlint-cli: ^0.31.1
@@ -44,7 +44,7 @@ devDependencies:
   eslint: 8.15.0
   eslint-config-prettier: 8.5.0_eslint@8.15.0
   eslint-plugin-prettier: 4.0.0_iqftbjqlxzn3ny5nablrkczhqi
-  husky: 7.0.4
+  husky: 8.0.0
   is-ci: 3.0.1
   lint-staged: 12.4.1
   markdownlint-cli: 0.31.1
@@ -2741,6 +2741,8 @@ packages:
     dependencies:
       '@sindresorhus/is': 0.14.0
       '@szmarczak/http-timer': 1.1.2
+      '@types/keyv': 3.1.4
+      '@types/responselike': 1.0.0
       cacheable-request: 6.1.0
       decompress-response: 3.3.0
       duplexer3: 0.1.4
@@ -2889,9 +2891,9 @@ packages:
     engines: {node: '>=12.20.0'}
     dev: true
 
-  /husky/7.0.4:
-    resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
-    engines: {node: '>=12'}
+  /husky/8.0.0:
+    resolution: {integrity: sha512-4qbE/5dzNDNxFEkX9MNRPKl5+omTXQzdILCUWiqG/lWIAioiM5vln265/l6I2Zx8gpW8l1ukZwGQeCFbBZ6+6w==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
