@@ -175,11 +175,17 @@ const config = ({
                 placeholder: placeholderText,
                 disabled: disabledText,
               },
+              'primary-text': primaryText,
+              'regular-text': regularText,
+              'secondary-text': secondaryText,
+              'placeholder-text': placeholderText,
+              'disabled-text': disabledText,
 
               bg: {
                 DEFAULT: bg,
                 disabled: disabledBg,
               },
+              'disabled-bg': disabledBg,
 
               border,
 
@@ -217,11 +223,17 @@ const config = ({
                 placeholder: darkPlaceholderText,
                 disabled: darkDisabledText,
               },
+              'primary-text': darkPrimaryText,
+              'regular-text': darkRegularText,
+              'secondary-text': darkSecondaryText,
+              'placeholder-text': darkPlaceholderText,
+              'disabled-text': darkDisabledText,
 
               bg: {
                 DEFAULT: darkBg,
                 disabled: darkDisabledBg,
               },
+              'disabled-bg': darkDisabledBg,
 
               border: darkBorder,
 

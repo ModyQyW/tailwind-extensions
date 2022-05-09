@@ -219,11 +219,15 @@ export default ({
                 secondary: secondaryText,
                 disabled: disabledText,
               },
+              'primary-text': primaryText,
+              'secondary-text': secondaryText,
+              'disabled-text': disabledText,
 
               bg: {
                 DEFAULT: bg,
                 disabled: disabledBg,
               },
+              'disabled-bg': disabledBg,
 
               border,
 
@@ -285,11 +289,15 @@ export default ({
                 secondary: darkSecondaryText,
                 disabled: darkDisabledText,
               },
+              'primary-text': darkPrimaryText,
+              'secondary-text': darkSecondaryText,
+              'disabled-text': darkDisabledText,
 
               bg: {
                 DEFAULT: darkBg,
                 disabled: darkDisabledBg,
               },
+              'disabled-bg': darkDisabledBg,
 
               border: darkBorder,
 
