@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.2 (2022-05-09)
+
+- fix: set `darkMode` and `safelist` avoiding wrong purge
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.8.1 (2022-05-09)
 
 - fix: fix presets' config
