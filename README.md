@@ -148,6 +148,8 @@ module.exports = {
   <summary>I would like to know what this preset has probably done.</summary>
   <ul>
     <li>Disable <code>preflight</code>.</li>
+    <li>Set <code>darkMode</code> to <code>class</code>.</li>
+    <li>Set <code>safelist</code> to <code>['dark']</code>.</li>
     <li>Replace <code>screens</code>.</li>
     <li>Extend <code>colors</code>.</li>
     <li>Extend <code>borderColor</code>.</li>
@@ -264,7 +266,9 @@ module.exports = {
 <details>
   <summary>I would like to know what this preset has probably done.</summary>
   <ul>
-    <li>Disable <code>preflight</code>. Recommend <a href="https://github.com/sindresorhus/modern-normalize" target="_blank">modern-normalize</a>.</li>
+    <li>Disable <code>preflight</code>.</li>
+    <li>Set <code>darkMode</code> to <code>class</code>.</li>
+    <li>Set <code>safelist</code> to <code>['dark']</code>.</li>
     <li>Replace <code>screens</code>.</li>
     <li>Extend <code>colors</code>.</li>
     <li>Extend <code>borderColor</code>.</li>

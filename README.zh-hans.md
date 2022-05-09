@@ -148,6 +148,8 @@ module.exports = {
   <summary>我想知道这个预设大概做了什么。</summary>
   <ul>
     <li>禁用了 <code>preflight</code>。</li>
+    <li>设置 <code>darkMode</code> 为 <code>class</code>。</li>
+    <li>设置 <code>safelist</code> 为 <code>['dark']</code>。</li>
     <li>替换了 <code>screens</code>。</li>
     <li>扩展了 <code>colors</code>。</li>
     <li>扩展了 <code>borderColor</code>。</li>
@@ -265,6 +267,8 @@ module.exports = {
   <summary>我想知道这个预设大概做了什么。</summary>
   <ul>
     <li>禁用了 <code>preflight</code>。</li>
+    <li>设置 <code>darkMode</code> 为 <code>class</code>。</li>
+    <li>设置 <code>safelist</code> 为 <code>['dark']</code>。</li>
     <li>替换了 <code>screens</code>。</li>
     <li>扩展了 <code>colors</code>。</li>
     <li>扩展了 <code>borderColor</code>。</li>
