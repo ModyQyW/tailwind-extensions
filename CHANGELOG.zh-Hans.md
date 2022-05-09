@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.8.0 (2022-05-09)
+
+- feat: 更新 `miniprogram-base.css`
+- fix: 修复预设配置
+- fix: 修复导出
+
+**这是一个早期版本。请小心使用。**
+
 ## 0.7.0 (2022-05-07)
 
 - fix: 设置 `ant-design` `darkSelectors` 默认值为 `[.dark]`

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.8.0 (2022-05-09)
+
+- feat: update `miniprogram-base.css`
+- fix: fix presets' config
+- fix: fix exports
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.7.0 (2022-05-07)
 
 - fix: set `ant-design` `darkSelectors` default value to `[.dark]`
