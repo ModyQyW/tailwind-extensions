@@ -97,7 +97,7 @@ module.exports = {
     basePreset,
     getAntDesignPreset({
       selectors: [':root'],
-      mediaQuery: [],
+      mediaQuery: '',
       primary: '#1890ff',
       secondary: '#666666',
       success: '#52c41a',
@@ -156,6 +156,49 @@ module.exports = {
   </ul>
 </details>
 
+#### 额外配置
+
+TailwindCSS 的 `preflight` 可能会和 `Ant Design` 规范相关的样式冲突，所以这个预设禁用了 `preflight`。请参考以下例子使用。
+
+```ts
+// 额外的 preflight
+import 'modern-normalize';
+// TailwindCSS 部分 preflight
+import './styles/preflight.css';
+// antd 样式
+import 'antd/dist/antd.min.css';
+// import 'antd/dist/antd.variable.min.css';
+// ant-design-vue 样式
+import 'ant-design-vue/dist/antd.min.css';
+// import 'ant-design-vue/dist/antd.variable.min.css';
+// TailwindCSS
+import './styles/tailwind.css';
+```
+
+```css
+/* styles/preflight.css */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--colors-border, currentColor);
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
 ### element-plus
 
 这个预设提供了 `element-plus` 相关的配置。[查看预设](./src/element-plus.ts)
@@ -169,7 +212,7 @@ module.exports = {
     basePreset,
     getElementPlusPreset({
       selectors: [':root'],
-      mediaQuery: [],
+      mediaQuery: '',
       primary: '#409eff',
       secondary: '#909399',
       success: '#67c23a',
@@ -221,7 +264,7 @@ module.exports = {
 <details>
   <summary>我想知道这个预设大概做了什么。</summary>
   <ul>
-    <li>禁用了 <code>preflight</code>。建议使用 <a href="https://github.com/sindresorhus/modern-normalize" target="_blank">modern-normalize</a>。</li>
+    <li>禁用了 <code>preflight</code>。</li>
     <li>替换了 <code>screens</code>。</li>
     <li>扩展了 <code>colors</code>。</li>
     <li>扩展了 <code>borderColor</code>。</li>
@@ -229,6 +272,45 @@ module.exports = {
     <li>扩展了 <code>boxShadow</code>。</li>
   </ul>
 </details>
+
+#### 额外配置
+
+TailwindCSS 的 `preflight` 可能会和 `element-plus` 样式冲突，所以这个预设禁用了 `preflight`。请参考以下例子使用。
+
+```ts
+// 额外的 preflight
+import 'modern-normalize';
+// TailwindCSS 部分 preflight
+import './styles/preflight.css';
+// element-plus 样式
+import 'element-plus/dist/index.css';
+// TailwindCSS
+import './styles/tailwind.css';
+```
+
+```css
+/* styles/preflight.css */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--colors-border, currentColor);
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
 ### miniprogram
 
@@ -273,7 +355,7 @@ module.exports = {
 
 #### 额外配置
 
-**不要** 使用 `@tailwind base;` 和 `preflight`，因为其生成的样式中包含小程序不支持的 `*` 选择器和无效标签。有需要请参考 [miniprogram-base.css](./miniprogram-base.css)。
+小程序平台不支持 TailwindCSS 的 `base`（包括 `preflight`）生成的样式代码。请直接使用 [miniprogram-base.css](./miniprogram-base.css) 以替代 TailwindCSS 的 `base`（包括 `preflight`）。
 
 ### easy
 
@@ -315,7 +397,7 @@ module.exports = {
 
 #### 额外配置
 
-在使用这个预设时，需要在页面容器元素添加 `class="easy"`，并为页面容器元素添加 `font-size` 相应样式。
+在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="easy"`，并需要为页面容器元素添加 `font-size` 相应样式。
 
 假定页面容器元素是 `html`，代码如下所示。
 
@@ -331,4 +413,4 @@ html {
 }
 ```
 
-如果做了自定义，需要自行做相应调整。
+如果调整了默认配置，请自行做相应调整。
