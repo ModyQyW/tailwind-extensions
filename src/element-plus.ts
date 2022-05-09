@@ -168,33 +168,30 @@ const config = ({
               danger: convert(danger),
 
               info: convert(info),
+            },
 
-              text: {
-                DEFAULT: text,
-                primary: primaryText,
-                regular: regularText,
-                secondary: secondaryText,
-                placeholder: placeholderText,
-                disabled: disabledText,
-              },
+            backgroundColor: {
+              DEFAULT: bg,
+              disabled: disabledBg,
+              mask,
+            },
+
+            borderColor: {
+              DEFAULT: border,
+            },
+
+            textColor: {
+              DEFAULT: text,
               'primary-text': primaryText,
               'regular-text': regularText,
               'secondary-text': secondaryText,
               'placeholder-text': placeholderText,
               'disabled-text': disabledText,
-
-              bg: {
-                DEFAULT: bg,
-                disabled: disabledBg,
-              },
-              'disabled-bg': disabledBg,
-
-              border,
-
-              mask,
             },
 
-            boxShadow,
+            boxShadow: {
+              DEFAULT: boxShadow,
+            },
           },
         },
         {
@@ -216,33 +213,30 @@ const config = ({
               danger: darkConvert(darkDanger, darkBg),
 
               info: darkConvert(darkInfo, darkBg),
+            },
 
-              text: {
-                DEFAULT: darkText,
-                primary: darkPrimaryText,
-                regular: darkRegularText,
-                secondary: darkSecondaryText,
-                placeholder: darkPlaceholderText,
-                disabled: darkDisabledText,
-              },
+            backgroundColor: {
+              DEFAULT: darkBg,
+              disabled: darkDisabledBg,
+              mask: darkMask,
+            },
+
+            borderColor: {
+              DEFAULT: darkBorder,
+            },
+
+            textColor: {
+              DEFAULT: darkText,
               'primary-text': darkPrimaryText,
               'regular-text': darkRegularText,
               'secondary-text': darkSecondaryText,
               'placeholder-text': darkPlaceholderText,
               'disabled-text': darkDisabledText,
-
-              bg: {
-                DEFAULT: darkBg,
-                disabled: darkDisabledBg,
-              },
-              'disabled-bg': darkDisabledBg,
-
-              border: darkBorder,
-
-              mask: darkMask,
             },
 
-            boxShadow: darkBoxShadow,
+            boxShadow: {
+              DEFAULT: darkBoxShadow,
+            },
           },
         },
       ],

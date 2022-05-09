@@ -49,14 +49,14 @@ export default ({
   error = '#f5222d',
   danger = '#f5222d',
   info = '#1890ff',
+  bg = '#ffffff',
+  disabledBg = '#f5f5f5',
+  mask = 'rgba(0, 0, 0, 0.45)',
+  border = '#d9d9d9',
   text = 'rgba(0, 0, 0, 0.85)',
   primaryText = 'rgba(0, 0, 0, 0.85)',
   secondaryText = 'rgba(0, 0, 0, 0.45)',
   disabledText = 'rgba(0, 0, 0, 0.25)',
-  bg = '#ffffff',
-  disabledBg = '#f5f5f5',
-  border = '#d9d9d9',
-  mask = 'rgba(0, 0, 0, 0.45)',
   boxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
   darkSelectors = ['.dark'],
   darkMediaQuery = '@media (prefers-color-scheme: dark)',
@@ -214,29 +214,28 @@ export default ({
                 'darken-6': '#000000',
                 'dark-6': '#000000',
               },
+            },
 
-              text: {
-                DEFAULT: text,
-                primary: primaryText,
-                secondary: secondaryText,
-                disabled: disabledText,
-              },
-              'primary-text': primaryText,
-              'secondary-text': secondaryText,
-              'disabled-text': disabledText,
-
-              bg: {
-                DEFAULT: bg,
-                disabled: disabledBg,
-              },
-              'disabled-bg': disabledBg,
-
-              border,
-
+            backgroundColor: {
+              DEFAULT: bg,
+              disabled: disabledBg,
               mask,
             },
 
-            boxShadow,
+            borderColor: {
+              DEFAULT: border,
+            },
+
+            textColor: {
+              DEFAULT: text,
+              'primary-text': primaryText,
+              'secondary-text': secondaryText,
+              'disabled-text': disabledText,
+            },
+
+            boxShadow: {
+              DEFAULT: boxShadow,
+            },
           },
         },
         {
@@ -284,29 +283,28 @@ export default ({
               purple: convert(presetDarkPalettes.purple),
 
               magenta: convert(presetDarkPalettes.magenta),
+            },
 
-              text: {
-                DEFAULT: darkText,
-                primary: darkPrimaryText,
-                secondary: darkSecondaryText,
-                disabled: darkDisabledText,
-              },
-              'primary-text': darkPrimaryText,
-              'secondary-text': darkSecondaryText,
-              'disabled-text': darkDisabledText,
-
-              bg: {
-                DEFAULT: darkBg,
-                disabled: darkDisabledBg,
-              },
-              'disabled-bg': darkDisabledBg,
-
-              border: darkBorder,
-
+            backgroundColor: {
+              DEFAULT: darkBg,
+              disabled: darkDisabledBg,
               mask: darkMask,
             },
 
-            boxShadow: darkBoxShadow,
+            borderColor: {
+              DEFAULT: darkBorder,
+            },
+
+            textColor: {
+              DEFAULT: darkText,
+              'primary-text': darkPrimaryText,
+              'secondary-text': darkSecondaryText,
+              'disabled-text': darkDisabledText,
+            },
+
+            boxShadow: {
+              DEFAULT: darkBoxShadow,
+            },
           },
         },
       ],
