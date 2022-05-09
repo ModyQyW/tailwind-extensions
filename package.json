@@ -65,17 +65,11 @@
   "scripts": {
     "build": "tsup-node",
     "commit": "git-cz",
-    "examples:react-antd:build": "pnpm run build --filter react-antd",
-    "examples:react-antd:dev": "pnpm run dev --filter react-antd",
-    "examples:vue-antdv:build": "pnpm run build --filter vue-antdv",
-    "examples:vue-antdv:dev": "pnpm run dev --filter vue-antdv",
-    "examples:vue-ep:build": "pnpm run build --filter vue-ep",
-    "examples:vue-ep:dev": "pnpm run dev --filter vue-ep",
     "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint && sort-package-json",
     "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue,.svelte --ignore-path=.gitignore",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
     "prepare": "is-ci || husky install",
-    "release": "release-it"
+    "release-it": "release-it"
   },
   "dependencies": {
     "@ant-design/colors": "^6.0.0",
