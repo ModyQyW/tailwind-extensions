@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.6 (2022-05-09)
+
+- fix: set `darkMediaQuery` to empty string
+- fix: fix `miniprogram-base.css`
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.8.5 (2022-05-09)
 
 - fix: fix presets' colors

@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.6 (2022-05-09)
+
+- fix: 设置 `darkMediaQuery` 为空字符串你
+- fix: 修复 `miniprogram-base.css`
+
+**这是一个早期版本。请小心使用。**
+
 ## 0.8.5 (2022-05-09)
 
 - fix: 修复预设颜色
