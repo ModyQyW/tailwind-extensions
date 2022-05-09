@@ -185,7 +185,7 @@ import './styles/tailwind.css';
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
-  border-color: var(--colors-border, currentColor);
+  border-color: var(--border-color, currentColor);
 }
 
 ::before,
@@ -300,7 +300,7 @@ import './styles/tailwind.css';
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
-  border-color: var(--colors-border, currentColor);
+  border-color: var(--border-color, currentColor);
 }
 
 ::before,
