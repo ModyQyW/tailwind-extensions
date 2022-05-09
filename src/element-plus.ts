@@ -257,7 +257,7 @@ const config = ({
     },
     extend: {
       borderColor: {
-        DEFAULT: 'var(--colors-border, currentColor)',
+        DEFAULT: 'rgb(var(--colors-border, currentColor) / var(--tw-bg-opacity))',
       },
       fontFamily: {
         font: [
