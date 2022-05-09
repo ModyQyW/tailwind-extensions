@@ -67,14 +67,14 @@ export default ({
   darkError = '#d32029',
   darkDanger = '#d32029',
   darkInfo = '#177ddc',
+  darkBg = '#141414',
+  darkDisabledBg = 'rgba(255, 255, 255, 0.08)',
+  darkMask = 'rgba(0, 0, 0, 0.45)',
+  darkBorder = '#434343',
   darkText = 'rgba(255, 255, 255, 0.85)',
   darkPrimaryText = 'rgba(255, 255, 255, 0.85)',
   darkSecondaryText = 'rgba(255, 255, 255, 0.45)',
   darkDisabledText = 'rgba(255, 255, 255, 0.3)',
-  darkBg = '#141414',
-  darkDisabledBg = 'rgba(255, 255, 255, 0.08)',
-  darkBorder = '#434343',
-  darkMask = 'rgba(0, 0, 0, 0.45)',
   darkBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
 } = {}): TailwindConfig => ({
   corePlugins: {
@@ -321,9 +321,6 @@ export default ({
       '2xl': '1600px',
     },
     extend: {
-      borderColor: {
-        DEFAULT: 'rgb(var(--colors-border, currentColor) / var(--tw-bg-opacity))',
-      },
       fontFamily: {
         font: [
           '-apple-system',

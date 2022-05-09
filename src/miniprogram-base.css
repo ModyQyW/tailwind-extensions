@@ -73,7 +73,7 @@ page-meta,
 ::after {
   box-sizing: border-box;
   background-repeat: no-repeat;
-  border-color: var(--colors-border, currentColor);
+  border-color: var(--border-color, currentColor);
   border-style: solid;
   border-width: 0;
   --tw-translate-x: 0;
@@ -418,7 +418,7 @@ menu {
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--colors-text-placeholder, --colors-text-secondary, #9ca3af);
+  color: var(--text-color-placeholder-text, --text-color-secondary-text, #9ca3af);
   opacity: 1;
 }
 

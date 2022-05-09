@@ -250,9 +250,6 @@ const config = ({
       xl: '1920px',
     },
     extend: {
-      borderColor: {
-        DEFAULT: 'rgb(var(--colors-border, currentColor) / var(--tw-bg-opacity))',
-      },
       fontFamily: {
         font: [
           'Helvetica Neue',
