@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.1 (2022-05-09)
+
+- fix: fix presets' config
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.8.0 (2022-05-09)
 
 - feat: update `miniprogram-base.css`
