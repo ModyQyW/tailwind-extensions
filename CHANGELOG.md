@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.4 (2022-05-09)
+
+- fix: fix presets' colors
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.8.3 (2022-05-09)
 
 - fix: fix release hooks
