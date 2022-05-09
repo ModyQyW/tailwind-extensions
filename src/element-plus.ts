@@ -144,6 +144,8 @@ const config = ({
   corePlugins: {
     preflight: false,
   },
+  darkMode: 'class',
+  safelist: ['dark'],
   plugins: [
     themeSwapper({
       themes: [
