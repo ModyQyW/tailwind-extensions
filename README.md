@@ -116,7 +116,7 @@ module.exports = {
       boxShadow:
         '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
       darkSelectors: ['.dark'],
-      darkMediaQuery: '@media (prefers-color-scheme: dark)',
+      darkMediaQuery: '',
       darkPrimary: '#177ddc',
       darkSecondary: '#5a5a5a',
       darkSuccess: '#49aa19',
@@ -179,23 +179,30 @@ import './styles/tailwind.css';
 
 ```css
 /* styles/preflight.css */
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
-  border-width: 0;
+  border-color: rgb(var(--border-color));
   border-style: solid;
-  border-color: var(--border-color, currentColor);
-}
-
-::before,
-::after {
-  --tw-content: '';
+  border-width: 0;
 }
 ```
 
 ```css
 /* styles/tailwind.css */
+::before,
+::after {
+  --tw-content: '';
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -234,7 +241,7 @@ module.exports = {
       disabledText: '#c0c4cc',
       boxShadow: '0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08)',
       darkSelectors: ['.dark'],
-      darkMediaQuery: '@media (prefers-color-scheme: dark)',
+      darkMediaQuery: '',
       darkPrimary: '#409eff',
       darkSecondary: '#909399',
       darkSuccess: '#67c23a',
@@ -294,23 +301,30 @@ import './styles/tailwind.css';
 
 ```css
 /* styles/preflight.css */
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
-  border-width: 0;
+  border-color: rgb(var(--border-color));
   border-style: solid;
-  border-color: var(--border-color, currentColor);
-}
-
-::before,
-::after {
-  --tw-content: '';
+  border-width: 0;
 }
 ```
 
 ```css
 /* styles/tailwind.css */
+::before,
+::after {
+  --tw-content: '';
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
