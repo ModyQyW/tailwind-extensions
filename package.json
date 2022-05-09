@@ -51,6 +51,11 @@
       "import": "./dist/miniprogram.mjs",
       "types": "./dist/miniprogram.d.ts"
     },
+    "./easy": {
+      "require": "./dist/easy.js",
+      "import": "./dist/easy.mjs",
+      "types": "./dist/easy.d.ts"
+    },
     "./miniprogram-base.css": "./dist/miniprogram-base.css"
   },
   "main": "./dist/index.js",
@@ -60,6 +65,12 @@
   "scripts": {
     "build": "tsup-node",
     "commit": "git-cz",
+    "examples:react-antd:build": "pnpm run build --filter react-antd",
+    "examples:react-antd:dev": "pnpm run dev --filter react-antd",
+    "examples:vue-antdv:build": "pnpm run build --filter vue-antdv",
+    "examples:vue-antdv:dev": "pnpm run dev --filter vue-antdv",
+    "examples:vue-ep:build": "pnpm run build --filter vue-ep",
+    "examples:vue-ep:dev": "pnpm run dev --filter vue-ep",
     "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint && sort-package-json",
     "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue,.svelte --ignore-path=.gitignore",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
@@ -84,7 +95,7 @@
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.4",
+    "husky": "^8.0.0",
     "is-ci": "^3.0.1",
     "lint-staged": "^12.4.1",
     "markdownlint-cli": "^0.31.1",
