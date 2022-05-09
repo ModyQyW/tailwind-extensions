@@ -1,10 +1,23 @@
-/* based on ress.css v5.0.2 and tailwindcss v3.0.0 */
-/* https://resset.dev/ */
+/* based on ress.css v5.0.2, modern-normalize v1.1.0 and tailwindcss v3.0.24 */
+/* ress.css: https://resset.dev/ */
+/* modern-normalize: https://github.com/sindresorhus/modern-normalize */
 
 /* for miniprogram */
 button,
 button::after {
   all: unset;
+}
+
+html,
+page {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  word-break: normal;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-text-size-adjust: 100%;
 }
 
 html,
@@ -58,23 +71,60 @@ navigation-bar,
 page-meta,
 ::before,
 ::after {
-  box-sizing: inherit;
-  background-repeat: no-repeat;
-}
-
-html,
-page {
   box-sizing: border-box;
-  -webkit-text-size-adjust: 100%;
-  word-break: normal;
-  -moz-tab-size: 4;
-  tab-size: 4;
+  background-repeat: no-repeat;
+  border-color: var(--colors-border, currentColor);
+  border-style: solid;
+  border-width: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
+  --tw-ring-offset-width: 0;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 50%);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
 }
 
 ::before,
 ::after {
   text-decoration: inherit;
   vertical-align: inherit;
+  --tw-content: "";
 }
 
 html,
@@ -159,12 +209,20 @@ abbr[title] {
   border-bottom: none;
 }
 
-a {
+a,
+functional-page-navigator,
+navigator {
+  color: inherit;
+  text-decoration: inherit;
   background-color: transparent;
 }
 
 a:active,
-a:hover {
+a:hover,
+functional-page-navigator:active,
+navigator:active,
+functional-page-navigator:hover,
+navigator:hover {
   outline-width: 0;
 }
 
@@ -172,10 +230,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace;
-}
-
-pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
   font-size: 1em;
 }
 
@@ -202,6 +257,7 @@ sup {
 
 table {
   text-indent: 0;
+  border-collapse: collapse;
   border-color: inherit;
 }
 
@@ -213,17 +269,17 @@ input {
   border-radius: 0;
 }
 
-[type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer-spin-button {
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type='search'] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type='search']::-webkit-search-decoration {
+::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -237,7 +293,10 @@ input,
 optgroup,
 select,
 textarea {
-  font: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  color: inherit;
 }
 
 optgroup {
@@ -255,34 +314,31 @@ select {
 }
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'],
-[role='button'] {
+[type="button"],
+[type="reset"],
+[type="submit"],
+[role="button"] {
   cursor: pointer;
 }
 
-button::-moz-focus-inner,
-[type='button']::-moz-focus-inner,
-[type='reset']::-moz-focus-inner,
-[type='submit']::-moz-focus-inner {
+::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }
 
-/* button:-moz-focusring,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+:-moz-focusring {
   outline: 1px dotted ButtonText;
-} */
+}
 
-/* remove these if cause bugs */
-/* button, */
-html [type='button'],
-page [type='button'],
-[type='reset'],
-[type='submit'] {
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/* remove these if cause bugs in miniprogram */
+html [type="button"],
+page [type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -342,7 +398,7 @@ progress {
   vertical-align: baseline;
 }
 
-[aria-busy='true'] {
+[aria-busy="true"] {
   cursor: progress;
 }
 
@@ -350,101 +406,38 @@ progress {
   cursor: pointer;
 }
 
-[aria-disabled='true'] {
+[aria-disabled="true"] {
   cursor: default;
 }
 
-html,
-body,
-page,
-cover-image,
-cover-view,
-match-media,
-movable-area,
-movable-view,
-scroll-view,
-swiper,
-swiper-item,
-view,
-icon,
-progress,
-rich-text,
-text,
-button,
-checkbox,
-checkbox-group,
-editor,
-form,
-input,
-label,
-picker,
-picker-view,
-picker-view-column,
-radio,
-radio-group,
-slider,
-switch,
-textarea,
-functional-page-navigator,
-navigator,
-audio,
-camera,
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--colors-text-placeholder, --colors-text-secondary, #9ca3af);
+  opacity: 1;
+}
+
+img,
 image,
-live-player,
-live-pusher,
+svg,
 video,
-voip-room,
-map,
 canvas,
-ad,
-ad-custom,
-official-account,
-open-data,
-web-view,
-navigation-bar,
-page-meta,
-::before,
-::after {
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-pan-x: ;
-  --tw-pan-y: ;
-  --tw-pinch-zoom: ;
-  --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal: ;
-  --tw-slashed-zero: ;
-  --tw-numeric-figure: ;
-  --tw-numeric-spacing: ;
-  --tw-numeric-fraction: ;
-  --tw-ring-inset: ;
-  --tw-ring-offset-width: 0;
-  --tw-ring-offset-color: #fff;
-  --tw-ring-color: rgb(59 130 246 / 50%);
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: 0 0 #0000;
-  --tw-shadow-colored: 0 0 #0000;
-  --tw-blur: ;
-  --tw-brightness: ;
-  --tw-contrast: ;
-  --tw-grayscale: ;
-  --tw-hue-rotate: ;
-  --tw-invert: ;
-  --tw-saturate: ;
-  --tw-sepia: ;
-  --tw-drop-shadow: ;
-  --tw-backdrop-blur: ;
-  --tw-backdrop-brightness: ;
-  --tw-backdrop-contrast: ;
-  --tw-backdrop-grayscale: ;
-  --tw-backdrop-hue-rotate: ;
-  --tw-backdrop-invert: ;
-  --tw-backdrop-opacity: ;
-  --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia: ;
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+image,
+video {
+  max-width: 100%;
+  height: auto;
 }
