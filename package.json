@@ -65,9 +65,10 @@
   "scripts": {
     "build": "tsup-node",
     "commit": "git-cz",
-    "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint && sort-package-json",
-    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue,.svelte --ignore-path=.gitignore",
+    "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint && pnpm run lint:stylelint",
+    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx --ignore-path=.gitignore",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
+    "lint:stylelint": "stylelint ./**/*.css --fix --ignore-path=.gitignore",
     "prepare": "is-ci || husky install",
     "release-it": "release-it"
   },
@@ -96,6 +97,11 @@
     "prettier": "^2.6.2",
     "prettier-plugin-packagejson": "^2.2.17",
     "release-it": "^15.0.0",
+    "stylelint": "^14.8.2",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-prettier": "^2.0.0",
     "tsup": "^5.12.7",
     "typescript": "^4.6.4"
   },
