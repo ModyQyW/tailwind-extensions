@@ -41,7 +41,7 @@ const convert = (colors: string[]) => {
 
 export default ({
   selectors = [':root'],
-  mediaQuery = [] as string[],
+  mediaQuery = '',
   primary = '#1890ff',
   secondary = '#666666',
   success = '#52c41a',

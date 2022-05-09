@@ -101,7 +101,7 @@ const darkConvert = (color: string, backgroundColor: string) => {
 
 const config = ({
   selectors = [':root'],
-  mediaQuery = [] as string[],
+  mediaQuery = '',
   primary = '#409eff',
   secondary = '#909399',
   success = '#67c23a',
