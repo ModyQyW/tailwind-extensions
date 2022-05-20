@@ -147,7 +147,6 @@ module.exports = {
 <details>
   <summary>我想知道这个预设大概做了什么。</summary>
   <ul>
-    <li>禁用了 <code>preflight</code>。</li>
     <li>设置 <code>darkMode</code> 为 <code>class</code>。</li>
     <li>设置 <code>safelist</code> 为 <code>['dark']</code>。</li>
     <li>替换了 <code>screens</code>。</li>
@@ -160,12 +159,15 @@ module.exports = {
 
 #### 额外配置
 
-TailwindCSS 的 `preflight` 可能会和 `Ant Design` 规范相关的样式冲突，所以这个预设禁用了 `preflight`。请参考以下例子使用。
+TailwindCSS 的 `preflight` 可能会和 `Ant Design` 规范相关的样式冲突。请参考以下例子适当调整。
+
+不使用 TailwindCSS 的 `preflight` 的例子如下。
 
 ```ts
+// 项目入口文件，如 main.ts
 // 额外的 preflight
 import 'modern-normalize';
-// TailwindCSS 部分 preflight
+// TailwindCSS base
 import './styles/preflight.css';
 // antd 样式
 import 'antd/dist/antd.min.css';
@@ -173,19 +175,14 @@ import 'antd/dist/antd.min.css';
 // ant-design-vue 样式
 import 'ant-design-vue/dist/antd.min.css';
 // import 'ant-design-vue/dist/antd.variable.min.css';
-// TailwindCSS
+// TailwindCSS components + utilities
 import './styles/tailwind.css';
+// 其它你需要的全局样式
+import './styles/global.css';
 ```
 
 ```css
 /* styles/preflight.css */
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 *,
 ::before,
 ::after {
@@ -194,16 +191,78 @@ html {
   border-style: solid;
   border-width: 0;
 }
-```
 
-```css
-/* styles/tailwind.css */
 ::before,
 ::after {
   --tw-content: '';
 }
 
 @tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+```js
+// tailwind.config.js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+
+module.exports = {
+  corePlugins: {
+    preflight: false,
+  },
+  presets: [
+    basePreset,
+    getAntDesignPreset({ ... }),
+  ],
+};
+```
+
+使用 TailwindCSS 的 `preflight` 的例子如下。
+
+```ts
+// 项目入口文件，如 main.ts
+// 额外的 preflight
+import 'modern-normalize';
+// TailwindCSS base
+import './styles/preflight.css';
+// antd 样式
+import 'antd/dist/antd.min.css';
+// import 'antd/dist/antd.variable.min.css';
+// ant-design-vue 样式
+import 'ant-design-vue/dist/antd.min.css';
+// import 'ant-design-vue/dist/antd.variable.min.css';
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+// 其它你需要的全局样式
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
 @tailwind components;
 @tailwind utilities;
 ```
@@ -273,7 +332,6 @@ module.exports = {
 <details>
   <summary>我想知道这个预设大概做了什么。</summary>
   <ul>
-    <li>禁用了 <code>preflight</code>。</li>
     <li>设置 <code>darkMode</code> 为 <code>class</code>。</li>
     <li>设置 <code>safelist</code> 为 <code>['dark']</code>。</li>
     <li>替换了 <code>screens</code>。</li>
@@ -286,28 +344,24 @@ module.exports = {
 
 #### 额外配置
 
-TailwindCSS 的 `preflight` 可能会和 `element-plus` 样式冲突，所以这个预设禁用了 `preflight`。请参考以下例子使用。
+TailwindCSS 的 `preflight` 可能会和 `element-plus` 样式冲突。请参考以下例子适当调整。
 
 ```ts
+// 项目入口文件，如 main.ts
 // 额外的 preflight
 import 'modern-normalize';
-// TailwindCSS 部分 preflight
+// TailwindCSS base
 import './styles/preflight.css';
 // element-plus 样式
 import 'element-plus/dist/index.css';
-// TailwindCSS
+// TailwindCSS components + utilities
 import './styles/tailwind.css';
+// 其它你需要的全局样式
+import './styles/global.css';
 ```
 
 ```css
 /* styles/preflight.css */
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 *,
 ::before,
 ::after {
@@ -316,16 +370,74 @@ html {
   border-style: solid;
   border-width: 0;
 }
-```
 
-```css
-/* styles/tailwind.css */
 ::before,
 ::after {
   --tw-content: '';
 }
 
 @tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+```js
+// tailwind.config.js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+
+module.exports = {
+  corePlugins: {
+    preflight: false,
+  },
+  presets: [
+    basePreset,
+    getAntDesignPreset({ ... }),
+  ],
+};
+```
+
+使用 TailwindCSS 的 `preflight` 的例子如下。
+
+```ts
+// 项目入口文件，如 main.ts
+// 额外的 preflight
+import 'modern-normalize';
+// TailwindCSS base
+import './styles/preflight.css';
+// element-plus 样式
+import 'element-plus/dist/index.css';
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+// 其它你需要的全局样式
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
 @tailwind components;
 @tailwind utilities;
 ```

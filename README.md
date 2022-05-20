@@ -147,7 +147,6 @@ module.exports = {
 <details>
   <summary>I would like to know what this preset has probably done.</summary>
   <ul>
-    <li>Disable <code>preflight</code>.</li>
     <li>Set <code>darkMode</code> to <code>class</code>.</li>
     <li>Set <code>safelist</code> to <code>['dark']</code>.</li>
     <li>Replace <code>screens</code>.</li>
@@ -160,12 +159,15 @@ module.exports = {
 
 #### Extra Configs
 
-This preset disables `preflight`, because TailwindCSS `preflight` may conflict with styles associated with the `Ant Design` specification. Please refer to the following example.
+TailwindCSS `preflight` may conflict with styles associated with the `Ant Design` specification. Please refer to the following examples for appropriate adjustments.
+
+An example without TailwindCSS `preflight` is as follows.
 
 ```ts
+// project entry files, such as main.ts
 // extra preflight
 import 'modern-normalize';
-// TailwindCSS partial preflight
+// TailwindCSS base
 import './styles/preflight.css';
 // antd styles
 import 'antd/dist/antd.min.css';
@@ -173,19 +175,14 @@ import 'antd/dist/antd.min.css';
 // ant-design-vue styles
 import 'ant-design-vue/dist/antd.min.css';
 // import 'ant-design-vue/dist/antd.variable.min.css';
-// TailwindCSS
+// TailwindCSS components + utilities
 import './styles/tailwind.css';
+// any other global styles you need
+import './styles/global.css';
 ```
 
 ```css
 /* styles/preflight.css */
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 *,
 ::before,
 ::after {
@@ -194,16 +191,78 @@ html {
   border-style: solid;
   border-width: 0;
 }
-```
 
-```css
-/* styles/tailwind.css */
 ::before,
 ::after {
   --tw-content: '';
 }
 
 @tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+```js
+// tailwind.config.js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+
+module.exports = {
+  corePlugins: {
+    preflight: false,
+  },
+  presets: [
+    basePreset,
+    getAntDesignPreset({ ... }),
+  ],
+};
+```
+
+An example with TailwindCSS `preflight` is as follows.
+
+```ts
+// project entry main.ts
+// extra preflight
+import 'modern-normalize';
+// TailwindCSS base
+import './styles/preflight.css';
+// antd styles
+import 'antd/dist/antd.min.css';
+// import 'antd/dist/antd.variable.min.css';
+// ant-design-vue styles
+import 'ant-design-vue/dist/antd.min.css';
+// import 'ant-design-vue/dist/antd.variable.min.css';
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+// any other global styles you need
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
 @tailwind components;
 @tailwind utilities;
 ```
@@ -273,7 +332,6 @@ module.exports = {
 <details>
   <summary>I would like to know what this preset has probably done.</summary>
   <ul>
-    <li>Disable <code>preflight</code>.</li>
     <li>Set <code>darkMode</code> to <code>class</code>.</li>
     <li>Set <code>safelist</code> to <code>['dark']</code>.</li>
     <li>Replace <code>screens</code>.</li>
@@ -286,28 +344,26 @@ module.exports = {
 
 #### Extra Configs
 
-This preset disables `preflight`, because TailwindCSS `preflight` may conflict with `element-plus` styles. Please refer to the following example.
+TailwindCSS `preflight` may conflict with `element-plus` styles. Please refer to the following examples for appropriate adjustments.
+
+An example without TailwindCSS `preflight` is as follows.
 
 ```ts
+// project entry files, such as main.ts
 // extra preflight
 import 'modern-normalize';
-// TailwindCSS partial preflight
+// TailwindCSS base
 import './styles/preflight.css';
 // element-plus styles
 import 'element-plus/dist/index.css';
-// TailwindCSS
+// TailwindCSS components + utilities
 import './styles/tailwind.css';
+// any other global styles you need
+import './styles/global.css';
 ```
 
 ```css
 /* styles/preflight.css */
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 *,
 ::before,
 ::after {
@@ -316,16 +372,74 @@ html {
   border-style: solid;
   border-width: 0;
 }
-```
 
-```css
-/* styles/tailwind.css */
 ::before,
 ::after {
   --tw-content: '';
 }
 
 @tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+```js
+// tailwind.config.js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+
+module.exports = {
+  corePlugins: {
+    preflight: false,
+  },
+  presets: [
+    basePreset,
+    getAntDesignPreset({ ... }),
+  ],
+};
+```
+
+An example with TailwindCSS `preflight` is as follows.
+
+```ts
+// project entry main.ts
+// extra preflight
+import 'modern-normalize';
+// TailwindCSS base
+import './styles/preflight.css';
+// antd styles
+import 'element-plus/dist/index.css';
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+// any other global styles you need
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
 @tailwind components;
 @tailwind utilities;
 ```
