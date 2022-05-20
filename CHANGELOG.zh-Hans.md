@@ -1,8 +1,14 @@
 # Changelog
 
+## 0.9.0 (2022-05-20)
+
+- feat: 在 `ant-design` 和 `element-plus` 预设中不再默认禁用 `preflight`
+
+**这是一个早期版本。请小心使用。**
+
 ## 0.8.6 (2022-05-09)
 
-- fix: 设置 `darkMediaQuery` 为空字符串你
+- fix: 设置 `darkMediaQuery` 为空字符串
 - fix: 修复 `miniprogram-base.css`
 
 **这是一个早期版本。请小心使用。**

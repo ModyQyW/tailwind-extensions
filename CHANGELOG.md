@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.0 (2022-05-20)
+
+- feat: don't disable `preflight` by default in `ant-design` and `element-plus` presets
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.8.6 (2022-05-09)
 
 - fix: set `darkMediaQuery` to empty string
