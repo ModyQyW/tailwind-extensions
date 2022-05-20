@@ -19,6 +19,8 @@ page {
   -moz-tab-size: 4;
   tab-size: 4;
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
