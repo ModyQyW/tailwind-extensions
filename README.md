@@ -4,7 +4,7 @@ English | [简体中文](./README.zh-hans.md)
 
 **WIP**
 
-Opinionated TailwindCSS v3 presets.
+Opinionated TailwindCSS v3 presets. Adaptation of TailwindCSS v3 to different UI libraries is also provided.
 
 ## Usage
 
@@ -159,24 +159,76 @@ module.exports = {
 
 #### Extra Configs
 
-TailwindCSS `preflight` may conflict with styles associated with the `Ant Design` specification. Please refer to the following examples for appropriate adjustments.
+When using this preset, you need to control when to add `class="dark"` to the page container element.
 
-An example without TailwindCSS `preflight` is as follows.
+TailwindCSS `preflight` may conflict with the styles associated with the `Ant Design` specification, and you will need to make some simple adjustments.
+
+√ Recommend: with TailwindCSS `preflight`.
 
 ```ts
-// project entry files, such as main.ts
+// project entry main.ts
+
 // extra preflight
 import 'modern-normalize';
-// TailwindCSS base
+
+// TailwindCSS base and custom preflight
 import './styles/preflight.css';
+
 // antd styles
 import 'antd/dist/antd.min.css';
 // import 'antd/dist/antd.variable.min.css';
+
 // ant-design-vue styles
 import 'ant-design-vue/dist/antd.min.css';
 // import 'ant-design-vue/dist/antd.variable.min.css';
+
 // TailwindCSS components + utilities
 import './styles/tailwind.css';
+
+// any other global styles you need
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+× Not recommend: without TailwindCSS `preflight`.
+
+```ts
+// project entry files, such as main.ts
+
+// extra preflight
+import 'modern-normalize';
+
+// TailwindCSS base and custom preflight
+import './styles/preflight.css';
+
+// antd styles
+import 'antd/dist/antd.min.css';
+// import 'antd/dist/antd.variable.min.css';
+
+// ant-design-vue styles
+import 'ant-design-vue/dist/antd.min.css';
+// import 'ant-design-vue/dist/antd.variable.min.css';
+
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+
 // any other global styles you need
 import './styles/global.css';
 ```
@@ -227,44 +279,6 @@ module.exports = {
     getAntDesignPreset({ ... }),
   ],
 };
-```
-
-An example with TailwindCSS `preflight` is as follows.
-
-```ts
-// project entry main.ts
-// extra preflight
-import 'modern-normalize';
-// TailwindCSS base
-import './styles/preflight.css';
-// antd styles
-import 'antd/dist/antd.min.css';
-// import 'antd/dist/antd.variable.min.css';
-// ant-design-vue styles
-import 'ant-design-vue/dist/antd.min.css';
-// import 'ant-design-vue/dist/antd.variable.min.css';
-// TailwindCSS components + utilities
-import './styles/tailwind.css';
-// any other global styles you need
-import './styles/global.css';
-```
-
-```css
-/* styles/preflight.css */
-@tailwind base;
-
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-```css
-/* styles/tailwind.css */
-@tailwind components;
-@tailwind utilities;
 ```
 
 ### element-plus
@@ -344,20 +358,66 @@ module.exports = {
 
 #### Extra Configs
 
-TailwindCSS `preflight` may conflict with `element-plus` styles. Please refer to the following examples for appropriate adjustments.
+When using this preset, you need to control when to add `class="dark"` to the page container element.
 
-An example without TailwindCSS `preflight` is as follows.
+TailwindCSS `preflight` may conflict with the `element-plus` styles, and you will need to make some simple adjustments.
+
+√ Recommend: with TailwindCSS `preflight`.
+
+```ts
+// project entry main.ts
+
+// extra preflight
+import 'modern-normalize';
+
+// TailwindCSS base and custom preflight
+import './styles/preflight.css';
+
+// element-plus styles
+import 'element-plus/dist/index.css';
+
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+
+// any other global styles you need
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+× Not recommend: without TailwindCSS `preflight`.
 
 ```ts
 // project entry files, such as main.ts
+
 // extra preflight
 import 'modern-normalize';
-// TailwindCSS base
+
+// TailwindCSS base and custom preflight
 import './styles/preflight.css';
+
 // element-plus styles
 import 'element-plus/dist/index.css';
+
 // TailwindCSS components + utilities
 import './styles/tailwind.css';
+
 // any other global styles you need
 import './styles/global.css';
 ```
@@ -408,40 +468,6 @@ module.exports = {
     getAntDesignPreset({ ... }),
   ],
 };
-```
-
-An example with TailwindCSS `preflight` is as follows.
-
-```ts
-// project entry main.ts
-// extra preflight
-import 'modern-normalize';
-// TailwindCSS base
-import './styles/preflight.css';
-// antd styles
-import 'element-plus/dist/index.css';
-// TailwindCSS components + utilities
-import './styles/tailwind.css';
-// any other global styles you need
-import './styles/global.css';
-```
-
-```css
-/* styles/preflight.css */
-@tailwind base;
-
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-```css
-/* styles/tailwind.css */
-@tailwind components;
-@tailwind utilities;
 ```
 
 ### miniprogram

@@ -4,7 +4,7 @@
 
 **WIP**
 
-开箱即用的 TailwindCSS v3 预设。
+开箱即用的 TailwindCSS v3 预设。也提供了 TailwindCSS v3 和不同 UI 库的适配。
 
 ## Usage
 
@@ -159,24 +159,76 @@ module.exports = {
 
 #### 额外配置
 
-TailwindCSS 的 `preflight` 可能会和 `Ant Design` 规范相关的样式冲突。请参考以下例子适当调整。
+在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="dark"`。
 
-不使用 TailwindCSS 的 `preflight` 的例子如下。
+TailwindCSS 的 `preflight` 可能会和 `Ant Design` 规范相关的样式冲突，你需要做一些简单的调整。
+
+√ 推荐：使用 TailwindCSS 的 `preflight`。
 
 ```ts
 // 项目入口文件，如 main.ts
+
 // 额外的 preflight
 import 'modern-normalize';
-// TailwindCSS base
+
+// TailwindCSS base 和自定义 preflight
 import './styles/preflight.css';
+
 // antd 样式
 import 'antd/dist/antd.min.css';
 // import 'antd/dist/antd.variable.min.css';
+
 // ant-design-vue 样式
 import 'ant-design-vue/dist/antd.min.css';
 // import 'ant-design-vue/dist/antd.variable.min.css';
+
 // TailwindCSS components + utilities
 import './styles/tailwind.css';
+
+// 其它你需要的全局样式
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+× 不推荐：不使用 TailwindCSS 的 `preflight`。
+
+```ts
+// 项目入口文件，如 main.ts
+
+// 额外的 preflight
+import 'modern-normalize';
+
+// TailwindCSS base 和自定义 preflight
+import './styles/preflight.css';
+
+// antd 样式
+import 'antd/dist/antd.min.css';
+// import 'antd/dist/antd.variable.min.css';
+
+// ant-design-vue 样式
+import 'ant-design-vue/dist/antd.min.css';
+// import 'ant-design-vue/dist/antd.variable.min.css';
+
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+
 // 其它你需要的全局样式
 import './styles/global.css';
 ```
@@ -227,44 +279,6 @@ module.exports = {
     getAntDesignPreset({ ... }),
   ],
 };
-```
-
-使用 TailwindCSS 的 `preflight` 的例子如下。
-
-```ts
-// 项目入口文件，如 main.ts
-// 额外的 preflight
-import 'modern-normalize';
-// TailwindCSS base
-import './styles/preflight.css';
-// antd 样式
-import 'antd/dist/antd.min.css';
-// import 'antd/dist/antd.variable.min.css';
-// ant-design-vue 样式
-import 'ant-design-vue/dist/antd.min.css';
-// import 'ant-design-vue/dist/antd.variable.min.css';
-// TailwindCSS components + utilities
-import './styles/tailwind.css';
-// 其它你需要的全局样式
-import './styles/global.css';
-```
-
-```css
-/* styles/preflight.css */
-@tailwind base;
-
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-```css
-/* styles/tailwind.css */
-@tailwind components;
-@tailwind utilities;
 ```
 
 ### element-plus
@@ -344,18 +358,66 @@ module.exports = {
 
 #### 额外配置
 
-TailwindCSS 的 `preflight` 可能会和 `element-plus` 样式冲突。请参考以下例子适当调整。
+在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="dark"`。
+
+TailwindCSS 的 `preflight` 可能会和 `element-plus` 样式冲突，你需要做一些简单的调整。
+
+√ 推荐：使用 TailwindCSS 的 `preflight`。
 
 ```ts
 // 项目入口文件，如 main.ts
+
 // 额外的 preflight
 import 'modern-normalize';
-// TailwindCSS base
+
+// TailwindCSS base 和自定义 preflight
 import './styles/preflight.css';
+
 // element-plus 样式
 import 'element-plus/dist/index.css';
+
 // TailwindCSS components + utilities
 import './styles/tailwind.css';
+
+// 其它你需要的全局样式
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+html {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+× 不推荐：不使用 TailwindCSS 的 `preflight`。
+
+```ts
+// 项目入口文件，如 main.ts
+
+// 额外的 preflight
+import 'modern-normalize';
+
+// TailwindCSS base 和自定义 preflight
+import './styles/preflight.css';
+
+// element-plus 样式
+import 'element-plus/dist/index.css';
+
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+
 // 其它你需要的全局样式
 import './styles/global.css';
 ```
@@ -406,40 +468,6 @@ module.exports = {
     getAntDesignPreset({ ... }),
   ],
 };
-```
-
-使用 TailwindCSS 的 `preflight` 的例子如下。
-
-```ts
-// 项目入口文件，如 main.ts
-// 额外的 preflight
-import 'modern-normalize';
-// TailwindCSS base
-import './styles/preflight.css';
-// element-plus 样式
-import 'element-plus/dist/index.css';
-// TailwindCSS components + utilities
-import './styles/tailwind.css';
-// 其它你需要的全局样式
-import './styles/global.css';
-```
-
-```css
-/* styles/preflight.css */
-@tailwind base;
-
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-```css
-/* styles/tailwind.css */
-@tailwind components;
-@tailwind utilities;
 ```
 
 ### miniprogram
