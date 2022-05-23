@@ -159,7 +159,7 @@ module.exports = {
 
 #### 额外配置
 
-在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="dark"`。
+在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="dark"`。推荐使用 [usehooks-ts useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode) 或 [VueUse useDark](https://vueuse.org/core/usedark/)。
 
 TailwindCSS 的 `preflight` 可能会和 `Ant Design` 规范相关的样式冲突，你需要做一些简单的调整。
 
@@ -358,7 +358,7 @@ module.exports = {
 
 #### 额外配置
 
-在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="dark"`。
+在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="dark"`。推荐使用 [VueUse useDark](https://vueuse.org/core/usedark/)。
 
 TailwindCSS 的 `preflight` 可能会和 `element-plus` 样式冲突，你需要做一些简单的调整。
 

@@ -159,7 +159,7 @@ module.exports = {
 
 #### Extra Configs
 
-When using this preset, you need to control when to add `class="dark"` to the page container element.
+When using this preset, you need to control when to add `class="dark"` to the page container element. [usehooks-ts useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode) and [VueUse useDark](https://vueuse.org/core/usedark/) are recommended.
 
 TailwindCSS `preflight` may conflict with the styles associated with the `Ant Design` specification, and you will need to make some simple adjustments.
 
@@ -358,7 +358,7 @@ module.exports = {
 
 #### Extra Configs
 
-When using this preset, you need to control when to add `class="dark"` to the page container element.
+When using this preset, you need to control when to add `class="dark"` to the page container element. [VueUse useDark](https://vueuse.org/core/usedark/) is recommended.
 
 TailwindCSS `preflight` may conflict with the `element-plus` styles, and you will need to make some simple adjustments.
 
