@@ -40,26 +40,35 @@ const convert = (colors: string[]) => {
 };
 
 export default ({
-  selectors = [':root'],
-  mediaQuery = '',
-  primary = '#1890ff',
-  secondary = '#666666',
-  success = '#52c41a',
-  warning = '#faad14',
-  error = '#f5222d',
-  danger = '#f5222d',
-  info = '#1890ff',
-  bg = '#ffffff',
-  disabledBg = '#f5f5f5',
-  mask = 'rgba(0, 0, 0, 0.45)',
-  border = '#d9d9d9',
-  text = 'rgba(0, 0, 0, 0.85)',
-  primaryText = 'rgba(0, 0, 0, 0.85)',
-  secondaryText = 'rgba(0, 0, 0, 0.45)',
-  disabledText = 'rgba(0, 0, 0, 0.25)',
-  boxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
+  /** Base */
+  baseSelectors = [':root'],
+  baseMediaQuery = '',
+
+  basePrimary = '#1890ff',
+  baseSecondary = '#666666',
+  baseSuccess = '#52c41a',
+  baseWarning = '#faad14',
+  baseError = '#f5222d',
+  baseDanger = '#f5222d',
+  baseInfo = '#1890ff',
+
+  baseBg = '#ffffff',
+  baseMaskBg = 'rgba(0, 0, 0, 0.45)',
+  baseDisabledBg = '#f5f5f5',
+
+  baseBorder = '#d9d9d9',
+
+  baseText = 'rgba(0, 0, 0, 0.85)',
+  basePrimaryText = 'rgba(0, 0, 0, 0.85)',
+  baseSecondaryText = 'rgba(0, 0, 0, 0.45)',
+  baseDisabledText = 'rgba(0, 0, 0, 0.25)',
+
+  baseBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
+
+  /** Dark */
   darkSelectors = ['.dark'],
   darkMediaQuery = '',
+
   darkPrimary = '#177ddc',
   darkSecondary = '#5a5a5a',
   darkSuccess = '#49aa19',
@@ -67,14 +76,18 @@ export default ({
   darkError = '#d32029',
   darkDanger = '#d32029',
   darkInfo = '#177ddc',
+
   darkBg = '#141414',
+  darkMaskBg = 'rgba(0, 0, 0, 0.45)',
   darkDisabledBg = 'rgba(255, 255, 255, 0.08)',
-  darkMask = 'rgba(0, 0, 0, 0.45)',
+
   darkBorder = '#434343',
+
   darkText = 'rgba(255, 255, 255, 0.85)',
   darkPrimaryText = 'rgba(255, 255, 255, 0.85)',
   darkSecondaryText = 'rgba(255, 255, 255, 0.45)',
   darkDisabledText = 'rgba(255, 255, 255, 0.3)',
+
   darkBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
 } = {}): TailwindConfig => ({
   darkMode: 'class',
@@ -84,23 +97,31 @@ export default ({
       themes: [
         {
           name: 'base',
-          selectors,
-          mediaQuery,
+          selectors: baseSelectors,
+          mediaQuery: baseMediaQuery,
           theme: {
             colors: {
-              primary: convert(generate(primary, { theme: 'default', backgroundColor: bg })),
+              primary: convert(
+                generate(basePrimary, { theme: 'default', backgroundColor: baseBg }),
+              ),
 
-              secondary: convert(generate(secondary, { theme: 'default', backgroundColor: bg })),
+              secondary: convert(
+                generate(baseSecondary, { theme: 'default', backgroundColor: baseBg }),
+              ),
 
-              success: convert(generate(success, { theme: 'default', backgroundColor: bg })),
+              success: convert(
+                generate(baseSuccess, { theme: 'default', backgroundColor: baseBg }),
+              ),
 
-              warning: convert(generate(warning, { theme: 'default', backgroundColor: bg })),
+              warning: convert(
+                generate(baseWarning, { theme: 'default', backgroundColor: baseBg }),
+              ),
 
-              error: convert(generate(error, { theme: 'default', backgroundColor: bg })),
+              error: convert(generate(baseError, { theme: 'default', backgroundColor: baseBg })),
 
-              danger: convert(generate(danger, { theme: 'default', backgroundColor: bg })),
+              danger: convert(generate(baseDanger, { theme: 'default', backgroundColor: baseBg })),
 
-              info: convert(generate(info, { theme: 'default', backgroundColor: bg })),
+              info: convert(generate(baseInfo, { theme: 'default', backgroundColor: baseBg })),
 
               red: convert(presetPalettes.red),
 
@@ -214,24 +235,24 @@ export default ({
             },
 
             backgroundColor: {
-              DEFAULT: bg,
-              disabled: disabledBg,
-              mask,
+              DEFAULT: baseBg,
+              mask: baseMaskBg,
+              disabled: baseDisabledBg,
             },
 
             borderColor: {
-              DEFAULT: border,
+              DEFAULT: baseBorder,
             },
 
             textColor: {
-              DEFAULT: text,
-              'primary-text': primaryText,
-              'secondary-text': secondaryText,
-              'disabled-text': disabledText,
+              DEFAULT: baseText,
+              'primary-text': basePrimaryText,
+              'secondary-text': baseSecondaryText,
+              'disabled-text': baseDisabledText,
             },
 
             boxShadow: {
-              DEFAULT: boxShadow,
+              DEFAULT: baseBoxShadow,
             },
           },
         },
@@ -284,8 +305,8 @@ export default ({
 
             backgroundColor: {
               DEFAULT: darkBg,
+              mask: darkMaskBg,
               disabled: darkDisabledBg,
-              mask: darkMask,
             },
 
             borderColor: {
