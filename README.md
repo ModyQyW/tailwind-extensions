@@ -96,44 +96,55 @@ module.exports = {
   presets: [
     basePreset,
     getAntDesignPreset({
-      selectors: [':root'],
-      mediaQuery: '',
-      primary: '#1890ff',
-      secondary: '#666666',
-      success: '#52c41a',
-      warning: '#faad14',
-      error: '#f5222d',
-      danger: '#f5222d',
-      info: '#1890ff',
-      bg: '#ffffff',
-      disabledBg: '#f5f5f5',
-      mask: 'rgba(0, 0, 0, 0.45)',
-      border: '#d9d9d9',
-      text: 'rgba(0, 0, 0, 0.85)',
-      primaryText: 'rgba(0, 0, 0, 0.85)',
-      secondaryText: 'rgba(0, 0, 0, 0.45)',
-      disabledText: 'rgba(0, 0, 0, 0.25)',
-      boxShadow:
-        '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
-      darkSelectors: ['.dark'],
-      darkMediaQuery: '',
-      darkPrimary: '#177ddc',
-      darkSecondary: '#5a5a5a',
-      darkSuccess: '#49aa19',
-      darkWarning: '#d89614',
-      darkError: '#d32029',
-      darkDanger: '#d32029',
-      darkInfo: '#177ddc',
-      darkBg: '#141414',
-      darkDisabledBg: 'rgba(255, 255, 255, 0.08)',
-      darkMask: 'rgba(0, 0, 0, 0.45)',
-      darkBorder: '#434343',
-      darkText: 'rgba(255, 255, 255, 0.85)',
-      darkPrimaryText: 'rgba(255, 255, 255, 0.85)',
-      darkSecondaryText: 'rgba(255, 255, 255, 0.45)',
-      darkDisabledText: 'rgba(255, 255, 255, 0.3)',
-      darkBoxShadow:
-        '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
+      /** Base */
+      baseSelectors = [':root'],
+      baseMediaQuery = '',
+
+      basePrimary = '#1890ff',
+      baseSecondary = '#666666',
+      baseSuccess = '#52c41a',
+      baseWarning = '#faad14',
+      baseError = '#f5222d',
+      baseDanger = '#f5222d',
+      baseInfo = '#1890ff',
+
+      baseBg = '#ffffff',
+      baseMaskBg = 'rgba(0, 0, 0, 0.45)',
+      baseDisabledBg = '#f5f5f5',
+
+      baseBorder = '#d9d9d9',
+
+      baseText = 'rgba(0, 0, 0, 0.85)',
+      basePrimaryText = 'rgba(0, 0, 0, 0.85)',
+      baseSecondaryText = 'rgba(0, 0, 0, 0.45)',
+      baseDisabledText = 'rgba(0, 0, 0, 0.25)',
+
+      baseBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
+
+      /** Dark */
+      darkSelectors = ['.dark'],
+      darkMediaQuery = '',
+
+      darkPrimary = '#177ddc',
+      darkSecondary = '#5a5a5a',
+      darkSuccess = '#49aa19',
+      darkWarning = '#d89614',
+      darkError = '#d32029',
+      darkDanger = '#d32029',
+      darkInfo = '#177ddc',
+
+      darkBg = '#141414',
+      darkMaskBg = 'rgba(0, 0, 0, 0.45)',
+      darkDisabledBg = 'rgba(255, 255, 255, 0.08)',
+
+      darkBorder = '#434343',
+
+      darkText = 'rgba(255, 255, 255, 0.85)',
+      darkPrimaryText = 'rgba(255, 255, 255, 0.85)',
+      darkSecondaryText = 'rgba(255, 255, 255, 0.45)',
+      darkDisabledText = 'rgba(255, 255, 255, 0.3)',
+
+      darkBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
     }),
   ],
 };
@@ -151,8 +162,10 @@ module.exports = {
     <li>Set <code>safelist</code> to <code>['dark']</code>.</li>
     <li>Replace <code>screens</code>.</li>
     <li>Extend <code>colors</code>.</li>
+    <li>Extend <code>backgroundColor</code>.</li>
     <li>Extend <code>borderColor</code>.</li>
     <li>Extend <code>fontFamily</code>.</li>
+    <li>Extend <code>textColor</code>.</li>
     <li>Extend <code>boxShadow</code>.</li>
   </ul>
 </details>
