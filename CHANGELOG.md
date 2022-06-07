@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.10.0
+
+- feat: update presets' config
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.9.1 (2022-05-23)
 
 **This is an early access. Use it at your own risk.**
