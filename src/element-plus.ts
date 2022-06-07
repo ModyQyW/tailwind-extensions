@@ -100,28 +100,52 @@ const darkConvert = (color: string, backgroundColor: string) => {
 };
 
 const config = ({
-  selectors = [':root'],
-  mediaQuery = '',
-  primary = '#409eff',
-  secondary = '#909399',
-  success = '#67c23a',
-  warning = '#e6a23c',
-  error = '#f56c6c',
-  danger = '#f56c6c',
-  info = '#909399',
-  text = '#303133',
-  primaryText = '#303133',
-  regularText = '#606266',
-  secondaryText = '#909399',
-  placeholderText = '#a8abb2',
-  disabledText = '#c0c4cc',
-  bg = '#ffffff',
-  disabledBg = '#f5f7fa',
-  border = '#dcdfe6',
-  mask = 'rgba(255, 255, 255, 0.9)',
-  boxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08)',
+  /** Base */
+  baseSelectors = [':root'],
+  baseMediaQuery = '',
+
+  basePrimary = '#409eff',
+  baseSecondary = '#909399',
+  baseSuccess = '#67c23a',
+  baseWarning = '#e6a23c',
+  baseError = '#f56c6c',
+  baseDanger = '#f56c6c',
+  baseInfo = '#909399',
+
+  baseFill = '#f0f2f5',
+  baseDarkerFill = '#e6e8eb',
+  baseDarkFill = '#ebedf0',
+  baseLightFill = '#f5f7fa',
+  baseLighterFill = '#fafafa',
+  baseExtraLightFill = '#fafcff',
+  baseBlankFill = '#ffffff',
+
+  baseText = '#303133',
+  basePrimaryText = '#303133',
+  baseRegularText = '#606266',
+  baseSecondaryText = '#909399',
+  basePlaceholderText = '#a8abb2',
+  baseDisabledText = '#c0c4cc',
+
+  baseBg = '#ffffff',
+  basePageBg = '#f2f3f5',
+  baseOverlayBg = '#ffffff',
+  baseMaskBg = 'rgba(0, 0, 0, 0.5)',
+  baseDisabledBg = '#f5f7fa',
+
+  baseBorder = '#dcdfe6',
+  baseDarkerBorder = '#cdd0d6',
+  baseDarkBorder = '#d4d7de',
+  baseLightBorder = '#e4e7ed',
+  baseLighterBorder = '#ebeef5',
+  baseExtraLightBorder = '#f2f6fc',
+
+  baseBoxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08)',
+
+  /** Dark */
   darkSelectors = ['.dark'],
   darkMediaQuery = '',
+
   darkPrimary = '#409eff',
   darkSecondary = '#909399',
   darkSuccess = '#67c23a',
@@ -129,16 +153,35 @@ const config = ({
   darkError = '#f56c6c',
   darkDanger = '#f56c6c',
   darkInfo = '#909399',
+
+  darkFill = '#303030',
+  darkDarkerFill = '#424243',
+  darkDarkFill = '#39393a',
+  darkLightFill = '#262727',
+  darkLighterFill = '#1d1d1d',
+  darkExtraLightFill = '#191919',
+  darkBlankFill = 'transparent',
+
   darkText = '#e5eaf3',
   darkPrimaryText = '#e5eaf3',
   darkRegularText = '#cfd3dc',
   darkSecondaryText = '#a3a6ad',
   darkPlaceholderText = '#8d9095',
   darkDisabledText = '#6c6e72',
+
   darkBg = '#141414',
+  darkPageBg = '#0a0a0a',
+  darkOverlayBg = '#1d1e1f',
+  darkMaskBg = 'rgba(0, 0, 0, 0.5)',
   darkDisabledBg = 'transparent',
+
   darkBorder = '#4c4d4f',
-  darkMask = 'rgba(0, 0, 0, 0.8)',
+  darkDarkerBorder = '#636466',
+  darkDarkBorder = '#58585b',
+  darkLightBorder = '#414243',
+  darkLighterBorder = '#363637',
+  darkExtraLightBorder = '#2b2b2c',
+
   darkBoxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.36), 0px 8px 20px rgba(0, 0, 0, 0.72)',
 } = {}): TailwindConfig => ({
   darkMode: 'class',
@@ -148,46 +191,63 @@ const config = ({
       themes: [
         {
           name: 'base',
-          selectors,
-          mediaQuery,
+          selectors: baseSelectors,
+          mediaQuery: baseMediaQuery,
           theme: {
             colors: {
-              primary: convert(primary),
+              primary: convert(basePrimary),
 
-              secondary: convert(secondary),
+              secondary: convert(baseSecondary),
 
-              success: convert(success),
+              success: convert(baseSuccess),
 
-              warning: convert(warning),
+              warning: convert(baseWarning),
 
-              error: convert(error),
+              error: convert(baseError),
 
-              danger: convert(danger),
+              danger: convert(baseDanger),
 
-              info: convert(info),
+              info: convert(baseInfo),
+
+              fill: {
+                DEFAULT: baseFill,
+                darker: baseDarkerFill,
+                dark: baseDarkFill,
+                light: baseLightFill,
+                lighter: baseLighterFill,
+                'extra-light': baseExtraLightFill,
+                blank: baseBlankFill,
+              },
             },
 
             backgroundColor: {
-              DEFAULT: bg,
-              disabled: disabledBg,
-              mask,
+              DEFAULT: baseBg,
+              page: basePageBg,
+              overlay: baseOverlayBg,
+              mask: baseMaskBg,
+              disabled: baseDisabledBg,
             },
 
             borderColor: {
-              DEFAULT: border,
+              DEFAULT: baseBorder,
+              darker: baseDarkerBorder,
+              dark: baseDarkBorder,
+              light: baseLightBorder,
+              lighter: baseLighterBorder,
+              'extra-light': baseExtraLightBorder,
             },
 
             textColor: {
-              DEFAULT: text,
-              'primary-text': primaryText,
-              'regular-text': regularText,
-              'secondary-text': secondaryText,
-              'placeholder-text': placeholderText,
-              'disabled-text': disabledText,
+              DEFAULT: baseText,
+              'primary-text': basePrimaryText,
+              'regular-text': baseRegularText,
+              'secondary-text': baseSecondaryText,
+              'placeholder-text': basePlaceholderText,
+              'disabled-text': baseDisabledText,
             },
 
             boxShadow: {
-              DEFAULT: boxShadow,
+              DEFAULT: baseBoxShadow,
             },
           },
         },
@@ -210,16 +270,33 @@ const config = ({
               danger: darkConvert(darkDanger, darkBg),
 
               info: darkConvert(darkInfo, darkBg),
+
+              fill: {
+                DEFAULT: darkFill,
+                darker: darkDarkerFill,
+                dark: darkDarkFill,
+                light: darkLightFill,
+                lighter: darkLighterFill,
+                'extra-light': darkExtraLightFill,
+                blank: darkBlankFill,
+              },
             },
 
             backgroundColor: {
               DEFAULT: darkBg,
+              pageBg: darkPageBg,
+              overlay: darkOverlayBg,
+              mask: darkMaskBg,
               disabled: darkDisabledBg,
-              mask: darkMask,
             },
 
             borderColor: {
               DEFAULT: darkBorder,
+              darker: darkDarkerBorder,
+              dark: darkDarkBorder,
+              light: darkLightBorder,
+              lighter: darkLighterBorder,
+              'extra-light': darkExtraLightBorder,
             },
 
             textColor: {
