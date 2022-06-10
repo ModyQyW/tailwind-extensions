@@ -1,9 +1,7 @@
 // @ts-ignore
 import themeSwapper from 'tailwindcss-theme-swapper';
 import { generate, presetPalettes, presetDarkPalettes } from '@ant-design/colors';
-import type { OptionalConfig } from 'tailwindcss/types/config';
-
-type Config = Partial<OptionalConfig>;
+import type { Config } from './types';
 
 const convert = (colors: string[]) => {
   return {
@@ -92,6 +90,7 @@ export default ({
 
   darkBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
 } = {}): Config => ({
+  content: [],
   darkMode: 'class',
   safelist: ['dark'],
   plugins: [
@@ -103,27 +102,19 @@ export default ({
           mediaQuery: baseMediaQuery,
           theme: {
             colors: {
-              primary: convert(
-                generate(basePrimary, { theme: 'default', backgroundColor: baseBg }),
-              ),
+              primary: convert(generate(basePrimary)),
 
-              secondary: convert(
-                generate(baseSecondary, { theme: 'default', backgroundColor: baseBg }),
-              ),
+              secondary: convert(generate(baseSecondary)),
 
-              success: convert(
-                generate(baseSuccess, { theme: 'default', backgroundColor: baseBg }),
-              ),
+              success: convert(generate(baseSuccess)),
 
-              warning: convert(
-                generate(baseWarning, { theme: 'default', backgroundColor: baseBg }),
-              ),
+              warning: convert(generate(baseWarning)),
 
-              error: convert(generate(baseError, { theme: 'default', backgroundColor: baseBg })),
+              error: convert(generate(baseError)),
 
-              danger: convert(generate(baseDanger, { theme: 'default', backgroundColor: baseBg })),
+              danger: convert(generate(baseDanger)),
 
-              info: convert(generate(baseInfo, { theme: 'default', backgroundColor: baseBg })),
+              info: convert(generate(baseInfo)),
 
               red: convert(presetPalettes.red),
 

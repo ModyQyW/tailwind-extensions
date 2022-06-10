@@ -1,103 +1,61 @@
 // @ts-ignore
 import themeSwapper from 'tailwindcss-theme-swapper';
-import Color from 'color';
-import type { OptionalConfig } from 'tailwindcss/types/config';
+import * as Color from 'color';
+import type { Config, ColorParam } from './types';
 
-type Config = Partial<OptionalConfig>;
-
-const white = Color('white');
-const black = Color('black');
-
-const convert = (color: string) => {
+const convert = <T extends ColorParam = ColorParam>({
+  color,
+  lightenColor,
+  darkenColor,
+}: {
+  color?: T;
+  lightenColor?: T;
+  darkenColor?: T;
+}) => {
   const c = Color(color);
+  const lc = Color(lightenColor || 'white');
+  const dc = Color(darkenColor || 'black');
   return {
     DEFAULT: c.hex(),
-    hover: c.mix(white, 0.3).hex(),
-    active: c.mix(black, 0.2).hex(),
-    disabled: c.mix(white, 0.5).hex(),
-    'lighten-9': c.mix(white, 0.9).hex(),
-    'light-9': c.mix(white, 0.9).hex(),
-    'lighten-8': c.mix(white, 0.8).hex(),
-    'light-8': c.mix(white, 0.8).hex(),
-    'lighten-7': c.mix(white, 0.7).hex(),
-    'light-7': c.mix(white, 0.7).hex(),
-    'lighten-6': c.mix(white, 0.6).hex(),
-    'light-6': c.mix(white, 0.6).hex(),
-    'lighten-5': c.mix(white, 0.5).hex(),
-    'light-5': c.mix(white, 0.5).hex(),
-    'lighten-4': c.mix(white, 0.4).hex(),
-    'light-4': c.mix(white, 0.4).hex(),
-    'lighten-3': c.mix(white, 0.3).hex(),
-    'light-3': c.mix(white, 0.3).hex(),
-    'lighten-2': c.mix(white, 0.2).hex(),
-    'light-2': c.mix(white, 0.2).hex(),
-    'lighten-1': c.mix(white, 0.1).hex(),
-    'light-1': c.mix(white, 0.1).hex(),
-    'darken-1': c.mix(black, 0.1).hex(),
-    'dark-1': c.mix(black, 0.1).hex(),
-    'darken-2': c.mix(black, 0.2).hex(),
-    'dark-2': c.mix(black, 0.2).hex(),
-    'darken-3': c.mix(black, 0.3).hex(),
-    'dark-3': c.mix(black, 0.3).hex(),
-    'darken-4': c.mix(black, 0.4).hex(),
-    'dark-4': c.mix(black, 0.4).hex(),
-    'darken-5': c.mix(black, 0.5).hex(),
-    'dark-5': c.mix(black, 0.5).hex(),
-    'darken-6': c.mix(black, 0.6).hex(),
-    'dark-6': c.mix(black, 0.6).hex(),
-    'darken-7': c.mix(black, 0.7).hex(),
-    'dark-7': c.mix(black, 0.7).hex(),
-    'darken-8': c.mix(black, 0.8).hex(),
-    'dark-8': c.mix(black, 0.8).hex(),
-    'darken-9': c.mix(black, 0.9).hex(),
-    'dark-9': c.mix(black, 0.9).hex(),
-  };
-};
-
-const darkConvert = (color: string, backgroundColor: string) => {
-  const c = Color(color);
-  const bg = Color(backgroundColor);
-  return {
-    DEFAULT: c.hex(),
-    hover: c.mix(bg, 0.3).hex(),
-    active: c.mix(white, 0.2).hex(),
-    disabled: c.mix(bg, 0.5).hex(),
-    'lighten-9': c.mix(bg, 0.9).hex(),
-    'light-9': c.mix(bg, 0.9).hex(),
-    'lighten-8': c.mix(bg, 0.8).hex(),
-    'light-8': c.mix(bg, 0.8).hex(),
-    'lighten-7': c.mix(bg, 0.7).hex(),
-    'light-7': c.mix(bg, 0.7).hex(),
-    'lighten-6': c.mix(bg, 0.6).hex(),
-    'light-6': c.mix(bg, 0.6).hex(),
-    'lighten-5': c.mix(bg, 0.5).hex(),
-    'light-5': c.mix(bg, 0.5).hex(),
-    'lighten-4': c.mix(bg, 0.4).hex(),
-    'light-4': c.mix(bg, 0.4).hex(),
-    'lighten-3': c.mix(bg, 0.3).hex(),
-    'light-3': c.mix(bg, 0.3).hex(),
-    'lighten-2': c.mix(bg, 0.2).hex(),
-    'light-2': c.mix(bg, 0.2).hex(),
-    'lighten-1': c.mix(bg, 0.1).hex(),
-    'light-1': c.mix(bg, 0.1).hex(),
-    'darken-1': c.mix(white, 0.1).hex(),
-    'dark-1': c.mix(white, 0.1).hex(),
-    'darken-2': c.mix(white, 0.2).hex(),
-    'dark-2': c.mix(white, 0.2).hex(),
-    'darken-3': c.mix(white, 0.3).hex(),
-    'dark-3': c.mix(white, 0.3).hex(),
-    'darken-4': c.mix(white, 0.4).hex(),
-    'dark-4': c.mix(white, 0.4).hex(),
-    'darken-5': c.mix(white, 0.5).hex(),
-    'dark-5': c.mix(white, 0.5).hex(),
-    'darken-6': c.mix(white, 0.6).hex(),
-    'dark-6': c.mix(white, 0.6).hex(),
-    'darken-7': c.mix(white, 0.7).hex(),
-    'dark-7': c.mix(white, 0.7).hex(),
-    'darken-8': c.mix(white, 0.8).hex(),
-    'dark-8': c.mix(white, 0.8).hex(),
-    'darken-9': c.mix(white, 0.9).hex(),
-    'dark-9': c.mix(white, 0.9).hex(),
+    hover: c.mix(lc, 0.3).hex(),
+    active: c.mix(dc, 0.2).hex(),
+    disabled: c.mix(lc, 0.5).hex(),
+    'lighten-9': c.mix(lc, 0.9).hex(),
+    'light-9': c.mix(lc, 0.9).hex(),
+    'lighten-8': c.mix(lc, 0.8).hex(),
+    'light-8': c.mix(lc, 0.8).hex(),
+    'lighten-7': c.mix(lc, 0.7).hex(),
+    'light-7': c.mix(lc, 0.7).hex(),
+    'lighten-6': c.mix(lc, 0.6).hex(),
+    'light-6': c.mix(lc, 0.6).hex(),
+    'lighten-5': c.mix(lc, 0.5).hex(),
+    'light-5': c.mix(lc, 0.5).hex(),
+    'lighten-4': c.mix(lc, 0.4).hex(),
+    'light-4': c.mix(lc, 0.4).hex(),
+    'lighten-3': c.mix(lc, 0.3).hex(),
+    'light-3': c.mix(lc, 0.3).hex(),
+    'lighten-2': c.mix(lc, 0.2).hex(),
+    'light-2': c.mix(lc, 0.2).hex(),
+    'lighten-1': c.mix(lc, 0.1).hex(),
+    'light-1': c.mix(lc, 0.1).hex(),
+    'darken-1': c.mix(dc, 0.1).hex(),
+    'dark-1': c.mix(dc, 0.1).hex(),
+    'darken-2': c.mix(dc, 0.2).hex(),
+    'dark-2': c.mix(dc, 0.2).hex(),
+    'darken-3': c.mix(dc, 0.3).hex(),
+    'dark-3': c.mix(dc, 0.3).hex(),
+    'darken-4': c.mix(dc, 0.4).hex(),
+    'dark-4': c.mix(dc, 0.4).hex(),
+    'darken-5': c.mix(dc, 0.5).hex(),
+    'dark-5': c.mix(dc, 0.5).hex(),
+    'darken-6': c.mix(dc, 0.6).hex(),
+    'dark-6': c.mix(dc, 0.6).hex(),
+    'darken-7': c.mix(dc, 0.7).hex(),
+    'dark-7': c.mix(dc, 0.7).hex(),
+    'darken-8': c.mix(dc, 0.8).hex(),
+    'dark-8': c.mix(dc, 0.8).hex(),
+    'darken-9': c.mix(dc, 0.9).hex(),
+    'dark-9': c.mix(dc, 0.9).hex(),
   };
 };
 
@@ -186,6 +144,7 @@ const config = ({
 
   darkBoxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.36), 0px 8px 20px rgba(0, 0, 0, 0.72)',
 } = {}): Config => ({
+  content: [],
   darkMode: 'class',
   safelist: ['dark'],
   plugins: [
@@ -197,19 +156,19 @@ const config = ({
           mediaQuery: baseMediaQuery,
           theme: {
             colors: {
-              primary: convert(basePrimary),
+              primary: convert({ color: basePrimary }),
 
-              secondary: convert(baseSecondary),
+              secondary: convert({ color: baseSecondary }),
 
-              success: convert(baseSuccess),
+              success: convert({ color: baseSuccess }),
 
-              warning: convert(baseWarning),
+              warning: convert({ color: baseWarning }),
 
-              error: convert(baseError),
+              error: convert({ color: baseError }),
 
-              danger: convert(baseDanger),
+              danger: convert({ color: baseDanger }),
 
-              info: convert(baseInfo),
+              info: convert({ color: baseInfo }),
 
               fill: {
                 DEFAULT: baseFill,
@@ -259,19 +218,35 @@ const config = ({
           mediaQuery: darkMediaQuery,
           theme: {
             colors: {
-              primary: darkConvert(darkPrimary, darkBg),
+              primary: convert({ color: darkPrimary, lightenColor: darkBg, darkenColor: 'white' }),
 
-              secondary: darkConvert(darkSecondary, darkBg),
+              secondary: convert({
+                color: darkSecondary,
+                lightenColor: darkBg,
+                darkenColor: 'white',
+              }),
 
-              success: darkConvert(darkSuccess, darkBg),
+              success: convert({
+                color: darkSuccess,
+                lightenColor: darkBg,
+                darkenColor: 'white',
+              }),
 
-              warning: darkConvert(darkWarning, darkBg),
+              warning: convert({
+                color: darkWarning,
+                lightenColor: darkBg,
+                darkenColor: 'white',
+              }),
 
-              error: darkConvert(darkError, darkBg),
+              error: convert({ color: darkError, lightenColor: darkBg, darkenColor: 'white' }),
 
-              danger: darkConvert(darkDanger, darkBg),
+              danger: convert({
+                color: darkDanger,
+                lightenColor: darkBg,
+                darkenColor: 'white',
+              }),
 
-              info: darkConvert(darkInfo, darkBg),
+              info: convert({ color: darkInfo, lightenColor: darkBg, darkenColor: 'white' }),
 
               fill: {
                 DEFAULT: darkFill,
