@@ -75,9 +75,7 @@
   "dependencies": {
     "@ant-design/colors": "^6.0.0",
     "@types/color": "^3.0.3",
-    "@types/color-convert": "^2.0.0",
     "color": "^4.2.3",
-    "color-convert": "^2.0.1",
     "tailwindcss-theme-swapper": "^0.6.2"
   },
   "devDependencies": {
