@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.11.0
+
+- feat: update presets' config
+- feat!: tailwindcss@^3.1.0 is required
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.10.0
 
 - feat: update presets' config
