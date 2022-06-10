@@ -7,9 +7,11 @@ specifiers:
   '@commitlint/prompt': ^17.0.0
   '@release-it/conventional-changelog': ^5.0.0
   '@types/color': ^3.0.3
+  '@types/color-convert': ^2.0.0
   '@typescript-eslint/eslint-plugin': ^5.27.1
   '@typescript-eslint/parser': ^5.27.1
   color: ^4.2.3
+  color-convert: ^2.0.1
   commitizen: ^4.2.4
   eslint: ^8.17.0
   eslint-config-prettier: ^8.5.0
@@ -26,7 +28,7 @@ specifiers:
   stylelint-config-recess-order: ^3.0.0
   stylelint-config-recommended: ^8.0.0
   stylelint-prettier: ^2.0.0
-  tailwindcss: ^3.1.1
+  tailwindcss: ^3.1.2
   tailwindcss-theme-swapper: ^0.6.2
   tsup: ^6.1.0
   typescript: ^4.7.3
@@ -34,7 +36,9 @@ specifiers:
 dependencies:
   '@ant-design/colors': 6.0.0
   '@types/color': 3.0.3
+  '@types/color-convert': 2.0.0
   color: 4.2.3
+  color-convert: 2.0.1
   tailwindcss-theme-swapper: 0.6.2
 
 devDependencies:
@@ -60,7 +64,7 @@ devDependencies:
   stylelint-config-recess-order: 3.0.0_stylelint@14.9.0
   stylelint-config-recommended: 8.0.0_stylelint@14.9.0
   stylelint-prettier: 2.0.0_t7l5xu3j5gvuz4zzoia3ce4ddi
-  tailwindcss: 3.1.1
+  tailwindcss: 3.1.2
   tsup: 6.1.0_typescript@4.7.3
   typescript: 4.7.3
 
@@ -4327,11 +4331,11 @@ packages:
     dev: true
 
   /pify/2.3.0:
-    resolution: {integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=}
+    resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
 
   /pify/3.0.0:
-    resolution: {integrity: sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=}
+    resolution: {integrity: sha512-C3FsVNH1udSEX48gGX1xfvwTWfsYWj5U+8/uK15BGzIGrKoUpghX8hWZwa/OFnakBiiVNmBvemTJR5mcy7iPcg==}
     engines: {node: '>=4'}
     dev: true
 
@@ -5407,13 +5411,13 @@ packages:
     dependencies:
       color: 4.2.3
       postcss: 8.4.13
-      tailwindcss: 3.1.1
+      tailwindcss: 3.1.2
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /tailwindcss/3.1.1:
-    resolution: {integrity: sha512-F5VFj5FiS4QZqdXPE6T6RJFqbsmISQ2KBUp9bOQyws9TleGToHsa54X8kwXwVdHMQhNeXOlxI47lrRICEVuOvg==}
+  /tailwindcss/3.1.2:
+    resolution: {integrity: sha512-yJ6L5s1U5AeS5g7HHy212zdQfjwD426FBfm59pet/JsyneuZuD4C2W7PpJEg4ppisiB21uLqtNagv8KXury3+Q==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
