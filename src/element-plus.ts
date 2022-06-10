@@ -1,7 +1,9 @@
 // @ts-ignore
 import themeSwapper from 'tailwindcss-theme-swapper';
 import Color from 'color';
-import type { TailwindConfig } from 'tailwindcss/tailwind-config';
+import type { OptionalConfig } from 'tailwindcss/types/config';
+
+type Config = Partial<OptionalConfig>;
 
 const white = Color('white');
 const black = Color('black');
@@ -183,7 +185,7 @@ const config = ({
   darkExtraLightBorder = '#2b2b2c',
 
   darkBoxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.36), 0px 8px 20px rgba(0, 0, 0, 0.72)',
-} = {}): TailwindConfig => ({
+} = {}): Config => ({
   darkMode: 'class',
   safelist: ['dark'],
   plugins: [

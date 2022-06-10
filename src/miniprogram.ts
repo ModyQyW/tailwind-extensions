@@ -1,6 +1,8 @@
-import type { TailwindConfig } from 'tailwindcss/tailwind-config';
+import type { OptionalConfig } from 'tailwindcss/types/config';
 
-const config: TailwindConfig = {
+type Config = Partial<OptionalConfig>;
+
+const config: Config = {
   corePlugins: {
     preflight: false,
   },

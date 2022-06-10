@@ -1,7 +1,9 @@
 // @ts-ignore
 import themeSwapper from 'tailwindcss-theme-swapper';
 import { generate, presetPalettes, presetDarkPalettes } from '@ant-design/colors';
-import type { TailwindConfig } from 'tailwindcss/tailwind-config';
+import type { OptionalConfig } from 'tailwindcss/types/config';
+
+type Config = Partial<OptionalConfig>;
 
 const convert = (colors: string[]) => {
   return {
@@ -89,7 +91,7 @@ export default ({
   darkDisabledText = 'rgba(255, 255, 255, 0.3)',
 
   darkBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
-} = {}): TailwindConfig => ({
+} = {}): Config => ({
   darkMode: 'class',
   safelist: ['dark'],
   plugins: [
