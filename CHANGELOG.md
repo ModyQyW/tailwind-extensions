@@ -4,6 +4,7 @@
 
 - feat: update presets' config
 - feat!: tailwindcss@^3.1.0 is required
+- fix: fix miniprogram colors
 
 **This is an early access. Use it at your own risk.**
 
