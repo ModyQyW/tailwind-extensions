@@ -1,78 +1,33 @@
 {
-  /* https://aka.ms/tsconfig.json */
-  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    // Type Checking
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
-
-    // Modules
-    // "baseUrl": ".",
+    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "typeRoots": ["./node_modules/@types", "./src/types", "./src/typings", "./types", "./typings"],
-
-    // Emit
     "declaration": true,
     "declarationDir": "dist",
     "downlevelIteration": true,
     "importHelpers": true,
     "importsNotUsedAsValues": "error",
     "newLine": "lf",
-    // "noEmit": true,
     "outDir": "dist",
     "preserveValueImports": true,
     "removeComments": true,
     "sourceMap": true,
-
-    // JavaScript Support
     "allowJs": true,
-
-    // Editor Support
-
-    // Interop Constraints
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    // "allowSyntheticDefaultImports": true,
+    // "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-
-    // Backwards Compatibility
-
-    // Language and Environment
-    // "emitDecoratorMetadata": true,
-    // "experimentalDecorators": true,
     "jsx": "preserve",
     "lib": ["ESNext"],
     "target": "ESNext",
     "useDefineForClassFields": true,
-
-    // Compiler Diagnostics
-
-    // Projects
-
-    // Output Formatting
-
-    // Completeness
     "skipLibCheck": true
   },
-  "include": [
-    "**/.*.js",
-    "**/.*.cjs",
-    "**/.*.mjs",
-    "**/*.js",
-    "**/*.cjs",
-    "**/*.mjs",
-    "**/*.jsx",
-    "**/.*.ts",
-    "**/.*.cts",
-    "**/.*.mts",
-    "**/*.ts",
-    "**/*.cts",
-    "**/*.mts",
-    "**/*.tsx"
-  ],
-  "exclude": [".cache", ".temp", ".tmp", "cache", "temp", "tmp", "dist*", "node_modules"]
+  "include": ["src/**/*.ts"]
 }
