@@ -1,4 +1,4 @@
-import * as Color from 'color';
+import type Color from 'color';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ColorParam = Color | string | ArrayLike<number> | number | { [key: string]: any };
