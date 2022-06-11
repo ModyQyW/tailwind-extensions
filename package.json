@@ -71,7 +71,11 @@
     "lint:stylelint": "stylelint ./**/*.css --fix --ignore-path=.gitignore",
     "prepare": "is-ci || husky install",
     "release-it": "release-it",
-    "view:ant-design": "pnpm --filter ant-design view"
+    "view:ant-design": "pnpm --filter ant-design view",
+    "view:base": "pnpm --filter base view",
+    "view:easy": "pnpm --filter easy view",
+    "view:element-plus": "pnpm --filter element-plus view",
+    "view:miniprogram": "pnpm --filter miniprogram view"
   },
   "dependencies": {
     "@ant-design/colors": "^6.0.0",

@@ -75,6 +75,46 @@ importers:
       tailwind-config-viewer: 1.7.1_tailwindcss@3.1.2
       tailwindcss: 3.1.2
 
+  examples/base:
+    specifiers:
+      '@modyqyw/tailwind-presets': workspace:*
+      tailwind-config-viewer: ^1.7.1
+      tailwindcss: ^3.1.2
+    devDependencies:
+      '@modyqyw/tailwind-presets': link:../..
+      tailwind-config-viewer: 1.7.1_tailwindcss@3.1.2
+      tailwindcss: 3.1.2
+
+  examples/easy:
+    specifiers:
+      '@modyqyw/tailwind-presets': workspace:*
+      tailwind-config-viewer: ^1.7.1
+      tailwindcss: ^3.1.2
+    devDependencies:
+      '@modyqyw/tailwind-presets': link:../..
+      tailwind-config-viewer: 1.7.1_tailwindcss@3.1.2
+      tailwindcss: 3.1.2
+
+  examples/element-plus:
+    specifiers:
+      '@modyqyw/tailwind-presets': workspace:*
+      tailwind-config-viewer: ^1.7.1
+      tailwindcss: ^3.1.2
+    devDependencies:
+      '@modyqyw/tailwind-presets': link:../..
+      tailwind-config-viewer: 1.7.1_tailwindcss@3.1.2
+      tailwindcss: 3.1.2
+
+  examples/miniprogram:
+    specifiers:
+      '@modyqyw/tailwind-presets': workspace:*
+      tailwind-config-viewer: ^1.7.1
+      tailwindcss: ^3.1.2
+    devDependencies:
+      '@modyqyw/tailwind-presets': link:../..
+      tailwind-config-viewer: 1.7.1_tailwindcss@3.1.2
+      tailwindcss: 3.1.2
+
 packages:
 
   /@ant-design/colors/6.0.0:

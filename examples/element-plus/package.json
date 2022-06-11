@@ -1,0 +1,13 @@
+{
+  "name": "element-plus",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "view": "tailwind-config-viewer -o -c tailwind.config.cjs"
+  },
+  "devDependencies": {
+    "@modyqyw/tailwind-presets": "workspace:*",
+    "tailwind-config-viewer": "^1.7.1",
+    "tailwindcss": "^3.1.2"
+  }
+}
