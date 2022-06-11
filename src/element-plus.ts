@@ -302,7 +302,7 @@ const config = ({
     },
     extend: {
       fontFamily: {
-        font: [
+        DEFAULT: [
           'Helvetica Neue',
           'Helvetica',
           'PingFang SC',

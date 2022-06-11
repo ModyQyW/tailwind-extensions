@@ -333,7 +333,7 @@ export default ({
     },
     extend: {
       fontFamily: {
-        font: [
+        DEFAULT: [
           '-apple-system',
           'BlinkMacSystemFont',
           'Segoe UI',
