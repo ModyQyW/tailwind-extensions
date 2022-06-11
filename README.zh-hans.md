@@ -594,7 +594,7 @@ const basePreset = require('@modyqyw/tailwind-presets/base').default;
 // const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
 // const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
 // const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
-const easyPreset = require('@modyqyw/tailwind-presets/easy').default;
+const getEasyPreset = require('@modyqyw/tailwind-presets/easy').default;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -604,7 +604,7 @@ module.exports = {
     // getAntDesignPreset({ ... }),
     // getElementPlusPreset({ ... }),
     // miniprogramPreset,
-    easyPreset({
+    getEasyPreset({
       selectors: ['.easy'],
       mediaQuery: '',
       fontSize: '24px',
