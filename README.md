@@ -21,7 +21,9 @@ This preset extends the default configuration of TailwindCSS. [View Preset](./sr
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [...],
   presets: [basePreset],
 };
 ```
@@ -92,7 +94,9 @@ This preset provides configurations related to `Ant Design`. [View Preset](./src
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
 const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [...],
   presets: [
     basePreset,
     getAntDesignPreset({
@@ -283,7 +287,9 @@ html {
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
 const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [...],
   corePlugins: {
     preflight: false,
   },
@@ -302,7 +308,9 @@ This preset provides configurations related to `element-plus`. [View Preset](./s
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
 const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [...],
   presets: [
     basePreset,
     getElementPlusPreset({
@@ -517,7 +525,9 @@ html {
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
 const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [...],
   corePlugins: {
     preflight: false,
   },
@@ -538,7 +548,9 @@ const basePreset = require('@modyqyw/tailwind-presets/base').default;
 // const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
 const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [...],
   presets: [
     basePreset,
     // getAntDesignPreset({ ... }),
@@ -584,7 +596,9 @@ const basePreset = require('@modyqyw/tailwind-presets/base').default;
 // const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
 const easyPreset = require('@modyqyw/tailwind-presets/easy').default;
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  content: [...],
   presets: [
     basePreset,
     // getAntDesignPreset({ ... }),
