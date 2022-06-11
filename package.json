@@ -65,7 +65,7 @@
   "scripts": {
     "build": "tsup-node",
     "commit": "git-cz",
-    "lint": "pnpm run lint:eslint && pnpm run lint:markdownlint && pnpm run lint:stylelint",
+    "lint": "pnpm -w run lint:eslint && pnpm -w run lint:markdownlint && pnpm -w run lint:stylelint",
     "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx --ignore-path=.gitignore",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
     "lint:stylelint": "stylelint ./**/*.css --fix --ignore-path=.gitignore",
