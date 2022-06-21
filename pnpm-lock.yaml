@@ -9,6 +9,7 @@ importers:
       '@commitlint/config-conventional': ^17.0.2
       '@commitlint/prompt': ^17.0.0
       '@release-it/conventional-changelog': ^5.0.0
+      '@tsconfig/node16': ^1.0.3
       '@types/color': ^3.0.3
       '@typescript-eslint/eslint-plugin': ^5.29.0
       '@typescript-eslint/parser': ^5.29.0
@@ -43,6 +44,7 @@ importers:
       '@commitlint/config-conventional': 17.0.2
       '@commitlint/prompt': 17.0.0
       '@release-it/conventional-changelog': 5.0.0_release-it@15.0.0
+      '@tsconfig/node16': 1.0.3
       '@typescript-eslint/eslint-plugin': 5.29.0_qqmbkyiaixvppdwswpytuf2hgm
       '@typescript-eslint/parser': 5.29.0_b5e7v2qnwxfo6hmiq56u52mz3e
       commitizen: 4.2.4
@@ -579,8 +581,8 @@ packages:
     resolution: {integrity: sha512-509r2+yARFfHHE7T6Puu2jjkoycftovhXRqW328PDXTVGKihlb1P8Z9mMZH04ebyajfRY7dedfGynlrFHJUQCg==}
     dev: true
 
-  /@tsconfig/node16/1.0.2:
-    resolution: {integrity: sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==}
+  /@tsconfig/node16/1.0.3:
+    resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
   /@types/cacheable-request/6.0.2:
@@ -5980,7 +5982,7 @@ packages:
       '@tsconfig/node10': 1.0.8
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
-      '@tsconfig/node16': 1.0.2
+      '@tsconfig/node16': 1.0.3
       '@types/node': 17.0.31
       acorn: 8.7.1
       acorn-walk: 8.2.0
