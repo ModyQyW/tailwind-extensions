@@ -16,6 +16,7 @@ export default defineConfig([
     dts: true,
     format: ['esm', 'cjs'],
     minify: true,
+    target: 'node12',
   },
   {
     entry: cssFiles,
