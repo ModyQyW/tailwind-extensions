@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.11.1
+
+- fix: fix types
+- fix: target `node12`
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.11.0
 
 - feat: update presets' config
