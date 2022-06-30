@@ -144,7 +144,6 @@ const config = ({
 
   darkBoxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.36), 0px 8px 20px rgba(0, 0, 0, 0.72)',
 } = {}): Config => ({
-  content: [],
   darkMode: 'class',
   safelist: ['dark'],
   plugins: [

@@ -1,6 +1,4 @@
-import type { OptionalConfig } from 'tailwindcss/types/config';
-
-type Config = Partial<OptionalConfig>;
+import type { Config } from './types';
 
 const config: Config = {
   corePlugins: {
