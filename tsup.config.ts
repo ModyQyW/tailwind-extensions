@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { defineConfig } from 'tsup';
 import fs from 'node:fs';
 
@@ -12,9 +13,17 @@ const cssFiles = files.filter((item) => item.endsWith('.css')).map((item) => `sr
 export default defineConfig([
   {
     entry: tsFiles,
-    clean: true,
     dts: true,
-    format: ['esm', 'cjs'],
+    format: 'esm',
+    minify: true,
+    target: 'node12',
+    banner: {
+      js: `import {createRequire} from 'module';var require=createRequire(import\.meta.url);`,
+    },
+  },
+  {
+    entry: tsFiles,
+    format: 'cjs',
     minify: true,
     target: 'node12',
   },
