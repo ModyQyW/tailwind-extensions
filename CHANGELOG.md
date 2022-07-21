@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.11.2
+
+- fix: fix `type: "module"` support
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.11.1
 
 - fix: fix types
