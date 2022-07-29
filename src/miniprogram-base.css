@@ -1,4 +1,4 @@
-/* based on ress.css v5.0.2, modern-normalize v1.1.0 and tailwindcss v3.0.24 */
+/* based on ress.css v5.0.2, modern-normalize v1.1.0 and tailwindcss v3.1.5 */
 /* ress.css: https://resset.dev/ */
 /* modern-normalize: https://github.com/sindresorhus/modern-normalize */
 
@@ -79,6 +79,8 @@ page-meta,
   border-color: rgb(var(--border-color, 229 231 235)); /* #e5e7eb */
   border-style: solid;
   border-width: 0;
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -281,6 +283,7 @@ hr {
   height: 0;
   overflow: visible;
   color: inherit;
+  border-top-width: 1px;
 }
 
 details,
@@ -390,8 +393,11 @@ input,
 optgroup,
 select,
 textarea {
+  padding: 0;
+  margin: 0;
   font-family: inherit;
   font-size: 100%;
+  font-weight: inherit;
   line-height: inherit;
   color: inherit;
 }
@@ -416,6 +422,7 @@ button,
 [type="submit"],
 [role="button"] {
   cursor: pointer;
+  background-image: none;
 }
 
 ::-moz-focus-inner {
@@ -424,7 +431,7 @@ button,
 }
 
 :-moz-focusring {
-  outline: 1px dotted ButtonText;
+  outline: auto;
 }
 
 :-moz-ui-invalid {
@@ -482,7 +489,8 @@ legend {
   -webkit-appearance: button;
 }
 
-[disabled] {
+[disabled],
+:disabled {
   cursor: default;
 }
 
@@ -515,7 +523,9 @@ menu {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgb(var(--text-color-placeholder-text, --text-color-secondary-text, 156 163 175));
+  color: rgb(
+    var(--text-color-placeholder-text, --text-color-secondary-text, 156 163 175)
+  ); /* #9ca3af */
   opacity: 1;
 }
 
