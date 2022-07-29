@@ -1,6 +1,6 @@
 // @ts-ignore
 import themeSwapper from 'tailwindcss-theme-swapper';
-import type { Config } from './types';
+import { Config } from './types';
 
 export default ({ selectors = ['.easy'], mediaQuery = '', fontSize = '24px' } = {}): Config => ({
   plugins: [

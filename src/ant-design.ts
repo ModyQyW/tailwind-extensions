@@ -1,7 +1,7 @@
 // @ts-ignore
 import themeSwapper from 'tailwindcss-theme-swapper';
 import { generate, presetPalettes, presetDarkPalettes } from '@ant-design/colors';
-import type { Config } from './types';
+import { Config } from './types';
 
 const convert = (colors: string[]) => {
   return {

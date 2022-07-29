@@ -1,7 +1,7 @@
 // @ts-ignore
 import themeSwapper from 'tailwindcss-theme-swapper';
 import Color from 'color';
-import type { Config, ColorParam } from './types';
+import { Config, ColorParam } from './types';
 
 const convert = <T extends ColorParam = ColorParam>({
   color,
