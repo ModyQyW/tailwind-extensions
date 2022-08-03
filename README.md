@@ -1,8 +1,9 @@
 # @modyqyw/tailwind-presets
 
-English | [简体中文](./README.zh-hans.md)
+[![npm](https://img.shields.io/npm/v/@modyqyw/tailwind-presets)](https://www.npmjs.com/package/@modyqyw/tailwind-presets)
+[![GitHub license](https://img.shields.io/github/license/ModyQyW/tailwind-presets)](https://github.com/ModyQyW/tailwind-presets/blob/main/LICENSE)
 
-**WIP**
+English | [简体中文](./README.zh-hans.md)
 
 Opinionated TailwindCSS v3 presets. Adaptation of TailwindCSS v3 to different UI libraries is also provided.
 

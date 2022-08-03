@@ -1,8 +1,9 @@
 # @modyqyw/tailwind-presets
 
-[English](./README.md) | 简体中文
+[![npm](https://img.shields.io/npm/v/@modyqyw/tailwind-presets)](https://www.npmjs.com/package/@modyqyw/tailwind-presets)
+[![GitHub license](https://img.shields.io/github/license/ModyQyW/tailwind-presets)](https://github.com/ModyQyW/tailwind-presets/blob/main/LICENSE)
 
-**WIP**
+[English](./README.md) | 简体中文
 
 开箱即用的 TailwindCSS v3 预设。也提供了 TailwindCSS v3 和不同 UI 库的适配。
 
