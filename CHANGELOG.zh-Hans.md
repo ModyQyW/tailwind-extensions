@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.1
+
+**这是一个早期版本。请小心使用。**
+
 ## 0.12.0
 
 - feat: 更新 `miniprogram-base.css`（基于 ress.css v5.0.2、modern-normalize v1.1.0 和 tailwindcss v3.1.5）

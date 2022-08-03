@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.1
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.12.0
 
 - feat: update `miniprogram-base.css` (based on ress.css v5.0.2, modern-normalize v1.1.0 and tailwindcss v3.1.5)
