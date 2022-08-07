@@ -179,9 +179,7 @@ module.exports = {
 
 When using this preset, you need to control when to add `class="dark"` to the page container element. [usehooks-ts useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode) and [VueUse useDark](https://vueuse.org/core/usedark/) are recommended.
 
-TailwindCSS `preflight` may conflict with the styles associated with the `Ant Design` specification, and you will need to make some simple adjustments.
-
-√ Recommend: with TailwindCSS `preflight`.
+TailwindCSS `preflight` may conflict with the styles associated with the `Ant Design` specification. Please refer to the example below for adjustments.
 
 ```ts
 // project entry main.ts
@@ -211,11 +209,13 @@ import './styles/global.css';
 /* styles/preflight.css */
 @tailwind base;
 
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  html {
+    font-size: var(--font-size, 16px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 ```
 
@@ -223,82 +223,6 @@ html {
 /* styles/tailwind.css */
 @tailwind components;
 @tailwind utilities;
-```
-
-× Not recommend: without TailwindCSS `preflight`.
-
-```ts
-// project entry files, such as main.ts
-
-// extra preflight
-import 'modern-normalize';
-
-// TailwindCSS base and custom preflight
-import './styles/preflight.css';
-
-// antd styles
-import 'antd/dist/antd.min.css';
-// import 'antd/dist/antd.variable.min.css';
-
-// ant-design-vue styles
-import 'ant-design-vue/dist/antd.min.css';
-// import 'ant-design-vue/dist/antd.variable.min.css';
-
-// TailwindCSS components + utilities
-import './styles/tailwind.css';
-
-// any other global styles you need
-import './styles/global.css';
-```
-
-```css
-/* styles/preflight.css */
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  border-color: rgb(var(--border-color));
-  border-style: solid;
-  border-width: 0;
-}
-
-::before,
-::after {
-  --tw-content: '';
-}
-
-@tailwind base;
-
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-```css
-/* styles/tailwind.css */
-@tailwind components;
-@tailwind utilities;
-```
-
-```js
-// tailwind.config.js
-const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [...],
-  corePlugins: {
-    preflight: false,
-  },
-  presets: [
-    basePreset,
-    getAntDesignPreset({ ... }),
-  ],
-};
 ```
 
 ### element-plus
@@ -427,9 +351,7 @@ module.exports = {
 
 When using this preset, you need to control when to add `class="dark"` to the page container element. [VueUse useDark](https://vueuse.org/core/usedark/) is recommended.
 
-TailwindCSS `preflight` may conflict with the `element-plus` styles, and you will need to make some simple adjustments.
-
-√ Recommend: with TailwindCSS `preflight`.
+TailwindCSS `preflight` may conflict with the `element-plus` styles. Please refer to the example below for adjustments.
 
 ```ts
 // project entry main.ts
@@ -454,11 +376,13 @@ import './styles/global.css';
 /* styles/preflight.css */
 @tailwind base;
 
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  html {
+    font-size: var(--font-size, 16px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 ```
 
@@ -466,77 +390,6 @@ html {
 /* styles/tailwind.css */
 @tailwind components;
 @tailwind utilities;
-```
-
-× Not recommend: without TailwindCSS `preflight`.
-
-```ts
-// project entry files, such as main.ts
-
-// extra preflight
-import 'modern-normalize';
-
-// TailwindCSS base and custom preflight
-import './styles/preflight.css';
-
-// element-plus styles
-import 'element-plus/dist/index.css';
-
-// TailwindCSS components + utilities
-import './styles/tailwind.css';
-
-// any other global styles you need
-import './styles/global.css';
-```
-
-```css
-/* styles/preflight.css */
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  border-color: rgb(var(--border-color));
-  border-style: solid;
-  border-width: 0;
-}
-
-::before,
-::after {
-  --tw-content: '';
-}
-
-@tailwind base;
-
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-```css
-/* styles/tailwind.css */
-@tailwind components;
-@tailwind utilities;
-```
-
-```js
-// tailwind.config.js
-const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [...],
-  corePlugins: {
-    preflight: false,
-  },
-  presets: [
-    basePreset,
-    getAntDesignPreset({ ... }),
-  ],
-};
 ```
 
 ### miniprogram
@@ -545,8 +398,6 @@ This preset provides configurations related to miniprogram. [View Preset](./src/
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
-// const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
-// const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
 const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
 
 /** @type {import('tailwindcss').Config} */
@@ -554,12 +405,12 @@ module.exports = {
   content: [...],
   presets: [
     basePreset,
-    // getAntDesignPreset({ ... }),
-    // getElementPlusPreset({ ... }),
     miniprogramPreset,
   ],
 };
 ```
+
+**Note: Be sure to include `page` in `baseSelectors` if you use another preset and that preset can accept `baseSelectors` for configuration, as miniprogram may not recognize the `:root` style.**
 
 <details>
   <summary>When might I use this preset?</summary>
@@ -584,7 +435,79 @@ module.exports = {
 
 #### Extra Configs
 
-Miniprogram does not support the styles generated by TailwindCSS `base` (including `preflight`). Please use [miniprogram-base.css](. /miniprogram-base.css) instead of TailwindCSS `base` (including `preflight`).
+TailwindCSS `base` generated style code contains selectors `*` and tags that are not supported by miniprogram. Please refer to the example below for adjustments.
+
+```ts
+// project entry main.ts
+
+// extra preflight
+import 'modern-normalize';
+
+// TailwindCSS base and custom preflight
+import './styles/preflight.css';
+
+// UI library styles
+// import 'xx/yy.css';
+
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+
+// any other global styles you need
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+@layer base {
+  html {
+    font-size: var(--font-size, 16px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  button::after {
+    all: unset;
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+```js
+// postcss config file, e.g. .postcssrc.cjs
+// replace selectors
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    'postcss-preset-env': {
+      stage: 3,
+    },
+    'postcss-selector-replace': {
+      before: ['html', 'body', 'img', 'span', /^a$/, '*'],
+      after: [
+        'html,page',
+        'body,page',
+        'img,image',
+        'span,text',
+        'a,functional-page-navigator,navigator',
+        'html,body,page,cover-image,cover-view,match-media,movable-area,movable-view,scroll-view,swiper,swiper-item,view,icon,progress,rich-text,text,button,checkbox,checkbox-group,editor,form,input,label,picker,picker-view,picker-view-column,radio,radio-group,slider,switch,textarea,functional-page-navigator,navigator,audio,camera,image,live-player,live-pusher,video,voip-room,map,canvas,ad,ad-custom,official-account,open-data,web-view,navigation-bar,page-meta',
+      ],
+    },
+  },
+};
+```
 
 ### easy
 
@@ -592,9 +515,6 @@ This preset provides configurations related to miniprogram. [View Preset](./src/
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
-// const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
-// const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
-// const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
 const getEasyPreset = require('@modyqyw/tailwind-presets/easy').default;
 
 /** @type {import('tailwindcss').Config} */
@@ -602,9 +522,6 @@ module.exports = {
   content: [...],
   presets: [
     basePreset,
-    // getAntDesignPreset({ ... }),
-    // getElementPlusPreset({ ... }),
-    // miniprogramPreset,
     getEasyPreset({
       selectors: ['.easy'],
       mediaQuery: '',
@@ -628,20 +545,45 @@ module.exports = {
 
 #### Extra Configs
 
-When using this preset, you need to control when to add `class="easy"` to the page container element, and you need to add `font-size` corresponding styles to the page container element.
+When using this preset, you need to control when to add `class="easy"` to the page container element. Refer to [usehooks-ts useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode) and [VueUse useDark](https://vueuse.org/core/usedark/).
 
-Assuming that the page container element is `html`, the code is shown below.
+To make sure the preset takes effect, please refer to the example below for adjustments.
 
-```html
-<html class="easy">
-  ...
-</html>
+```ts
+// project entry main.ts
+
+// extra preflight
+import 'modern-normalize';
+
+// TailwindCSS base and custom preflight
+import './styles/preflight.css';
+
+// UI library styles
+// import 'xx/yy.css';
+
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+
+// any other global styles you need
+import './styles/global.css';
 ```
 
 ```css
-html {
-  font-size: var(--font-size, 16px);
+/* styles/preflight.css */
+@tailwind base;
+
+@layer base {
+  html {
+    font-size: var(--font-size, 16px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 ```
 
-You need to adjust it accordingly if you customized.
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```

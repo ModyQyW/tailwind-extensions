@@ -179,9 +179,7 @@ module.exports = {
 
 在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="dark"`。推荐使用 [usehooks-ts useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode) 或 [VueUse useDark](https://vueuse.org/core/usedark/)。
 
-TailwindCSS 的 `preflight` 可能会和 `Ant Design` 规范相关的样式冲突，你需要做一些简单的调整。
-
-√ 推荐：使用 TailwindCSS 的 `preflight`。
+TailwindCSS 的 `preflight` 可能会和 `Ant Design` 规范相关的样式冲突，请参考下面的例子做调整。
 
 ```ts
 // 项目入口文件，如 main.ts
@@ -211,11 +209,13 @@ import './styles/global.css';
 /* styles/preflight.css */
 @tailwind base;
 
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  html {
+    font-size: var(--font-size, 16px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 ```
 
@@ -223,82 +223,6 @@ html {
 /* styles/tailwind.css */
 @tailwind components;
 @tailwind utilities;
-```
-
-× 不推荐：不使用 TailwindCSS 的 `preflight`。
-
-```ts
-// 项目入口文件，如 main.ts
-
-// 额外的 preflight
-import 'modern-normalize';
-
-// TailwindCSS base 和自定义 preflight
-import './styles/preflight.css';
-
-// antd 样式
-import 'antd/dist/antd.min.css';
-// import 'antd/dist/antd.variable.min.css';
-
-// ant-design-vue 样式
-import 'ant-design-vue/dist/antd.min.css';
-// import 'ant-design-vue/dist/antd.variable.min.css';
-
-// TailwindCSS components + utilities
-import './styles/tailwind.css';
-
-// 其它你需要的全局样式
-import './styles/global.css';
-```
-
-```css
-/* styles/preflight.css */
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  border-color: rgb(var(--border-color));
-  border-style: solid;
-  border-width: 0;
-}
-
-::before,
-::after {
-  --tw-content: '';
-}
-
-@tailwind base;
-
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-```css
-/* styles/tailwind.css */
-@tailwind components;
-@tailwind utilities;
-```
-
-```js
-// tailwind.config.js
-const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [...],
-  corePlugins: {
-    preflight: false,
-  },
-  presets: [
-    basePreset,
-    getAntDesignPreset({ ... }),
-  ],
-};
 ```
 
 ### element-plus
@@ -427,9 +351,7 @@ module.exports = {
 
 在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="dark"`。推荐使用 [VueUse useDark](https://vueuse.org/core/usedark/)。
 
-TailwindCSS 的 `preflight` 可能会和 `element-plus` 样式冲突，你需要做一些简单的调整。
-
-√ 推荐：使用 TailwindCSS 的 `preflight`。
+TailwindCSS 的 `preflight` 可能会和 `element-plus` 样式冲突，请参考下面的例子做调整。
 
 ```ts
 // 项目入口文件，如 main.ts
@@ -454,11 +376,13 @@ import './styles/global.css';
 /* styles/preflight.css */
 @tailwind base;
 
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  html {
+    font-size: var(--font-size, 16px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 ```
 
@@ -466,77 +390,6 @@ html {
 /* styles/tailwind.css */
 @tailwind components;
 @tailwind utilities;
-```
-
-× 不推荐：不使用 TailwindCSS 的 `preflight`。
-
-```ts
-// 项目入口文件，如 main.ts
-
-// 额外的 preflight
-import 'modern-normalize';
-
-// TailwindCSS base 和自定义 preflight
-import './styles/preflight.css';
-
-// element-plus 样式
-import 'element-plus/dist/index.css';
-
-// TailwindCSS components + utilities
-import './styles/tailwind.css';
-
-// 其它你需要的全局样式
-import './styles/global.css';
-```
-
-```css
-/* styles/preflight.css */
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  border-color: rgb(var(--border-color));
-  border-style: solid;
-  border-width: 0;
-}
-
-::before,
-::after {
-  --tw-content: '';
-}
-
-@tailwind base;
-
-html {
-  font-size: var(--font-size, 16px);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-```css
-/* styles/tailwind.css */
-@tailwind components;
-@tailwind utilities;
-```
-
-```js
-// tailwind.config.js
-const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [...],
-  corePlugins: {
-    preflight: false,
-  },
-  presets: [
-    basePreset,
-    getAntDesignPreset({ ... }),
-  ],
-};
 ```
 
 ### miniprogram
@@ -545,8 +398,6 @@ module.exports = {
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
-// const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
-// const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
 const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
 
 /** @type {import('tailwindcss').Config} */
@@ -554,12 +405,12 @@ module.exports = {
   content: [...],
   presets: [
     basePreset,
-    // getAntDesignPreset({ ... }),
-    // getElementPlusPreset({ ... }),
     miniprogramPreset,
   ],
 };
 ```
+
+**注意：如果你使用了其它预设，并且该预设可以传入 `baseSelectors` 以进行配置，务必将 `page` 纳入 `baseSelectors` 内，这是因为小程序可能不能识别 `:root` 样式。**
 
 <details>
   <summary>我可能会在什么时候用到这个预设？</summary>
@@ -569,7 +420,7 @@ module.exports = {
 <details>
   <summary>我想知道这个预设大概做了什么。</summary>
   <ul>
-    <li>禁用了 <code>preflight</code>。</li>
+    <li>禁用了 <code>screens</code>。</li>
     <li>替换了 <code>separator</code>。</li>
     <li>扩展了 <code>spacing</code>。</li>
     <li>扩展了 <code>borderRadius</code>。</li>
@@ -584,7 +435,79 @@ module.exports = {
 
 #### 额外配置
 
-小程序平台不支持 TailwindCSS 的 `base`（包括 `preflight`）生成的样式代码。请直接使用 [miniprogram-base.css](./miniprogram-base.css) 以替代 TailwindCSS 的 `base`（包括 `preflight`）。
+TailwindCSS 的 `base` 生成的样式代码包含了小程序不支持的选择器 `*` 和标签，请参考下面的例子做调整。
+
+```ts
+// 项目入口文件，如 main.ts
+
+// 额外的 preflight
+import 'modern-normalize';
+
+// TailwindCSS base 和自定义 preflight
+import './styles/preflight.css';
+
+// UI 库样式
+// import 'xx/yy.css';
+
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+
+// 其它你需要的全局样式
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+@layer base {
+  html {
+    font-size: var(--font-size, 16px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  button::after {
+    all: unset;
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+```js
+// postcss 配置文件，如 .postcssrc.cjs
+// 替换选择器
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    'postcss-preset-env': {
+      stage: 3,
+    },
+    'postcss-selector-replace': {
+      before: ['html', 'body', 'img', 'span', /^a$/, '*'],
+      after: [
+        'html,page',
+        'body,page',
+        'img,image',
+        'span,text',
+        'a,functional-page-navigator,navigator',
+        'html,body,page,cover-image,cover-view,match-media,movable-area,movable-view,scroll-view,swiper,swiper-item,view,icon,progress,rich-text,text,button,checkbox,checkbox-group,editor,form,input,label,picker,picker-view,picker-view-column,radio,radio-group,slider,switch,textarea,functional-page-navigator,navigator,audio,camera,image,live-player,live-pusher,video,voip-room,map,canvas,ad,ad-custom,official-account,open-data,web-view,navigation-bar,page-meta',
+      ],
+    },
+  },
+};
+```
 
 ### easy
 
@@ -592,9 +515,6 @@ module.exports = {
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
-// const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
-// const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
-// const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
 const getEasyPreset = require('@modyqyw/tailwind-presets/easy').default;
 
 /** @type {import('tailwindcss').Config} */
@@ -602,9 +522,6 @@ module.exports = {
   content: [...],
   presets: [
     basePreset,
-    // getAntDesignPreset({ ... }),
-    // getElementPlusPreset({ ... }),
-    // miniprogramPreset,
     getEasyPreset({
       selectors: ['.easy'],
       mediaQuery: '',
@@ -628,20 +545,45 @@ module.exports = {
 
 #### 额外配置
 
-在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="easy"`，并需要为页面容器元素添加 `font-size` 相应样式。
+在使用这个预设时，需要自行控制何时在页面容器元素添加 `class="easy"`。请参考 [usehooks-ts useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode) 或 [VueUse useDark](https://vueuse.org/core/usedark/)。
 
-假定页面容器元素是 `html`，代码如下所示。
+为了保证预设生效，请参考下面的例子做调整。
 
-```html
-<html class="easy">
-  ...
-</html>
+```ts
+// 项目入口文件，如 main.ts
+
+// 额外的 preflight
+import 'modern-normalize';
+
+// TailwindCSS base 和自定义 preflight
+import './styles/preflight.css';
+
+// UI 库样式
+// import 'xx/yy.css';
+
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+
+// 其它你需要的全局样式
+import './styles/global.css';
 ```
 
 ```css
-html {
-  font-size: var(--font-size, 16px);
+/* styles/preflight.css */
+@tailwind base;
+
+@layer base {
+  html {
+    font-size: var(--font-size, 16px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 ```
 
-如果调整了默认配置，请自行做相应调整。
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
