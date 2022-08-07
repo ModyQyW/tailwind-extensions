@@ -55,8 +55,7 @@
       "require": "./dist/easy.js",
       "import": "./dist/easy.mjs",
       "types": "./dist/easy.d.ts"
-    },
-    "./miniprogram-base.css": "./dist/miniprogram-base.css"
+    }
   },
   "main": "./dist/index.js",
   "files": [

@@ -23,26 +23,6 @@ const getTsFiles = (entry: string): string[] =>
     })
     .filter((item) => !!item) as string[];
 
-const getCssFiles = (entry: string): string[] =>
-  fs
-    .readdirSync(entry)
-    .flatMap((item) => {
-      if (
-        item.includes('.css') &&
-        !item.includes('.test.') &&
-        !item.includes('.spec.') &&
-        !item.includes('.d.') &&
-        !item.includes('type')
-      ) {
-        return path.join(entry, item);
-      }
-      if (!item.includes('.') && !item.includes('type')) {
-        return getCssFiles(path.join(entry, item));
-      }
-      return '';
-    })
-    .filter((item) => !!item) as string[];
-
 export default defineConfig([
   {
     entry: getTsFiles('src'),
@@ -60,9 +40,5 @@ export default defineConfig([
     format: 'cjs',
     minify: true,
     target: 'node12',
-  },
-  {
-    entry: getCssFiles('src'),
-    minify: true,
   },
 ]);
