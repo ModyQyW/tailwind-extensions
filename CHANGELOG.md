@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.13.0
+
+- feat!: update every preset's usage, especially `miniprogram`
+
+**This is an early access. Use it at your own risk.**
+
 ## 0.12.1
 
 **This is an early access. Use it at your own risk.**
