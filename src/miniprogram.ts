@@ -1,9 +1,6 @@
 import { Config } from './types';
 
 const config: Config = {
-  corePlugins: {
-    preflight: false,
-  },
   separator: '_',
   theme: {
     extend: {
