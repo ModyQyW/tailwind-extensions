@@ -30,7 +30,7 @@ importers:
       stylelint-config-recess-order: ^3.0.0
       stylelint-config-recommended: ^8.0.0
       stylelint-prettier: ^2.0.0
-      tailwindcss: ^3.1.7
+      tailwindcss: ^3.1.8
       tailwindcss-theme-swapper: ^0.6.2
       tsup: ^6.2.1
       typescript: ^4.7.4
@@ -63,7 +63,7 @@ importers:
       stylelint-config-recess-order: 3.0.0_stylelint@14.9.1
       stylelint-config-recommended: 8.0.0_stylelint@14.9.1
       stylelint-prettier: 2.0.0_ajb4dyjcjxvkvtnz4mzu4n3pcq
-      tailwindcss: 3.1.7
+      tailwindcss: 3.1.8
       tsup: 6.2.1_typescript@4.7.4
       typescript: 4.7.4
 
@@ -1671,8 +1671,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      is-text-path: 1.0.1
       JSONStream: 1.3.5
+      is-text-path: 1.0.1
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -5825,7 +5825,7 @@ packages:
     dependencies:
       color: 4.2.3
       postcss: 8.4.14
-      tailwindcss: 3.1.7
+      tailwindcss: 3.1.8
     transitivePeerDependencies:
       - ts-node
     dev: false
@@ -5861,8 +5861,8 @@ packages:
       - ts-node
     dev: true
 
-  /tailwindcss/3.1.7:
-    resolution: {integrity: sha512-r7mgumZ3k0InfVPpGWcX8X/Ut4xBfv+1O/+C73ar/m01LxGVzWvPxF/w6xIUPEztrCoz7axfx0SMdh8FH8ZvRQ==}
+  /tailwindcss/3.1.8:
+    resolution: {integrity: sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
