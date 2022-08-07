@@ -3,6 +3,7 @@ import { Config } from './types';
 const config: Config = {
   separator: '_',
   theme: {
+    screens: {},
     extend: {
       spacing: {
         '0--25': '0.0625rem',
