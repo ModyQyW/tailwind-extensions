@@ -63,8 +63,9 @@
   ],
   "scripts": {
     "build": "tsup-node",
+    "check:types": "tsc --noEmit",
     "commit": "cz",
-    "lint": "run-p lint:eslint lint:markdownlint",
+    "lint": "run-p lint:eslint lint:markdownlint check:types",
     "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx --ignore-path=.gitignore --cache",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
     "prepare": "is-ci || husky install",
