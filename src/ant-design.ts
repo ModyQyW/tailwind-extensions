@@ -41,7 +41,7 @@ const convert = (colors: string[]) => {
 
 export default ({
   /** Base */
-  baseSelectors = [':root'],
+  baseSelectors = [':root', 'page'],
   baseMediaQuery = '',
 
   basePrimary = '#1890ff',

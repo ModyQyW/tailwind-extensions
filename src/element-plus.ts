@@ -61,7 +61,7 @@ const convert = <T extends ColorParam = ColorParam>({
 
 const config = ({
   /** Base */
-  baseSelectors = [':root'],
+  baseSelectors = [':root', 'page'],
   baseMediaQuery = '',
 
   basePrimary = '#409eff',
