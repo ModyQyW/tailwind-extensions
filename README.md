@@ -5,7 +5,9 @@
 
 English | [简体中文](./README.zh-hans.md)
 
-Opinionated TailwindCSS v3 presets. Adaptation of TailwindCSS v3 to different UI libraries is also provided.
+Opinionated TailwindCSS v3 presets.
+
+Adaptations of TailwindCSS v3 to different UI libraries / miniprogram are provided.
 
 ## Usage
 
@@ -102,7 +104,7 @@ module.exports = {
     basePreset,
     getAntDesignPreset({
       /** Base */
-      baseSelectors = [':root'],
+      baseSelectors = [':root', 'page'],
       baseMediaQuery = '',
 
       basePrimary = '#1890ff',
@@ -210,7 +212,8 @@ import './styles/global.css';
 @tailwind base;
 
 @layer base {
-  html {
+  html,
+  page {
     font-size: var(--font-size, 16px);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -240,7 +243,7 @@ module.exports = {
     basePreset,
     getElementPlusPreset({
       /** Base */
-      baseSelectors = [':root'],
+      baseSelectors = [':root', 'page'],
       baseMediaQuery = '',
 
       basePrimary = '#409eff',
@@ -377,7 +380,8 @@ import './styles/global.css';
 @tailwind base;
 
 @layer base {
-  html {
+  html,
+  page {
     font-size: var(--font-size, 16px);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -394,7 +398,7 @@ import './styles/global.css';
 
 ### miniprogram
 
-This preset provides configurations related to miniprogram. [View Preset](./src/miniprogram.ts)
+This preset extends the default configuration of TailwindCSS for miniprogram. [View Preset](./src/miniprogram.ts)
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
@@ -410,7 +414,7 @@ module.exports = {
 };
 ```
 
-**Note: Be sure to include `page` in `baseSelectors` if you use another preset and that preset can accept `baseSelectors` for configuration, as miniprogram may not recognize the `:root` style.**
+**Note: Be sure to include `page` in `baseSelectors` if you use another preset and that preset can accept `baseSelectors` for configuration (this is a default behavior), as miniprogram may not recognize the `:root` style.**
 
 <details>
   <summary>When might I use this preset?</summary>
@@ -420,8 +424,6 @@ module.exports = {
 <details>
   <summary>I would like to know what this preset has probably done.</summary>
   <ul>
-    <li>Disable <code>preflight</code>.</li>
-    <li>Replace <code>separator</code>.</li>
     <li>Extend <code>spacing</code>.</li>
     <li>Extend <code>borderRadius</code>.</li>
     <li>Extend <code>borderWidth</code>.</li>
@@ -461,7 +463,8 @@ import './styles/global.css';
 @tailwind base;
 
 @layer base {
-  html {
+  html,
+  page {
     font-size: var(--font-size, 16px);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -487,7 +490,7 @@ import './styles/global.css';
 
 ```js
 // postcss config file, e.g. .postcssrc.cjs
-// replace selectors
+// replace selectors in @tailwind base
 module.exports = {
   plugins: {
     tailwindcss: {},
@@ -508,6 +511,130 @@ module.exports = {
   },
 };
 ```
+
+**Note: You still can't use classes with `!`, `:`, and other classes with special characters. To break these restrictions, check out [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind), [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind), [unocss-preset-uni](<https://github.com/zguolee/unocss>- preset-uni) and [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp).**
+
+Translated with www.DeepL.com/Translator (free version)
+
+### miniprogram-enhanced
+
+This preset is based on `miniprogram` and add two configurations. [View Preset](./src/miniprogram-enhanced.ts)
+
+```js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+const miniprogramEnhancedPreset = require('@modyqyw/tailwind-presets/miniprogram-enhanced').default;
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [...],
+  presets: [
+    basePreset,
+    miniprogramEnhancedPreset,
+  ],
+};
+```
+
+**Note: Be sure to include `page` in `baseSelectors` if you use another preset and that preset can accept `baseSelectors` for configuration (this is a default behavior), as miniprogram may not recognize the `:root` style.**
+
+<details>
+  <summary>When might I use this preset?</summary>
+  <p>This preset will be useful if you are developing miniprogram with TailwindCSS.</p>
+</details>
+
+<details>
+  <summary>I would like to know what this preset has probably done.</summary>
+  <ul>
+    <li>(Extra) Disable <code>preflight</code>.</li>
+    <li>(Extra) Replace <code>separator</code>.</li>
+    <li>Extend <code>spacing</code>.</li>
+    <li>Extend <code>borderRadius</code>.</li>
+    <li>Extend <code>borderWidth</code>.</li>
+    <li>Extend <code>flexBasis</code>.</li>
+    <li>Extend <code>height</code>.</li>
+    <li>Extend <code>inset</code>.</li>
+    <li>Extend <code>translate</code>.</li>
+    <li>Extend <code>width</code>.</li>
+  </ul>
+</details>
+
+#### Extra Configs
+
+TailwindCSS `base` generated style code contains selectors `*` and tags that are not supported by miniprogram. Please refer to the example below for adjustments.
+
+```ts
+// project entry main.ts
+
+// extra preflight
+import 'modern-normalize';
+
+// TailwindCSS base and custom preflight
+import './styles/preflight.css';
+
+// UI library styles
+// import 'xx/yy.css';
+
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+
+// any other global styles you need
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+@layer base {
+  html,
+  page {
+    font-size: var(--font-size, 16px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  button::after {
+    all: unset;
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+```js
+// postcss config file, e.g. .postcssrc.cjs
+// replace selectors in @tailwind base
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    'postcss-preset-env': {
+      stage: 3,
+    },
+    'postcss-selector-replace': {
+      before: ['html', 'body', 'img', 'span', /^a$/, '*'],
+      after: [
+        'html,page',
+        'body,page',
+        'img,image',
+        'span,text',
+        'a,functional-page-navigator,navigator',
+        'html,body,page,cover-image,cover-view,match-media,movable-area,movable-view,scroll-view,swiper,swiper-item,view,icon,progress,rich-text,text,button,checkbox,checkbox-group,editor,form,input,label,picker,picker-view,picker-view-column,radio,radio-group,slider,switch,textarea,functional-page-navigator,navigator,audio,camera,image,live-player,live-pusher,video,voip-room,map,canvas,ad,ad-custom,official-account,open-data,web-view,navigation-bar,page-meta',
+      ],
+    },
+  },
+};
+```
+
+**Note: You still can't use classes with `!`, `:`, and other classes with special characters. To break these restrictions, check out [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind), [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind), [unocss-preset-uni](<https://github.com/zguolee/unocss>- preset-uni) and [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp).**
 
 ### easy
 
@@ -573,7 +700,8 @@ import './styles/global.css';
 @tailwind base;
 
 @layer base {
-  html {
+  html,
+  page {
     font-size: var(--font-size, 16px);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;

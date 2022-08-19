@@ -5,7 +5,9 @@
 
 [English](./README.md) | 简体中文
 
-开箱即用的 TailwindCSS v3 预设。也提供了 TailwindCSS v3 和不同 UI 库的适配。
+开箱即用的 TailwindCSS v3 预设。
+
+提供了 TailwindCSS v3 和不同 UI 库 / 小程序的适配。
 
 ## Usage
 
@@ -102,7 +104,7 @@ module.exports = {
     basePreset,
     getAntDesignPreset({
       /** Base */
-      baseSelectors = [':root'],
+      baseSelectors = [':root', 'page'],
       baseMediaQuery = '',
 
       basePrimary = '#1890ff',
@@ -210,7 +212,8 @@ import './styles/global.css';
 @tailwind base;
 
 @layer base {
-  html {
+  html,
+  page {
     font-size: var(--font-size, 16px);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -240,7 +243,7 @@ module.exports = {
     basePreset,
     getElementPlusPreset({
       /** Base */
-      baseSelectors = [':root'],
+      baseSelectors = [':root', 'page'],
       baseMediaQuery = '',
 
       basePrimary = '#409eff',
@@ -377,7 +380,8 @@ import './styles/global.css';
 @tailwind base;
 
 @layer base {
-  html {
+  html,
+  page {
     font-size: var(--font-size, 16px);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -394,7 +398,7 @@ import './styles/global.css';
 
 ### miniprogram
 
-这个预设提供了小程序相关的配置。[查看预设](./src/miniprogram.ts)
+这个预设扩展了 TailwindCSS 的小程序专用默认配置。[查看预设](./src/miniprogram.ts)
 
 ```js
 const basePreset = require('@modyqyw/tailwind-presets/base').default;
@@ -410,7 +414,7 @@ module.exports = {
 };
 ```
 
-**注意：如果你使用了其它预设，并且该预设可以传入 `baseSelectors` 以进行配置，务必将 `page` 纳入 `baseSelectors` 内，这是因为小程序可能不能识别 `:root` 样式。**
+**注意：如果你使用了其它预设，并且该预设可以传入 `baseSelectors` 以进行配置，务必将 `page` 纳入 `baseSelectors` 内（默认行为），这是因为小程序可能不能识别 `:root` 样式。**
 
 <details>
   <summary>我可能会在什么时候用到这个预设？</summary>
@@ -420,8 +424,6 @@ module.exports = {
 <details>
   <summary>我想知道这个预设大概做了什么。</summary>
   <ul>
-    <li>禁用了 <code>screens</code>。</li>
-    <li>替换了 <code>separator</code>。</li>
     <li>扩展了 <code>spacing</code>。</li>
     <li>扩展了 <code>borderRadius</code>。</li>
     <li>扩展了 <code>borderWidth</code>。</li>
@@ -461,7 +463,8 @@ import './styles/global.css';
 @tailwind base;
 
 @layer base {
-  html {
+  html,
+  page {
     font-size: var(--font-size, 16px);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -487,7 +490,7 @@ import './styles/global.css';
 
 ```js
 // postcss 配置文件，如 .postcssrc.cjs
-// 替换选择器
+// 替换 @tailwind base 中包含的选择器
 module.exports = {
   plugins: {
     tailwindcss: {},
@@ -508,6 +511,128 @@ module.exports = {
   },
 };
 ```
+
+**注意：你依然不能使用带有 `!`、`:` 等带有特殊符号的类。如果想要突破这些限制，请查看 [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind)、[mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind)、[unocss-preset-uni](https://github.com/zguolee/unocss-preset-uni)、[unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) 等项目。**
+
+### miniprogram-enhanced
+
+这个预设在 `miniprogram` 的基础上增加了两项配置。[查看预设](./src/miniprogram-enhanced.ts)
+
+```js
+const basePreset = require('@modyqyw/tailwind-presets/base').default;
+const miniprogramEnhancedPreset = require('@modyqyw/tailwind-presets/miniprogram-enhanced').default;
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [...],
+  presets: [
+    basePreset,
+    miniprogramEnhancedPreset,
+  ],
+};
+```
+
+**注意：如果你使用了其它预设，并且该预设可以传入 `baseSelectors` 以进行配置，务必将 `page` 纳入 `baseSelectors` 内（默认行为），这是因为小程序可能不能识别 `:root` 样式。**
+
+<details>
+  <summary>我可能会在什么时候用到这个预设？</summary>
+  <p>如果你在开发小程序，又想使用 TailwindCSS，这个预设很有用。</p>
+</details>
+
+<details>
+  <summary>我想知道这个预设大概做了什么。</summary>
+  <ul>
+    <li>（额外新增）禁用了 <code>screens</code>。</li>
+    <li>（额外新增）替换了 <code>separator</code>。</li>
+    <li>扩展了 <code>spacing</code>。</li>
+    <li>扩展了 <code>borderRadius</code>。</li>
+    <li>扩展了 <code>borderWidth</code>。</li>
+    <li>扩展了 <code>flexBasis</code>。</li>
+    <li>扩展了 <code>height</code>。</li>
+    <li>扩展了 <code>inset</code>。</li>
+    <li>扩展了 <code>translate</code>。</li>
+    <li>扩展了 <code>width</code>。</li>
+  </ul>
+</details>
+
+#### 额外配置
+
+TailwindCSS 的 `base` 生成的样式代码包含了小程序不支持的选择器 `*` 和标签，请参考下面的例子做调整。
+
+```ts
+// 项目入口文件，如 main.ts
+
+// 额外的 preflight
+import 'modern-normalize';
+
+// TailwindCSS base 和自定义 preflight
+import './styles/preflight.css';
+
+// UI 库样式
+// import 'xx/yy.css';
+
+// TailwindCSS components + utilities
+import './styles/tailwind.css';
+
+// 其它你需要的全局样式
+import './styles/global.css';
+```
+
+```css
+/* styles/preflight.css */
+@tailwind base;
+
+@layer base {
+  html,
+  page {
+    font-size: var(--font-size, 16px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  button::after {
+    all: unset;
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
+```js
+// postcss 配置文件，如 .postcssrc.cjs
+// 替换 @tailwind base 中包含的选择器
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    'postcss-preset-env': {
+      stage: 3,
+    },
+    'postcss-selector-replace': {
+      before: ['html', 'body', 'img', 'span', /^a$/, '*'],
+      after: [
+        'html,page',
+        'body,page',
+        'img,image',
+        'span,text',
+        'a,functional-page-navigator,navigator',
+        'html,body,page,cover-image,cover-view,match-media,movable-area,movable-view,scroll-view,swiper,swiper-item,view,icon,progress,rich-text,text,button,checkbox,checkbox-group,editor,form,input,label,picker,picker-view,picker-view-column,radio,radio-group,slider,switch,textarea,functional-page-navigator,navigator,audio,camera,image,live-player,live-pusher,video,voip-room,map,canvas,ad,ad-custom,official-account,open-data,web-view,navigation-bar,page-meta',
+      ],
+    },
+  },
+};
+```
+
+**注意：你依然不能使用带有 `!`、`:` 等带有特殊符号的类。如果想要突破这些限制，请查看 [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind)、[mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind)、[unocss-preset-uni](https://github.com/zguolee/unocss-preset-uni)、[unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) 等项目。**
 
 ### easy
 
@@ -573,7 +698,8 @@ import './styles/global.css';
 @tailwind base;
 
 @layer base {
-  html {
+  html,
+  page {
     font-size: var(--font-size, 16px);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
