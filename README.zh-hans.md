@@ -22,12 +22,12 @@ npm install @modyqyw/tailwind-presets
 这个预设扩展了 TailwindCSS 的默认配置。[查看预设](./src/base.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base');
+const { base } = require('@modyqyw/tailwind-presets');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
-  presets: [basePreset],
+  presets: [base],
 };
 ```
 
@@ -94,15 +94,14 @@ module.exports = {
 这个预设提供了 `Ant Design` 相关的配置。[查看预设](./src/ant-design.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base');
-const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design');
+const { base, antDesign } = require('@modyqyw/tailwind-presets');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    basePreset,
-    getAntDesignPreset({
+    base,
+    antDesign({
       /** Base */
       baseSelectors = [':root', 'page'],
       baseMediaQuery = '',
@@ -233,15 +232,14 @@ import './styles/global.css';
 这个预设提供了 `element-plus` 相关的配置。[查看预设](./src/element-plus.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base');
-const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus');
+const { base, elementPlus } = require('@modyqyw/tailwind-presets');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    basePreset,
-    getElementPlusPreset({
+    base,
+    elementPlus({
       /** Base */
       baseSelectors = [':root', 'page'],
       baseMediaQuery = '',
@@ -401,19 +399,16 @@ import './styles/global.css';
 这个预设扩展了 TailwindCSS 的小程序专用默认配置。[查看预设](./src/miniprogram.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base');
-const miniprogramBasePreset = require('@modyqyw/tailwind-presets/miniprogram-base');
-const miniprogramScreensPreset = require('@modyqyw/tailwind-presets/miniprogram-screens');
-const miniprogramSeparatorPreset = require('@modyqyw/tailwind-presets/miniprogram-separator');
+const { base, miniprogramBase, miniprogramScreens, miniprogramSeparator } = require('@modyqyw/tailwind-presets');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    basePreset,
-    miniprogramBasePreset,
-    miniprogramScreensPreset,
-    miniprogramSeparatorPreset,
+    base,
+    miniprogramBase,
+    miniprogramScreens,
+    miniprogramSeparator,
   ],
 };
 ```
@@ -525,15 +520,14 @@ module.exports = {
 这个预设提供了关怀模式相关的配置。[查看预设](./src/easy.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base');
-const getEasyPreset = require('@modyqyw/tailwind-presets/easy');
+const { base, easy } = require('@modyqyw/tailwind-presets');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    basePreset,
-    getEasyPreset({
+    base,
+    easy({
       selectors: ['.easy'],
       mediaQuery: '',
       fontSize: '24px',

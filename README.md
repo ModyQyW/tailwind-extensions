@@ -22,12 +22,12 @@ Then update your TailwindCSS config.
 This preset extends the default configuration of TailwindCSS. [View Preset](./src/base.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base');
+const { base } = require('@modyqyw/tailwind-presets');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
-  presets: [basePreset],
+  presets: [base],
 };
 ```
 
@@ -94,15 +94,14 @@ module.exports = {
 This preset provides configurations related to `Ant Design`. [View Preset](./src/base.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base');
-const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design');
+const { base, antDesign } = require('@modyqyw/tailwind-presets');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    basePreset,
-    getAntDesignPreset({
+    base,
+    antDesign({
       /** Base */
       baseSelectors = [':root', 'page'],
       baseMediaQuery = '',
@@ -233,15 +232,14 @@ import './styles/global.css';
 This preset provides configurations related to `element-plus`. [View Preset](./src/base.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base');
-const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus');
+const { base, elementPlus } = require('@modyqyw/tailwind-presets');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    basePreset,
-    getElementPlusPreset({
+    base,
+    elementPlus({
       /** Base */
       baseSelectors = [':root', 'page'],
       baseMediaQuery = '',
@@ -401,19 +399,16 @@ import './styles/global.css';
 This preset extends the default configuration of TailwindCSS for miniprogram. [View Preset](./src/miniprogram.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base');
-const miniprogramBasePreset = require('@modyqyw/tailwind-presets/miniprogram-base');
-const miniprogramScreensPreset = require('@modyqyw/tailwind-presets/miniprogram-screens');
-const miniprogramSeparatorPreset = require('@modyqyw/tailwind-presets/miniprogram-separator');
+const { base, miniprogramBase, miniprogramScreens, miniprogramSeparator } = require('@modyqyw/tailwind-presets');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    basePreset,
-    miniprogramBasePreset,
-    miniprogramScreensPreset,
-    miniprogramSeparatorPreset,
+    base,
+    miniprogramBase,
+    miniprogramScreens,
+    miniprogramSeparator,
   ],
 };
 ```
@@ -527,15 +522,14 @@ Translated with www.DeepL.com/Translator (free version)
 This preset provides configurations related to miniprogram. [View Preset](./src/easy.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base');
-const getEasyPreset = require('@modyqyw/tailwind-presets/easy');
+const { base, easy } = require('@modyqyw/tailwind-presets');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    basePreset,
-    getEasyPreset({
+    base,
+    easy({
       selectors: ['.easy'],
       mediaQuery: '',
       fontSize: '24px',
