@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.0
+
+- feat: 更新导出
+- feat!: 更新 `miniprogram` 关联预设
+
 ## 0.14.0
 
 - feat!: 区分 `miniprogram` 和 `miniprogramEnhanced` 预设

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.0
+
+- feat: update exports
+- feat!: update `miniprogram` related presets
+
 ## 0.14.0
 
 - feat!: split `miniprogram` and `miniprogramEnhanced` presets
