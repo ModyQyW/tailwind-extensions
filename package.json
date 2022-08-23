@@ -31,31 +31,7 @@
       "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     },
-    "./base": {
-      "require": "./dist/base.js",
-      "import": "./dist/base.mjs",
-      "types": "./dist/base.d.ts"
-    },
-    "./ant-design": {
-      "require": "./dist/ant-design.js",
-      "import": "./dist/ant-design.mjs",
-      "types": "./dist/ant-design.d.ts"
-    },
-    "./element-plus": {
-      "require": "./dist/element-plus.js",
-      "import": "./dist/element-plus.mjs",
-      "types": "./dist/element-plus.d.ts"
-    },
-    "./miniprogram": {
-      "require": "./dist/miniprogram.js",
-      "import": "./dist/miniprogram.mjs",
-      "types": "./dist/miniprogram.d.ts"
-    },
-    "./easy": {
-      "require": "./dist/easy.js",
-      "import": "./dist/easy.mjs",
-      "types": "./dist/easy.d.ts"
-    }
+    "./*": "./dist/*"
   },
   "main": "./dist/index.js",
   "files": [
