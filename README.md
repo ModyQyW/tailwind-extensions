@@ -22,7 +22,7 @@ Then update your TailwindCSS config.
 This preset extends the default configuration of TailwindCSS. [View Preset](./src/base.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base').default;
+const basePreset = require('@modyqyw/tailwind-presets/base');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -94,8 +94,8 @@ module.exports = {
 This preset provides configurations related to `Ant Design`. [View Preset](./src/base.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design').default;
+const basePreset = require('@modyqyw/tailwind-presets/base');
+const getAntDesignPreset = require('@modyqyw/tailwind-presets/ant-design');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -233,8 +233,8 @@ import './styles/global.css';
 This preset provides configurations related to `element-plus`. [View Preset](./src/base.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus').default;
+const basePreset = require('@modyqyw/tailwind-presets/base');
+const getElementPlusPreset = require('@modyqyw/tailwind-presets/element-plus');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -401,15 +401,19 @@ import './styles/global.css';
 This preset extends the default configuration of TailwindCSS for miniprogram. [View Preset](./src/miniprogram.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const miniprogramPreset = require('@modyqyw/tailwind-presets/miniprogram').default;
+const basePreset = require('@modyqyw/tailwind-presets/base');
+const miniprogramBasePreset = require('@modyqyw/tailwind-presets/miniprogram-base');
+const miniprogramScreensPreset = require('@modyqyw/tailwind-presets/miniprogram-screens');
+const miniprogramSeparatorPreset = require('@modyqyw/tailwind-presets/miniprogram-separator');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
     basePreset,
-    miniprogramPreset,
+    miniprogramBasePreset,
+    miniprogramScreensPreset,
+    miniprogramSeparatorPreset,
   ],
 };
 ```
@@ -424,14 +428,16 @@ module.exports = {
 <details>
   <summary>I would like to know what this preset has probably done.</summary>
   <ul>
-    <li>Extend <code>spacing</code>.</li>
-    <li>Extend <code>borderRadius</code>.</li>
-    <li>Extend <code>borderWidth</code>.</li>
-    <li>Extend <code>flexBasis</code>.</li>
-    <li>Extend <code>height</code>.</li>
-    <li>Extend <code>inset</code>.</li>
-    <li>Extend <code>translate</code>.</li>
-    <li>Extend <code>width</code>.</li>
+    <li>(screens) Disable <code>screens</code>.</li>
+    <li>(separator) Replace <code>separator</code>.</li>
+    <li>(base) Extend <code>spacing</code>.</li>
+    <li>(base) Extend <code>borderRadius</code>.</li>
+    <li>(base) Extend <code>borderWidth</code>.</li>
+    <li>(base) Extend <code>flexBasis</code>.</li>
+    <li>(base) Extend <code>height</code>.</li>
+    <li>(base) Extend <code>inset</code>.</li>
+    <li>(base) Extend <code>translate</code>.</li>
+    <li>(base) Extend <code>width</code>.</li>
   </ul>
 </details>
 
@@ -516,133 +522,13 @@ module.exports = {
 
 Translated with www.DeepL.com/Translator (free version)
 
-### miniprogram-enhanced
-
-This preset is based on `miniprogram` and add two configurations. [View Preset](./src/miniprogram-enhanced.ts)
-
-```js
-const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const miniprogramEnhancedPreset = require('@modyqyw/tailwind-presets/miniprogram-enhanced').default;
-
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [...],
-  presets: [
-    basePreset,
-    miniprogramEnhancedPreset,
-  ],
-};
-```
-
-**Note: Be sure to include `page` in `baseSelectors` if you use another preset and that preset can accept `baseSelectors` for configuration (this is a default behavior), as miniprogram may not recognize the `:root` style.**
-
-<details>
-  <summary>When might I use this preset?</summary>
-  <p>This preset will be useful if you are developing miniprogram with TailwindCSS.</p>
-</details>
-
-<details>
-  <summary>I would like to know what this preset has probably done.</summary>
-  <ul>
-    <li>(Extra) Disable <code>preflight</code>.</li>
-    <li>(Extra) Replace <code>separator</code>.</li>
-    <li>Extend <code>spacing</code>.</li>
-    <li>Extend <code>borderRadius</code>.</li>
-    <li>Extend <code>borderWidth</code>.</li>
-    <li>Extend <code>flexBasis</code>.</li>
-    <li>Extend <code>height</code>.</li>
-    <li>Extend <code>inset</code>.</li>
-    <li>Extend <code>translate</code>.</li>
-    <li>Extend <code>width</code>.</li>
-  </ul>
-</details>
-
-#### Extra Configs
-
-TailwindCSS `base` generated style code contains selectors `*` and tags that are not supported by miniprogram. Please refer to the example below for adjustments.
-
-```ts
-// project entry main.ts
-
-// extra preflight
-import 'modern-normalize';
-
-// TailwindCSS base and custom preflight
-import './styles/preflight.css';
-
-// UI library styles
-// import 'xx/yy.css';
-
-// TailwindCSS components + utilities
-import './styles/tailwind.css';
-
-// any other global styles you need
-import './styles/global.css';
-```
-
-```css
-/* styles/preflight.css */
-@tailwind base;
-
-@layer base {
-  html,
-  page {
-    font-size: var(--font-size, 16px);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  button,
-  button::after {
-    all: unset;
-  }
-
-  button {
-    -webkit-tap-highlight-color: transparent;
-  }
-}
-```
-
-```css
-/* styles/tailwind.css */
-@tailwind components;
-@tailwind utilities;
-```
-
-```js
-// postcss config file, e.g. .postcssrc.cjs
-// replace selectors in @tailwind base
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    'postcss-preset-env': {
-      stage: 3,
-    },
-    'postcss-selector-replace': {
-      before: ['html', 'body', 'img', 'span', /^a$/, '*'],
-      after: [
-        'html,page',
-        'body,page',
-        'img,image',
-        'span,text',
-        'a,functional-page-navigator,navigator',
-        'html,body,page,cover-image,cover-view,match-media,movable-area,movable-view,scroll-view,swiper,swiper-item,view,icon,progress,rich-text,text,button,checkbox,checkbox-group,editor,form,input,label,picker,picker-view,picker-view-column,radio,radio-group,slider,switch,textarea,functional-page-navigator,navigator,audio,camera,image,live-player,live-pusher,video,voip-room,map,canvas,ad,ad-custom,official-account,open-data,web-view,navigation-bar,page-meta',
-      ],
-    },
-  },
-};
-```
-
-**Note: You still can't use classes with `!`, `:`, and other classes with special characters. To break these restrictions, check out [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind), [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind), [unocss-preset-uni](<https://github.com/zguolee/unocss>- preset-uni) and [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp).**
-
 ### easy
 
 This preset provides configurations related to miniprogram. [View Preset](./src/easy.ts)
 
 ```js
-const basePreset = require('@modyqyw/tailwind-presets/base').default;
-const getEasyPreset = require('@modyqyw/tailwind-presets/easy').default;
+const basePreset = require('@modyqyw/tailwind-presets/base');
+const getEasyPreset = require('@modyqyw/tailwind-presets/easy');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
