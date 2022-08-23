@@ -518,7 +518,7 @@ module.exports = {
 };
 ```
 
-**注意：你依然不能使用带有 `!`、`:` 等带有特殊符号的类。如果想要突破这些限制，请查看 [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind)、[mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind)、[unocss-preset-uni](https://github.com/zguolee/unocss-preset-uni)、[unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) 等项目。**
+**注意：你依然不能使用带有 `!`、`:` 等带有特殊符号的类。如果想要突破这些限制，请查看 [unplugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/unplugin-uni-app-tailwind)、[mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind)、[unocss-preset-uni](https://github.com/zguolee/unocss-preset-uni)、[unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp) 等项目。**
 
 ### easy
 

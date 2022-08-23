@@ -518,7 +518,7 @@ module.exports = {
 };
 ```
 
-**Note: You still can't use classes with `!`, `:`, and other classes with special characters. To break these restrictions, check out [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind), [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind), [unocss-preset-uni](<https://github.com/zguolee/unocss>- preset-uni) and [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp).**
+**Note: You still can't use classes with `!`, `:`, and other classes with special characters. To break these restrictions, check out [unplugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/unplugin-uni-app-tailwind), [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind), [unocss-preset-uni](<https://github.com/zguolee/unocss>- preset-uni) and [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp).**
 
 Translated with www.DeepL.com/Translator (free version)
 
