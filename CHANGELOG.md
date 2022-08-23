@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.15.1
+
+- fix: fix exports
+
 ## 0.15.0
 
 - feat: update exports
