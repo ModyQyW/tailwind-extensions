@@ -1,22 +1,25 @@
 import base from './base';
 import antDesign from './ant-design';
 import elementPlus from './element-plus';
-import miniprogram from './miniprogram';
-import miniprogramEnhanced from './miniprogram-enhanced';
+import miniprogramBase from './miniprogram-base';
+import miniprogramScreens from './miniprogram-screens';
+import miniprogramSeparator from './miniprogram-separator';
 import easy from './easy';
 
 export default {
   base,
   antDesign,
   elementPlus,
-  miniprogram,
-  miniprogramEnhanced,
+  miniprogramBase,
+  miniprogramScreens,
+  miniprogramSeparator,
   easy,
 };
 
 export { base };
 export { antDesign };
 export { elementPlus };
-export { miniprogram };
-export { miniprogramEnhanced };
+export { miniprogramBase };
+export { miniprogramScreens };
+export { miniprogramSeparator };
 export { easy };
