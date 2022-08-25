@@ -1,6 +1,7 @@
 # @modyqyw/tailwind-presets
 
 [![npm](https://img.shields.io/npm/v/@modyqyw/tailwind-presets)](https://www.npmjs.com/package/@modyqyw/tailwind-presets)
+
 [![GitHub license](https://img.shields.io/github/license/ModyQyW/tailwind-presets)](https://github.com/ModyQyW/tailwind-presets/blob/main/LICENSE)
 
 [English](./README.md) | 简体中文
@@ -185,11 +186,17 @@ TailwindCSS 的 `preflight` 可能会和 `Ant Design` 规范相关的样式冲�
 ```ts
 // 项目入口文件，如 main.ts
 
-// 额外的 preflight
+// 自定义 preflight 1
+import './styles/preflight1.css';
+
+// 第三方 preflight
 import 'modern-normalize';
 
-// TailwindCSS base 和自定义 preflight
-import './styles/preflight.css';
+// TailwindCSS base
+import './styles/tailwind-base.css';
+
+// 自定义 preflight 2
+import './styles/preflight2.css';
 
 // antd 样式
 import 'antd/dist/antd.min.css';
@@ -200,6 +207,7 @@ import 'ant-design-vue/dist/antd.min.css';
 // import 'ant-design-vue/dist/antd.variable.min.css';
 
 // TailwindCSS components + utilities
+// 如果把 TailwindCSS base 移动到这里可能会覆盖 antd / ant-design-vue preflight
 import './styles/tailwind.css';
 
 // 其它你需要的全局样式
@@ -207,17 +215,18 @@ import './styles/global.css';
 ```
 
 ```css
-/* styles/preflight.css */
+/* styles/tailwind-base.css */
 @tailwind base;
+```
 
-@layer base {
-  html,
-  page {
-    font-size: var(--font-size, 16px);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+```css
+/* styles/preflight2.css */
+html,
+page {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ```
 
@@ -357,16 +366,23 @@ TailwindCSS 的 `preflight` 可能会和 `element-plus` 样式冲突，请参考
 ```ts
 // 项目入口文件，如 main.ts
 
-// 额外的 preflight
+// 自定义 preflight 1
+import './styles/preflight1.css';
+
+// 第三方 preflight
 import 'modern-normalize';
 
-// TailwindCSS base 和自定义 preflight
-import './styles/preflight.css';
+// TailwindCSS base
+import './styles/tailwind-base.css';
+
+// 自定义 preflight 2
+import './styles/preflight2.css';
 
 // element-plus 样式
 import 'element-plus/dist/index.css';
 
 // TailwindCSS components + utilities
+// 如果把 TailwindCSS base 移动到这里可能会覆盖 element-plus preflight
 import './styles/tailwind.css';
 
 // 其它你需要的全局样式
@@ -374,17 +390,18 @@ import './styles/global.css';
 ```
 
 ```css
-/* styles/preflight.css */
+/* styles/tailwind-base.css */
 @tailwind base;
+```
 
-@layer base {
-  html,
-  page {
-    font-size: var(--font-size, 16px);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+```css
+/* styles/preflight2.css */
+html,
+page {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ```
 
@@ -443,16 +460,23 @@ TailwindCSS 的 `base` 生成的样式代码包含了小程序不支持的选择
 ```ts
 // 项目入口文件，如 main.ts
 
-// 额外的 preflight
+// 自定义 preflight 1
+import './styles/preflight1.css';
+
+// 第三方 preflight
 import 'modern-normalize';
 
-// TailwindCSS base 和自定义 preflight
-import './styles/preflight.css';
+// TailwindCSS base
+import './styles/tailwind-base.css';
+
+// custom preflight 2
+import './styles/preflight2.css';
 
 // UI 库样式
 // import 'xx/yy.css';
 
 // TailwindCSS components + utilities
+// 如果把 TailwindCSS base 移动到这里可能会覆盖 UI 库 preflight
 import './styles/tailwind.css';
 
 // 其它你需要的全局样式
@@ -460,26 +484,30 @@ import './styles/global.css';
 ```
 
 ```css
-/* styles/preflight.css */
+/* styles/preflight1.css */
+button,
+button::after {
+  all: unset;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+```
+
+```css
+/* styles/tailwind-base.css */
 @tailwind base;
+```
 
-@layer base {
-  html,
-  page {
-    font-size: var(--font-size, 16px);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  button,
-  button::after {
-    all: unset;
-  }
-
-  button {
-    -webkit-tap-highlight-color: transparent;
-  }
+```css
+/* styles/preflight2.css */
+html,
+page {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ```
 
@@ -494,9 +522,11 @@ import './styles/global.css';
 // 替换 @tailwind base 中包含的选择器
 module.exports = {
   plugins: {
+    'tailwindcss/nesting': {},
     tailwindcss: {},
     'postcss-preset-env': {
       stage: 3,
+      features: { 'nesting-rules': false },
     },
     'postcss-selector-replace': {
       before: ['html', 'body', 'img', 'span', /^a$/, '*'],
@@ -557,16 +587,23 @@ module.exports = {
 ```ts
 // 项目入口文件，如 main.ts
 
-// 额外的 preflight
+// 自定义 preflight 1
+import './styles/preflight1.css';
+
+// 第三方 preflight
 import 'modern-normalize';
 
-// TailwindCSS base 和自定义 preflight
-import './styles/preflight.css';
+// TailwindCSS base
+import './styles/tailwind-base.css';
+
+// custom preflight 2
+import './styles/preflight2.css';
 
 // UI 库样式
 // import 'xx/yy.css';
 
 // TailwindCSS components + utilities
+// 如果把 TailwindCSS base 移动到这里可能会覆盖 UI 库 preflight
 import './styles/tailwind.css';
 
 // 其它你需要的全局样式
@@ -574,17 +611,30 @@ import './styles/global.css';
 ```
 
 ```css
-/* styles/preflight.css */
-@tailwind base;
+/* styles/preflight1.css */
+button,
+button::after {
+  all: unset;
+}
 
-@layer base {
-  html,
-  page {
-    font-size: var(--font-size, 16px);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+```
+
+```css
+/* styles/tailwind-base.css */
+@tailwind base;
+```
+
+```css
+/* styles/preflight2.css */
+html,
+page {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ```
 

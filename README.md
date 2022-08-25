@@ -1,6 +1,7 @@
 # @modyqyw/tailwind-presets
 
 [![npm](https://img.shields.io/npm/v/@modyqyw/tailwind-presets)](https://www.npmjs.com/package/@modyqyw/tailwind-presets)
+
 [![GitHub license](https://img.shields.io/github/license/ModyQyW/tailwind-presets)](https://github.com/ModyQyW/tailwind-presets/blob/main/LICENSE)
 
 English | [简体中文](./README.zh-hans.md)
@@ -185,11 +186,17 @@ TailwindCSS `preflight` may conflict with the styles associated with the `Ant De
 ```ts
 // project entry main.ts
 
-// extra preflight
+// custom preflight 1
+import './styles/preflight1.css';
+
+// third-party preflight
 import 'modern-normalize';
 
-// TailwindCSS base and custom preflight
-import './styles/preflight.css';
+// TailwindCSS base
+import './styles/tailwind-base.css';
+
+// custom preflight 2
+import './styles/preflight2.css';
 
 // antd styles
 import 'antd/dist/antd.min.css';
@@ -200,6 +207,7 @@ import 'ant-design-vue/dist/antd.min.css';
 // import 'ant-design-vue/dist/antd.variable.min.css';
 
 // TailwindCSS components + utilities
+// maybe override antd / ant-design-vue preflight if move TailwindCSS base here
 import './styles/tailwind.css';
 
 // any other global styles you need
@@ -207,17 +215,18 @@ import './styles/global.css';
 ```
 
 ```css
-/* styles/preflight.css */
+/* styles/tailwind-base.css */
 @tailwind base;
+```
 
-@layer base {
-  html,
-  page {
-    font-size: var(--font-size, 16px);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+```css
+/* styles/preflight2.css */
+html,
+page {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ```
 
@@ -357,16 +366,23 @@ TailwindCSS `preflight` may conflict with the `element-plus` styles. Please refe
 ```ts
 // project entry main.ts
 
-// extra preflight
+// custom preflight 1
+import './styles/preflight1.css';
+
+// third-party preflight
 import 'modern-normalize';
 
-// TailwindCSS base and custom preflight
-import './styles/preflight.css';
+// TailwindCSS base
+import './styles/tailwind-base.css';
+
+// custom preflight 2
+import './styles/preflight2.css';
 
 // element-plus styles
 import 'element-plus/dist/index.css';
 
 // TailwindCSS components + utilities
+// maybe override element-plus preflight if move TailwindCSS base here
 import './styles/tailwind.css';
 
 // any other global styles you need
@@ -374,17 +390,18 @@ import './styles/global.css';
 ```
 
 ```css
-/* styles/preflight.css */
+/* styles/tailwind-base.css */
 @tailwind base;
+```
 
-@layer base {
-  html,
-  page {
-    font-size: var(--font-size, 16px);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+```css
+/* styles/preflight2.css */
+html,
+page {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ```
 
@@ -443,16 +460,23 @@ TailwindCSS `base` generated style code contains selectors `*` and tags that are
 ```ts
 // project entry main.ts
 
-// extra preflight
+// custom preflight 1
+import './styles/preflight1.css';
+
+// third-party preflight
 import 'modern-normalize';
 
-// TailwindCSS base and custom preflight
-import './styles/preflight.css';
+// TailwindCSS base
+import './styles/tailwind-base.css';
+
+// custom preflight 2
+import './styles/preflight2.css';
 
 // UI library styles
 // import 'xx/yy.css';
 
-// TailwindCSS components + utilities
+// TailwindCSS base + components + utilities
+// maybe override UI library preflight if move TailwindCSS base here
 import './styles/tailwind.css';
 
 // any other global styles you need
@@ -460,26 +484,30 @@ import './styles/global.css';
 ```
 
 ```css
-/* styles/preflight.css */
+/* styles/preflight1.css */
+button,
+button::after {
+  all: unset;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+```
+
+```css
+/* styles/tailwind-base.css */
 @tailwind base;
+```
 
-@layer base {
-  html,
-  page {
-    font-size: var(--font-size, 16px);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  button,
-  button::after {
-    all: unset;
-  }
-
-  button {
-    -webkit-tap-highlight-color: transparent;
-  }
+```css
+/* styles/preflight2.css */
+html,
+page {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ```
 
@@ -494,9 +522,11 @@ import './styles/global.css';
 // replace selectors in @tailwind base
 module.exports = {
   plugins: {
+    'tailwindcss/nesting': {},
     tailwindcss: {},
     'postcss-preset-env': {
       stage: 3,
+      features: { 'nesting-rules': false },
     },
     'postcss-selector-replace': {
       before: ['html', 'body', 'img', 'span', /^a$/, '*'],
@@ -559,16 +589,23 @@ To make sure the preset takes effect, please refer to the example below for adju
 ```ts
 // project entry main.ts
 
-// extra preflight
+// custom preflight 1
+import './styles/preflight1.css';
+
+// third-party preflight
 import 'modern-normalize';
 
-// TailwindCSS base and custom preflight
-import './styles/preflight.css';
+// TailwindCSS base
+import './styles/tailwind-base.css';
+
+// custom preflight 2
+import './styles/preflight2.css';
 
 // UI library styles
 // import 'xx/yy.css';
 
-// TailwindCSS components + utilities
+// TailwindCSS base + components + utilities
+// maybe override UI library preflight if move TailwindCSS base here
 import './styles/tailwind.css';
 
 // any other global styles you need
@@ -576,17 +613,30 @@ import './styles/global.css';
 ```
 
 ```css
-/* styles/preflight.css */
-@tailwind base;
+/* styles/preflight1.css */
+button,
+button::after {
+  all: unset;
+}
 
-@layer base {
-  html,
-  page {
-    font-size: var(--font-size, 16px);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+```
+
+```css
+/* styles/tailwind-base.css */
+@tailwind base;
+```
+
+```css
+/* styles/preflight2.css */
+html,
+page {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ```
 
