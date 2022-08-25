@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.15.2
+
+- fix: fix docs
+
 ## 0.15.1
 
 - fix: fix exports
