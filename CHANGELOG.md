@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.16.0
+
+- feat: add more classes
+
 ## 0.15.2
 
 - fix: fix docs
