@@ -44,6 +44,7 @@ module.exports = {
   <ul>
     <li>Extend <code>columns</code>.</li>
     <li>Extend <code>spacing</code>.</li>
+    <li>Extend <code>aspect-ratio</code>.</li>
     <li>Extend <code>blur</code>.</li>
     <li>Extend <code>brightness</code>.</li>
     <li>Extend <code>borderRadius</code>.</li>

@@ -44,6 +44,7 @@ module.exports = {
   <ul>
     <li>扩展了 <code>columns</code>。</li>
     <li>扩展了 <code>spacing</code>。</li>
+    <li>扩展了 <code>aspect-ratio</code>。</li>
     <li>扩展了 <code>blur</code>。</li>
     <li>扩展了 <code>brightness</code>。</li>
     <li>扩展了 <code>borderRadius</code>。</li>
