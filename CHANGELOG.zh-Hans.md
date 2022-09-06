@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.17.0
+
+- feat: 扩展 `aspect-ratio` 配置
+
 ## 0.16.0
 
 - feat: 增加更多的类名

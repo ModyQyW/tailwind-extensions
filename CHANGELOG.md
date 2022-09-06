@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.17.0
+
+- feat: extend `aspect-ratio` configs
+
 ## 0.16.0
 
 - feat: add more classes
