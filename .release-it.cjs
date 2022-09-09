@@ -13,4 +13,7 @@ module.exports = {
     'before:init': 'pnpm install && pnpm run lint',
     'after:bump': 'pnpm run build',
   },
+  npm: {
+    timeout: 30,
+  },
 };
