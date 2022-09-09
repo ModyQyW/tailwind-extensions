@@ -493,6 +493,7 @@ button::after {
 
 button {
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
 ```
 
@@ -620,6 +621,7 @@ button::after {
 
 button {
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
 }
 ```
 
