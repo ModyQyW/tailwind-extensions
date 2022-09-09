@@ -506,7 +506,8 @@ button {
 /* styles/preflight2.css */
 html,
 page {
-  font-size: var(--font-size, 16px);
+  /* Add !important in miniprogram to make sure it works */
+  font-size: var(--font-size, 16px) !important;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -636,6 +637,7 @@ button {
 /* styles/preflight2.css */
 html,
 page {
+  /* Should add !important in miniprogram to make sure it works */
   font-size: var(--font-size, 16px);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;

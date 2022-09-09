@@ -506,7 +506,8 @@ button {
 /* styles/preflight2.css */
 html,
 page {
-  font-size: var(--font-size, 16px);
+  /* 在小程序，增加 !important 保证不会被框架自带样式覆盖 */
+  font-size: var(--font-size, 16px) !important;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -634,6 +635,7 @@ button {
 /* styles/preflight2.css */
 html,
 page {
+  /* 在小程序，需要增加 !important 保证不会被框架自带样式覆盖 */
   font-size: var(--font-size, 16px);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
