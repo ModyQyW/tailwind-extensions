@@ -1,22 +1,24 @@
 {
-  "name": "@modyqyw/tailwind-presets",
+  "name": "tailwind-extensions",
   "version": "0.17.1",
-  "description": "Tailwind presets.",
+  "description": "Extensions for tailwindcss@3.",
   "keywords": [
     "tailwind",
     "tailwindcss",
+    "extension",
+    "plugin",
     "preset",
     "ant-design",
     "element-plus",
     "miniprogram"
   ],
-  "homepage": "https://github.com/ModyQyW/tailwind-presets#readme",
+  "homepage": "https://github.com/ModyQyW/tailwind-tailwind-extensions#readme",
   "bugs": {
-    "url": "https://github.com/ModyQyW/tailwind-presets/issues"
+    "url": "https://github.com/ModyQyW/tailwind-extensions/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ModyQyW/tailwind-presets.git"
+    "url": "git+https://github.com/ModyQyW/tailwind-extensions.git"
   },
   "license": "MIT",
   "author": {
