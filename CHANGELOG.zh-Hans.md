@@ -1,5 +1,9 @@
 # Changelog
 
+## 未发布
+
+- fix: 修复构建
+
 ## 0.17.0
 
 - feat: 扩展 `aspect-ratio` 配置
