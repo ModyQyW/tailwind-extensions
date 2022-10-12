@@ -8,8 +8,7 @@
     "preset",
     "ant-design",
     "element-plus",
-    "miniprogram",
-    "miniprogram-preflight"
+    "miniprogram"
   ],
   "homepage": "https://github.com/ModyQyW/tailwind-presets#readme",
   "bugs": {
@@ -49,8 +48,7 @@
   },
   "dependencies": {
     "@ant-design/colors": "^6.0.0",
-    "@types/color": "^3.0.3",
-    "color": "^4.2.3",
+    "@ctrl/tinycolor": "^3.4.1",
     "tailwindcss-theme-swapper": "^0.6.2"
   },
   "devDependencies": {
