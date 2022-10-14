@@ -41,7 +41,7 @@ const convert = (colors: string[]) => {
 
 export const antDesignPreset = ({
   /** Base */
-  baseSelectors = [':root', 'page'],
+  baseSelectors = [':root'],
   baseMediaQuery = '',
 
   basePrimary = '#1890ff',

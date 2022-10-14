@@ -61,7 +61,7 @@ const convert = <T extends ColorInput = ColorInput>({
 
 export const elementPlusPreset = ({
   /** Base */
-  baseSelectors = [':root', 'page'],
+  baseSelectors = [':root'],
   baseMediaQuery = '',
 
   basePrimary = '#409eff',
