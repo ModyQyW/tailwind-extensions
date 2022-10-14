@@ -1,8 +1,12 @@
 // @ts-ignore
 import themeSwapper from 'tailwindcss-theme-swapper';
-import { Config } from './types';
+import { Config } from 'tailwindcss';
 
-export default ({ selectors = ['.easy'], mediaQuery = '', fontSize = '24px' } = {}): Config => ({
+export const easyPreset = ({
+  selectors = ['.easy'],
+  mediaQuery = '',
+  fontSize = '24px',
+} = {}): Partial<Config> => ({
   plugins: [
     themeSwapper({
       themes: [
@@ -19,5 +23,4 @@ export default ({ selectors = ['.easy'], mediaQuery = '', fontSize = '24px' } = 
       ],
     }),
   ],
-  theme: {},
 });
