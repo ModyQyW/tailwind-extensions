@@ -1,111 +1,60 @@
-# @modyqyw/tailwind-presets
+# tailwind-extensions
 
-[![npm](https://img.shields.io/npm/v/@modyqyw/tailwind-presets)](https://www.npmjs.com/package/@modyqyw/tailwind-presets)
+[![npm](https://img.shields.io/npm/v/tailwind-extensions)](https://www.npmjs.com/package/tailwind-extensions)
 
-[![GitHub license](https://img.shields.io/github/license/ModyQyW/tailwind-presets)](https://github.com/ModyQyW/tailwind-presets/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/ModyQyW/tailwind-extensions)](https://github.com/ModyQyW/tailwind-extensions/blob/main/LICENSE)
 
 English | [简体中文](./README.zh-hans.md)
 
-Opinionated TailwindCSS v3 presets.
+Opinionated TailwindCSS v3 extensions.
 
-Adaptations of TailwindCSS v3 to different UI libraries / miniprogram are provided.
+- TailwindCSS v3 enhanced preset for default config.
+- TailwindCSS v3 and [Ant Design](https://ant.design/) compat preset
+- TailwindCSS v3 and [element-plus](https://element-plus.org/) compat preset
+- TailwindCSS v3 and miniprogram compat preset
+- TailwindCSS v3 and easy mode compat preset
 
 ## Usage
 
 ```sh
-npm install @modyqyw/tailwind-presets
+npm install tailwind-extensions
 ```
 
 Then update your TailwindCSS config.
 
-### base
+### Presets
 
-This preset extends the default configuration of TailwindCSS. [View Preset](./src/base.ts)
+#### `basePreset`
+
+This preset enhances TailwindCSS default config of TailwindCSS. With this preset you can reduce the use of arbitrary values to keep your attention focused and improve code cleanliness.
 
 ```js
-const { base } = require('@modyqyw/tailwind-presets');
+const { basePreset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
-  presets: [base],
+  presets: [basePreset],
 };
 ```
 
-<details>
-  <summary>When might I use this preset?</summary>
-  <p>The TailwindCSS default configuration is sufficient for most cases. However, in situations where <strong>a high degree of customization is required</strong>, heavy use of <code>[xxx]</code> can be distracting and reduce code cleanliness.</p>
-  <p>This preset considers these situations. You should be able to reduce the use of <code> [xxx] </code> after using this preset.</p>
-  <p>Recommend <a href="https://windicss.org/" target="_blank">WindiCSS</a> and <a href="https://github.com/unocss/unocss" target="_blank">UnoCSS</a> besides TailwindCSS.</p>
-</details>
+Check out [UnoCss](https://github.com/unocss/unocss) if you have a stronger need for arbitrary values.
 
-<details>
-  <summary>I would like to know what this preset has probably done.</summary>
-  <ul>
-    <li>Extend <code>columns</code>.</li>
-    <li>Extend <code>spacing</code>.</li>
-    <li>Extend <code>aspect-ratio</code>.</li>
-    <li>Extend <code>blur</code>.</li>
-    <li>Extend <code>brightness</code>.</li>
-    <li>Extend <code>borderRadius</code>.</li>
-    <li>Extend <code>borderWidth</code>.</li>
-    <li>Extend <code>contrast</code>.</li>
-    <li>Extend <code>hueRotate</code>.</li>
-    <li>Extend <code>flexBasis</code>.</li>
-    <li>Extend <code>flexGrow</code>.</li>
-    <li>Extend <code>flexShrink</code>.</li>
-    <li>Extend <code>fontSize</code>.</li>
-    <li>Extend <code>fontWeight</code>.</li>
-    <li>Extend <code>gridColumn</code>.</li>
-    <li>Extend <code>gridColumnEnd</code>.</li>
-    <li>Extend <code>gridColumnStart</code>.</li>
-    <li>Extend <code>gridRow</code>.</li>
-    <li>Extend <code>gridRowStart</code>.</li>
-    <li>Extend <code>gridRowEnd</code>.</li>
-    <li>Extend <code>gridTemplateColumns</code>.</li>
-    <li>Extend <code>gridTemplateRows</code>.</li>
-    <li>Extend <code>height</code>.</li>
-    <li>Extend <code>inset</code>.</li>
-    <li>Extend <code>lineHeight</code>.</li>
-    <li>Extend <code>maxHeight</code>.</li>
-    <li>Extend <code>maxWidth</code>.</li>
-    <li>Extend <code>minHeight</code>.</li>
-    <li>Extend <code>minWidth</code>.</li>
-    <li>Extend <code>opacity</code>.</li>
-    <li>Extend <code>order</code>.</li>
-    <li>Extend <code>outlineOffset</code>.</li>
-    <li>Extend <code>outlineWidth</code>.</li>
-    <li>Extend <code>ringOffsetWidth</code>.</li>
-    <li>Extend <code>ringWidth</code>.</li>
-    <li>Extend <code>rotate</code>.</li>
-    <li>Extend <code>saturate</code>.</li>
-    <li>Extend <code>scale</code>.</li>
-    <li>Extend <code>skew</code>.</li>
-    <li>Extend <code>textDecorationThickness</code>.</li>
-    <li>Extend <code>textUnderlineOffset</code>.</li>
-    <li>Extend <code>transitionDelay</code>.</li>
-    <li>Extend <code>transitionDuration</code>.</li>
-    <li>Extend <code>translate</code>.</li>
-    <li>Extend <code>width</code>.</li>
-    <li>Extend <code>zIndex</code>.</li>
-  </ul>
-</details>
+#### `antDesignPreset`
 
-### ant-design
-
-This preset provides configurations related to `Ant Design`. [View Preset](./src/base.ts)
+This preset provides `Ant Design` compat config.
 
 ```js
-const { base, antDesign } = require('@modyqyw/tailwind-presets');
+const { basePreset, antDesignPreset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    base,
-    antDesign({
+    basePreset,
+    antDesignPreset({
       /** Base */
-      baseSelectors = [':root', 'page'],
+      baseSelectors = [':root'],
       baseMediaQuery = '',
 
       basePrimary = '#1890ff',
@@ -158,31 +107,9 @@ module.exports = {
 };
 ```
 
-<details>
-  <summary>When might I use this preset?</summary>
-  <p>This preset will be useful if you are using some UI libraries following <code>Ant Design</code> (e.g. <code>antd</code> and <code>ant-design-vue</code>) and TailwindCSS.</p>
-</details>
-
-<details>
-  <summary>I would like to know what this preset has probably done.</summary>
-  <ul>
-    <li>Set <code>darkMode</code> to <code>class</code>.</li>
-    <li>Set <code>safelist</code> to <code>['dark']</code>.</li>
-    <li>Replace <code>screens</code>.</li>
-    <li>Extend <code>colors</code>.</li>
-    <li>Extend <code>backgroundColor</code>.</li>
-    <li>Extend <code>borderColor</code>.</li>
-    <li>Extend <code>fontFamily</code>.</li>
-    <li>Extend <code>textColor</code>.</li>
-    <li>Extend <code>boxShadow</code>.</li>
-  </ul>
-</details>
-
-#### Extra Configs
-
 When using this preset, you need to control when to add `class="dark"` to the page container element. [usehooks-ts useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode) and [VueUse useDark](https://vueuse.org/core/usedark/) are recommended.
 
-TailwindCSS `preflight` may conflict with the styles associated with the `Ant Design` specification. Please refer to the example below for adjustments.
+`@tailwind base` styles may conflict with the styles associated with the `Ant Design` specification. Please refer to the example below for adjustments.
 
 ```ts
 // project entry main.ts
@@ -237,21 +164,21 @@ page {
 @tailwind utilities;
 ```
 
-### element-plus
+#### `elementPlusPreset`
 
-This preset provides configurations related to `element-plus`. [View Preset](./src/base.ts)
+This preset provides `element-plus` compat config.
 
 ```js
-const { base, elementPlus } = require('@modyqyw/tailwind-presets');
+const { basePreset, elementPlusPreset} = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    base,
-    elementPlus({
+    basePreset,
+    elementPlusPreset({
       /** Base */
-      baseSelectors = [':root', 'page'],
+      baseSelectors = [':root'],
       baseMediaQuery = '',
 
       basePrimary = '#409eff',
@@ -338,31 +265,9 @@ module.exports = {
 };
 ```
 
-<details>
-  <summary>When might I use this preset?</summary>
-  <p>This preset will be useful if you are using <code>element-plus</code> and TailwindCSS.</p>
-</details>
-
-<details>
-  <summary>I would like to know what this preset has probably done.</summary>
-  <ul>
-    <li>Set <code>darkMode</code> to <code>class</code>.</li>
-    <li>Set <code>safelist</code> to <code>['dark']</code>.</li>
-    <li>Replace <code>screens</code>.</li>
-    <li>Extend <code>colors</code>.</li>
-    <li>Extend <code>backgroundColor</code>.</li>
-    <li>Extend <code>borderColor</code>.</li>
-    <li>Extend <code>textColor</code>.</li>
-    <li>Extend <code>fontFamily</code>.</li>
-    <li>Extend <code>boxShadow</code>.</li>
-  </ul>
-</details>
-
-#### Extra Configs
-
 When using this preset, you need to control when to add `class="dark"` to the page container element. [VueUse useDark](https://vueuse.org/core/usedark/) is recommended.
 
-TailwindCSS `preflight` may conflict with the `element-plus` styles. Please refer to the example below for adjustments.
+`@tailwind base` styles may conflict with the `element-plus` styles. Please refer to the example below for adjustments.
 
 ```ts
 // project entry main.ts
@@ -412,157 +317,40 @@ page {
 @tailwind utilities;
 ```
 
-### miniprogram
+#### `miniprogramBasePreset`
 
-This preset extends the default configuration of TailwindCSS for miniprogram. [View Preset](./src/miniprogram.ts)
+This preset enhances TailwindCSS default config of TailwindCSS, providing key-value pairs related to `rpx`, only for miniprogram.
 
 ```js
-const { base, miniprogramBase, miniprogramScreens, miniprogramSeparator } = require('@modyqyw/tailwind-presets');
+const { basePreset, miniprogramBasePreset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    base,
-    miniprogramBase,
-    miniprogramScreens,
-    miniprogramSeparator,
+    basePreset,
+    miniprogramBasePreset,
   ],
 };
 ```
 
-**Note: Be sure to include `page` in `baseSelectors` if you use another preset and that preset can accept `baseSelectors` for configuration (this is a default behavior), as miniprogram may not recognize the `:root` style.**
+Be sure to include `page` in `baseSelectors` if you use another preset and that preset can accept `baseSelectors` for configuration, as miniprogram may not recognize the `:root` style.
 
-<details>
-  <summary>When might I use this preset?</summary>
-  <p>This preset will be useful if you are developing miniprogram with TailwindCSS.</p>
-</details>
+`@tailwind base` styles cannot run in miniprogram. Please use [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind), [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) or others to deal with it.
 
-<details>
-  <summary>I would like to know what this preset has probably done.</summary>
-  <ul>
-    <li>(screens) Disable <code>screens</code>.</li>
-    <li>(separator) Replace <code>separator</code>.</li>
-    <li>(base) Extend <code>spacing</code>.</li>
-    <li>(base) Extend <code>borderRadius</code>.</li>
-    <li>(base) Extend <code>borderWidth</code>.</li>
-    <li>(base) Extend <code>flexBasis</code>.</li>
-    <li>(base) Extend <code>height</code>.</li>
-    <li>(base) Extend <code>inset</code>.</li>
-    <li>(base) Extend <code>translate</code>.</li>
-    <li>(base) Extend <code>width</code>.</li>
-  </ul>
-</details>
+#### `easyPreset`
 
-#### Extra Configs
-
-TailwindCSS `base` generated style code contains selectors `*` and tags that are not supported by miniprogram. Please refer to the example below for adjustments.
-
-```ts
-// project entry main.ts
-
-// custom preflight 1
-import './styles/preflight1.css';
-
-// third-party preflight
-import 'modern-normalize';
-
-// TailwindCSS base
-import './styles/tailwind-base.css';
-
-// custom preflight 2
-import './styles/preflight2.css';
-
-// UI library styles
-// import 'xx/yy.css';
-
-// TailwindCSS base + components + utilities
-// maybe override UI library preflight if move TailwindCSS base here
-import './styles/tailwind.css';
-
-// any other global styles you need
-import './styles/global.css';
-```
-
-```css
-/* styles/preflight1.css */
-button,
-button::after {
-  all: unset;
-}
-
-button {
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-}
-```
-
-```css
-/* styles/tailwind-base.css */
-@tailwind base;
-```
-
-```css
-/* styles/preflight2.css */
-html,
-page {
-  /* Add !important in miniprogram to make sure it works */
-  font-size: var(--font-size, 16px) !important;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-```
-
-```css
-/* styles/tailwind.css */
-@tailwind components;
-@tailwind utilities;
-```
+This preset provides easy mode compat config.
 
 ```js
-// postcss config file, e.g. .postcssrc.cjs
-// replace selectors in @tailwind base
-module.exports = {
-  plugins: {
-    'tailwindcss/nesting': {},
-    tailwindcss: {},
-    'postcss-preset-env': {
-      stage: 3,
-      features: { 'nesting-rules': false },
-    },
-    'postcss-selector-replace': {
-      before: ['html', 'body', 'img', 'span', /^a$/, '*'],
-      after: [
-        'html,page',
-        'body,page',
-        'img,image',
-        'span,text',
-        'a,functional-page-navigator,navigator',
-        'html,body,page,cover-image,cover-view,match-media,movable-area,movable-view,scroll-view,swiper,swiper-item,view,icon,progress,rich-text,text,button,checkbox,checkbox-group,editor,form,input,label,picker,picker-view,picker-view-column,radio,radio-group,slider,switch,textarea,functional-page-navigator,navigator,audio,camera,image,live-player,live-pusher,video,voip-room,map,canvas,ad,ad-custom,official-account,open-data,web-view,navigation-bar,page-meta',
-      ],
-    },
-  },
-};
-```
-
-**Note: You still can't use classes with `!`, `:`, and other classes with special characters. To break these restrictions, check out [unplugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/unplugin-uni-app-tailwind), [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind), [unocss-preset-uni](<https://github.com/zguolee/unocss>- preset-uni) and [unocss-preset-weapp](https://github.com/MellowCo/unocss-preset-weapp).**
-
-Translated with www.DeepL.com/Translator (free version)
-
-### easy
-
-This preset provides configurations related to miniprogram. [View Preset](./src/easy.ts)
-
-```js
-const { base, easy } = require('@modyqyw/tailwind-presets');
+const { basePreset, easyPreset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
-    base,
-    easy({
+    basePreset,
+    easyPreset({
       selectors: ['.easy'],
       mediaQuery: '',
       fontSize: '24px',
@@ -570,20 +358,6 @@ module.exports = {
   ],
 };
 ```
-
-<details>
-  <summary>When might I use this preset?</summary>
-  <p>This preset will be useful if you are developing easy mode with TailwindCSS.</p>
-</details>
-
-<details>
-  <summary>I would like to know what this preset has probably done.</summary>
-  <ul>
-    <li>Extend <code>fontSize</code>.</li>
-  </ul>
-</details>
-
-#### Extra Configs
 
 When using this preset, you need to control when to add `class="easy"` to the page container element. Refer to [usehooks-ts useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode) and [VueUse useDark](https://vueuse.org/core/usedark/).
 
@@ -613,19 +387,6 @@ import './styles/tailwind.css';
 
 // any other global styles you need
 import './styles/global.css';
-```
-
-```css
-/* styles/preflight1.css */
-button,
-button::after {
-  all: unset;
-}
-
-button {
-  -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
-}
 ```
 
 ```css
