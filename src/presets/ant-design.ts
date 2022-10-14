@@ -1,7 +1,7 @@
 // @ts-ignore
 import themeSwapper from 'tailwindcss-theme-swapper';
 import { generate, presetPalettes, presetDarkPalettes } from '@ant-design/colors';
-import { Config } from './types';
+import { Config } from 'tailwindcss';
 
 const convert = (colors: string[]) => {
   return {
@@ -39,7 +39,7 @@ const convert = (colors: string[]) => {
   };
 };
 
-export default ({
+export const antDesignPreset = ({
   /** Base */
   baseSelectors = [':root', 'page'],
   baseMediaQuery = '',
@@ -89,7 +89,7 @@ export default ({
   darkDisabledText = 'rgba(255, 255, 255, 0.3)',
 
   darkBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
-} = {}): Config => ({
+} = {}): Partial<Config> => ({
   darkMode: 'class',
   safelist: ['dark'],
   plugins: [
@@ -134,6 +134,8 @@ export default ({
               blue: convert(presetPalettes.blue),
 
               geekblue: convert(presetPalettes.geekblue),
+
+              geekBlue: convert(presetPalettes.geekblue),
 
               purple: convert(presetPalettes.purple),
 
