@@ -1,9 +1,9 @@
 // @ts-ignore
 import themeSwapper from 'tailwindcss-theme-swapper';
-import Color from 'color';
-import { Config, ColorParam } from './types';
+import { TinyColor, ColorInput } from '@ctrl/tinycolor';
+import { Config } from 'tailwindcss';
 
-const convert = <T extends ColorParam = ColorParam>({
+const convert = <T extends ColorInput = ColorInput>({
   color,
   lightenColor,
   darkenColor,
@@ -11,55 +11,55 @@ const convert = <T extends ColorParam = ColorParam>({
   color?: T;
   lightenColor?: T;
   darkenColor?: T;
-}) => {
-  const c = Color(color);
-  const lc = Color(lightenColor || 'white');
-  const dc = Color(darkenColor || 'black');
+} = {}) => {
+  const c = new TinyColor(color);
+  const lc = new TinyColor(lightenColor || 'white');
+  const dc = new TinyColor(darkenColor || 'black');
   return {
-    DEFAULT: c.hex(),
-    hover: c.mix(lc, 0.3).hex(),
-    active: c.mix(dc, 0.2).hex(),
-    disabled: c.mix(lc, 0.5).hex(),
-    'lighten-9': c.mix(lc, 0.9).hex(),
-    'light-9': c.mix(lc, 0.9).hex(),
-    'lighten-8': c.mix(lc, 0.8).hex(),
-    'light-8': c.mix(lc, 0.8).hex(),
-    'lighten-7': c.mix(lc, 0.7).hex(),
-    'light-7': c.mix(lc, 0.7).hex(),
-    'lighten-6': c.mix(lc, 0.6).hex(),
-    'light-6': c.mix(lc, 0.6).hex(),
-    'lighten-5': c.mix(lc, 0.5).hex(),
-    'light-5': c.mix(lc, 0.5).hex(),
-    'lighten-4': c.mix(lc, 0.4).hex(),
-    'light-4': c.mix(lc, 0.4).hex(),
-    'lighten-3': c.mix(lc, 0.3).hex(),
-    'light-3': c.mix(lc, 0.3).hex(),
-    'lighten-2': c.mix(lc, 0.2).hex(),
-    'light-2': c.mix(lc, 0.2).hex(),
-    'lighten-1': c.mix(lc, 0.1).hex(),
-    'light-1': c.mix(lc, 0.1).hex(),
-    'darken-1': c.mix(dc, 0.1).hex(),
-    'dark-1': c.mix(dc, 0.1).hex(),
-    'darken-2': c.mix(dc, 0.2).hex(),
-    'dark-2': c.mix(dc, 0.2).hex(),
-    'darken-3': c.mix(dc, 0.3).hex(),
-    'dark-3': c.mix(dc, 0.3).hex(),
-    'darken-4': c.mix(dc, 0.4).hex(),
-    'dark-4': c.mix(dc, 0.4).hex(),
-    'darken-5': c.mix(dc, 0.5).hex(),
-    'dark-5': c.mix(dc, 0.5).hex(),
-    'darken-6': c.mix(dc, 0.6).hex(),
-    'dark-6': c.mix(dc, 0.6).hex(),
-    'darken-7': c.mix(dc, 0.7).hex(),
-    'dark-7': c.mix(dc, 0.7).hex(),
-    'darken-8': c.mix(dc, 0.8).hex(),
-    'dark-8': c.mix(dc, 0.8).hex(),
-    'darken-9': c.mix(dc, 0.9).hex(),
-    'dark-9': c.mix(dc, 0.9).hex(),
+    DEFAULT: c.toHexString(),
+    hover: c.mix(lc, 0.3).toHexString(),
+    active: c.mix(dc, 0.2).toHexString(),
+    disabled: c.mix(lc, 0.5).toHexString(),
+    'lighten-9': c.mix(lc, 0.9).toHexString(),
+    'light-9': c.mix(lc, 0.9).toHexString(),
+    'lighten-8': c.mix(lc, 0.8).toHexString(),
+    'light-8': c.mix(lc, 0.8).toHexString(),
+    'lighten-7': c.mix(lc, 0.7).toHexString(),
+    'light-7': c.mix(lc, 0.7).toHexString(),
+    'lighten-6': c.mix(lc, 0.6).toHexString(),
+    'light-6': c.mix(lc, 0.6).toHexString(),
+    'lighten-5': c.mix(lc, 0.5).toHexString(),
+    'light-5': c.mix(lc, 0.5).toHexString(),
+    'lighten-4': c.mix(lc, 0.4).toHexString(),
+    'light-4': c.mix(lc, 0.4).toHexString(),
+    'lighten-3': c.mix(lc, 0.3).toHexString(),
+    'light-3': c.mix(lc, 0.3).toHexString(),
+    'lighten-2': c.mix(lc, 0.2).toHexString(),
+    'light-2': c.mix(lc, 0.2).toHexString(),
+    'lighten-1': c.mix(lc, 0.1).toHexString(),
+    'light-1': c.mix(lc, 0.1).toHexString(),
+    'darken-1': c.mix(dc, 0.1).toHexString(),
+    'dark-1': c.mix(dc, 0.1).toHexString(),
+    'darken-2': c.mix(dc, 0.2).toHexString(),
+    'dark-2': c.mix(dc, 0.2).toHexString(),
+    'darken-3': c.mix(dc, 0.3).toHexString(),
+    'dark-3': c.mix(dc, 0.3).toHexString(),
+    'darken-4': c.mix(dc, 0.4).toHexString(),
+    'dark-4': c.mix(dc, 0.4).toHexString(),
+    'darken-5': c.mix(dc, 0.5).toHexString(),
+    'dark-5': c.mix(dc, 0.5).toHexString(),
+    'darken-6': c.mix(dc, 0.6).toHexString(),
+    'dark-6': c.mix(dc, 0.6).toHexString(),
+    'darken-7': c.mix(dc, 0.7).toHexString(),
+    'dark-7': c.mix(dc, 0.7).toHexString(),
+    'darken-8': c.mix(dc, 0.8).toHexString(),
+    'dark-8': c.mix(dc, 0.8).toHexString(),
+    'darken-9': c.mix(dc, 0.9).toHexString(),
+    'dark-9': c.mix(dc, 0.9).toHexString(),
   };
 };
 
-const config = ({
+export const elementPlusPreset = ({
   /** Base */
   baseSelectors = [':root', 'page'],
   baseMediaQuery = '',
@@ -143,7 +143,7 @@ const config = ({
   darkExtraLightBorder = '#2b2b2c',
 
   darkBoxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.36), 0px 8px 20px rgba(0, 0, 0, 0.72)',
-} = {}): Config => ({
+} = {}): Partial<Config> => ({
   darkMode: 'class',
   safelist: ['dark'],
   plugins: [
@@ -315,5 +315,3 @@ const config = ({
     },
   },
 });
-
-export default config;
