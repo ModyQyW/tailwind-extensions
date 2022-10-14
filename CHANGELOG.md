@@ -1,8 +1,22 @@
 # Changelog
 
-## Unreleased
+## 0.18.0 (2022-10-14)
 
+- feat!: `@modyqyw/tailwind-presets` -> `tailwind-extensions`
+- feat!: update exports
+  - `base` -> `basePreset`
+  - `antDesign` -> `antDesignPreset`
+  - `elementPlus` -> `elementPlusPreset`
+  - `miniprogramBase` -> `miniprogramBasePreset`
+  - `miniprogramScreens` -> `miniprogramScreensPreset`
+- feat: update `basePreset`
+- feat: update `antDesignPreset`
+- feat!: update `miniprogramPreset`
+  - No longer set key-value pairs related to special symbols like `.` and `/`. Use [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind) and [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) if you need.
+- feat!: remove `miniprogramSeparatorPreset`
+  - Use [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind) and [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) if you need.
 - fix: fix build
+- fix: fix `easyPreset` empty theme
 
 ## 0.17.0
 

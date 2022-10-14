@@ -1,8 +1,22 @@
 # Changelog
 
-## 未发布
+## 0.18.0 (2022-10-14)
 
+- feat!: `@modyqyw/tailwind-presets` -> `tailwind-extensions`
+- feat!: 调整导出
+  - `base` -> `basePreset`
+  - `antDesign` -> `antDesignPreset`
+  - `elementPlus` -> `elementPlusPreset`
+  - `miniprogramBase` -> `miniprogramBasePreset`
+  - `miniprogramScreens` -> `miniprogramScreensPreset`
+- feat: 更新 `basePreset`
+- feat: 更新 `antDesignPreset`
+- feat!: 更新 `miniprogramPreset`
+  - 现在不再设置 `.`、`/` 等特殊符号对等的键值对，如有需要请使用 [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind)、[vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) 等处理
+- feat!: 移除 `miniprogramSeparatorPreset`
+  - 如有需要请使用 [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind)、[vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) 等处理
 - fix: 修复构建
+- fix: 修复 `easyPreset` 错误设置 `theme` 的问题
 
 ## 0.17.0
 
