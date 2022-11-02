@@ -54,13 +54,13 @@
     "tailwindcss-theme-swapper": "^0.6.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
-    "@commitlint/prompt": "^17.1.2",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@commitlint/prompt": "^17.2.0",
     "@release-it/conventional-changelog": "^5.1.1",
     "@tsconfig/node16": "^1.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
     "commitizen": "^4.2.5",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
