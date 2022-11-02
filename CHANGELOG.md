@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.19.2 (2022-11-02)
+
+- fix: fix types
+
 ## 0.19.1 (2022-11-02)
 
 - fix: fix `element-plus` colors
