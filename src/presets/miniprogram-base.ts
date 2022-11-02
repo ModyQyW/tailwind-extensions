@@ -1,6 +1,7 @@
 import { Config } from 'tailwindcss';
 
-export const miniprogramBasePreset: Partial<Config> = {
+export const miniprogramBasePreset: Config = {
+  content: [],
   theme: {
     extend: {
       spacing: {

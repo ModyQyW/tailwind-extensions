@@ -6,7 +6,8 @@ export const easyPreset = ({
   selectors = ['.easy'],
   mediaQuery = '',
   fontSize = '24px',
-} = {}): Partial<Config> => ({
+} = {}): Config => ({
+  content: [],
   plugins: [
     themeSwapper({
       themes: [

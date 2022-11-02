@@ -1,6 +1,7 @@
 import { Config } from 'tailwindcss';
 
-export const basePreset: Partial<Config> = {
+export const basePreset: Config = {
+  content: [],
   theme: {
     extend: {
       columns: {
