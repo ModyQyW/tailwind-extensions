@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.19.0 (2022-11-02)
+
+- feat!: update `aspectRatio` config, following [here](https://github.com/tailwindlabs/tailwindcss-aspect-ratio#compatibility-with-default-aspect-ratio-utilities)
+
 ## 0.18.0 (2022-10-14)
 
 - feat!: `tailwind-extensions` -> `tailwind-extensions`
