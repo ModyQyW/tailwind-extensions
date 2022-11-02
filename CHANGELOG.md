@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.19.1 (2022-11-02)
+
+- fix: fix `element-plus` colors
+
 ## 0.19.0 (2022-11-02)
 
 - feat!: update `aspectRatio` config, following [here](https://github.com/tailwindlabs/tailwindcss-aspect-ratio#compatibility-with-default-aspect-ratio-utilities)
