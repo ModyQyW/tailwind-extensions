@@ -39,7 +39,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup-node",
+    "build": "tsup",
     "check:types": "tsc --noEmit",
     "commit": "cz",
     "lint": "run-p lint:eslint lint:markdownlint check:types",
@@ -49,11 +49,11 @@
     "release-it": "release-it"
   },
   "dependencies": {
-    "@ant-design/colors": "^6.0.0",
     "@ctrl/tinycolor": "^3.4.1",
     "tailwindcss-theme-swapper": "^0.6.2"
   },
   "devDependencies": {
+    "@ant-design/colors": "^6.0.0",
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
     "@commitlint/prompt": "^17.2.0",
