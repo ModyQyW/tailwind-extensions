@@ -42,7 +42,7 @@ Check out [UnoCss](https://github.com/unocss/unocss) if you have a stronger need
 
 #### `antDesignPreset`
 
-This preset provides `Ant Design` compat config.
+This preset provides `Ant Design` colors compat config.
 
 ```js
 const { basePreset, antDesignPreset } = require('tailwind-extensions');
@@ -166,7 +166,7 @@ page {
 
 #### `elementPlusPreset`
 
-This preset provides `element-plus` compat config.
+This preset provides `element-plus` colors compat config.
 
 ```js
 const { basePreset, elementPlusPreset} = require('tailwind-extensions');

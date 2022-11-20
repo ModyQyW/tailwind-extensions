@@ -42,7 +42,7 @@ module.exports = {
 
 #### `antDesignPreset`
 
-这个预设提供了和 `Ant Design` 适配的配置。
+这个预设提供了和 `Ant Design` 适配的颜色配置。
 
 ```js
 const { basePreset, antDesignPreset } = require('tailwind-extensions');
@@ -166,7 +166,7 @@ page {
 
 #### `elementPlusPreset`
 
-这个预设提供了和 `element-plus` 适配的配置。
+这个预设提供了和 `element-plus` 适配的颜色配置。
 
 ```js
 const { basePreset, elementPlusPreset } = require('tailwind-extensions');
