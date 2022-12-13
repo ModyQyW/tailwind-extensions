@@ -6,7 +6,7 @@
 
 [English](./README.md) | 简体中文
 
-开箱即用的 TailwindCSS v3 扩展。
+开箱即用的 TailwindCSS v3 扩展。要求 `node >= 14.18`。
 
 - TailwindCSS v3 默认预设的增强预设
 - TailwindCSS v3 和 [Ant Design](https://ant.design/) 的适配预设

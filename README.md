@@ -6,7 +6,7 @@
 
 English | [简体中文](./README.zh-hans.md)
 
-Opinionated TailwindCSS v3 extensions.
+Opinionated TailwindCSS v3 extensions. Requires `node >= 14.18`.
 
 - TailwindCSS v3 enhanced preset for default config.
 - TailwindCSS v3 and [Ant Design](https://ant.design/) compat preset
