@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- feat!: require `node>=14.18`
+
 ## 0.19.2 (2022-11-02)
 
 - fix: fix types
