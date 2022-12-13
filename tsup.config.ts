@@ -9,7 +9,7 @@ export default defineConfig([
     minify: true,
     shims: true,
     splitting: false,
-    target: 'node14.16',
+    target: 'node14.18',
     footer: ({ format }) => {
       if (format === 'cjs') {
         return {
