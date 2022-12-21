@@ -40,9 +40,128 @@ module.exports = {
 
 Check out [UnoCss](https://github.com/unocss/unocss) if you have a stronger need for arbitrary values.
 
+#### `antDesignPreset`
+
+This preset provides `Ant Design` v5 colors compat config.
+
+```js
+const { basePreset, antDesignV4Preset } = require('tailwind-extensions');
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [...],
+  presets: [
+    basePreset,
+    antDesignV4Preset({
+      /** Base */
+      baseSelectors = [':root'],
+      baseMediaQuery = '',
+
+      basePrimary = '#1677ff',
+      baseSecondary = '#666666',
+      baseSuccess = '#52c41a',
+      baseWarning = '#faad14',
+      baseError = '#ff4d4f',
+      baseDanger = '#ff4d4f',
+      baseInfo = '#1677ff',
+
+      baseBg = '#ffffff',
+      baseMaskBg = 'rgba(0, 0, 0, 0.45)',
+      baseDisabledBg = 'rgba(0, 0, 0, 0.04)',
+
+      baseBorder = '#d9d9d9',
+
+      baseText = 'rgba(0, 0, 0, 0.85)',
+      basePrimaryText = 'rgba(0, 0, 0, 0.85)',
+      baseSecondaryText = 'rgba(0, 0, 0, 0.45)',
+      baseDisabledText = 'rgba(0, 0, 0, 0.25)',
+
+      baseBoxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+
+      /** Dark */
+      darkSelectors = ['.dark'],
+      darkMediaQuery = '',
+
+      darkPrimary = '#1668dc',
+      darkSecondary = '#5a5a5a',
+      darkSuccess = '#49aa19',
+      darkWarning = '#d89614',
+      darkError = '#dc4446',
+      darkDanger = '#dc4446',
+      darkInfo = '#1668dc',
+
+      darkBg = '#141414',
+      darkMaskBg = 'rgba(0, 0, 0, 0.45)',
+      darkDisabledBg = 'rgba(255, 255, 255, 0.08)',
+
+      darkBorder = '#434343',
+
+      darkText = 'rgba(255, 255, 255, 0.85)',
+      darkPrimaryText = 'rgba(255, 255, 255, 0.85)',
+      darkSecondaryText = 'rgba(255, 255, 255, 0.45)',
+      darkDisabledText = 'rgba(255, 255, 255, 0.3)',
+
+      darkBoxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+    }),
+  ],
+};
+```
+
+When using this preset, you need to control when to add `class="dark"` to the page container element. [usehooks-ts useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode) and [VueUse useDark](https://vueuse.org/core/usedark/) are recommended.
+
+`@tailwind base` styles may conflict with the styles associated with the `Ant Design` specification. Please refer to the example below for adjustments.
+
+```ts
+// project entry main.ts
+
+// custom preflight 1
+import './styles/preflight1.css';
+
+// third-party preflight
+import 'modern-normalize';
+
+// TailwindCSS base
+import './styles/tailwind-base.css';
+
+// custom preflight 2
+import './styles/preflight2.css';
+
+// antd preflight styles
+import 'antd/dist/reset.css';
+
+// TailwindCSS components + utilities
+// maybe override antd / ant-design-vue preflight if move TailwindCSS base here
+import './styles/tailwind.css';
+
+// any other global styles you need
+import './styles/global.css';
+```
+
+```css
+/* styles/tailwind-base.css */
+@tailwind base;
+```
+
+```css
+/* styles/preflight2.css */
+html,
+page {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
 #### `antDesignV4Preset`
 
-This preset provides `Ant Design` colors compat config.
+This preset provides `Ant Design` v4 colors compat config.
 
 ```js
 const { basePreset, antDesignV4Preset } = require('tailwind-extensions');

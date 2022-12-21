@@ -40,9 +40,128 @@ module.exports = {
 
 如果你有更强的动态值需求，请查看 [UnoCss](https://github.com/unocss/unocss)。
 
+#### `antDesignPreset`
+
+这个预设提供了和 `Ant Design` v5 适配的颜色配置。
+
+```js
+const { basePreset, antDesignV4Preset } = require('tailwind-extensions');
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [...],
+  presets: [
+    basePreset,
+    antDesignV4Preset({
+      /** Base */
+      baseSelectors = [':root'],
+      baseMediaQuery = '',
+
+      basePrimary = '#1677ff',
+      baseSecondary = '#666666',
+      baseSuccess = '#52c41a',
+      baseWarning = '#faad14',
+      baseError = '#ff4d4f',
+      baseDanger = '#ff4d4f',
+      baseInfo = '#1677ff',
+
+      baseBg = '#ffffff',
+      baseMaskBg = 'rgba(0, 0, 0, 0.45)',
+      baseDisabledBg = 'rgba(0, 0, 0, 0.04)',
+
+      baseBorder = '#d9d9d9',
+
+      baseText = 'rgba(0, 0, 0, 0.85)',
+      basePrimaryText = 'rgba(0, 0, 0, 0.85)',
+      baseSecondaryText = 'rgba(0, 0, 0, 0.45)',
+      baseDisabledText = 'rgba(0, 0, 0, 0.25)',
+
+      baseBoxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+
+      /** Dark */
+      darkSelectors = ['.dark'],
+      darkMediaQuery = '',
+
+      darkPrimary = '#1668dc',
+      darkSecondary = '#5a5a5a',
+      darkSuccess = '#49aa19',
+      darkWarning = '#d89614',
+      darkError = '#dc4446',
+      darkDanger = '#dc4446',
+      darkInfo = '#1668dc',
+
+      darkBg = '#141414',
+      darkMaskBg = 'rgba(0, 0, 0, 0.45)',
+      darkDisabledBg = 'rgba(255, 255, 255, 0.08)',
+
+      darkBorder = '#434343',
+
+      darkText = 'rgba(255, 255, 255, 0.85)',
+      darkPrimaryText = 'rgba(255, 255, 255, 0.85)',
+      darkSecondaryText = 'rgba(255, 255, 255, 0.45)',
+      darkDisabledText = 'rgba(255, 255, 255, 0.3)',
+
+      darkBoxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+    }),
+  ],
+};
+```
+
+使用这个预设时，需要自行控制何时在页面容器元素添加 `class="dark"`。推荐使用 [usehooks-ts useDarkMode](https://usehooks-ts.com/react-hook/use-dark-mode) 或 [VueUse useDark](https://vueuse.org/core/usedark/)。
+
+`@tailwind base` 生成的样式可能会和 `Ant Design` 规范相关的样式冲突，请参考下面的例子做调整。
+
+```ts
+// 项目入口文件，如 main.ts
+
+// 自定义 preflight 1
+import './styles/preflight1.css';
+
+// 第三方 preflight
+import 'modern-normalize';
+
+// TailwindCSS base
+import './styles/tailwind-base.css';
+
+// 自定义 preflight 2
+import './styles/preflight2.css';
+
+// antd preflight 样式
+import 'antd/dist/reset.css';
+
+// TailwindCSS components + utilities
+// 如果把 TailwindCSS base 移动到这里可能会覆盖 antd / ant-design-vue preflight
+import './styles/tailwind.css';
+
+// 其它你需要的全局样式
+import './styles/global.css';
+```
+
+```css
+/* styles/tailwind-base.css */
+@tailwind base;
+```
+
+```css
+/* styles/preflight2.css */
+html,
+page {
+  font-size: var(--font-size, 16px);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+```css
+/* styles/tailwind.css */
+@tailwind components;
+@tailwind utilities;
+```
+
 #### `antDesignV4Preset`
 
-这个预设提供了和 `Ant Design` 适配的颜色配置。
+这个预设提供了和 `Ant Design` v4 适配的颜色配置。
 
 ```js
 const { basePreset, antDesignV4Preset } = require('tailwind-extensions');
