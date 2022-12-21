@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.20.0 (2022-12-21)
 
 - feat!: require `node>=14.18`
 - feat!: `antDesignPreset` -> `antDesignV4Preset`
