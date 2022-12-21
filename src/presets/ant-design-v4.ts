@@ -39,7 +39,7 @@ const convert = (colors: string[]) => {
   };
 };
 
-export const antDesignPreset = ({
+export const antDesignV4Preset = ({
   /** Base */
   baseSelectors = [':root'],
   baseMediaQuery = '',
