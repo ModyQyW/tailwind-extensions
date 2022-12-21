@@ -455,7 +455,7 @@ module.exports = {
 
 Be sure to include `page` in `baseSelectors` if you use another preset and that preset can accept `baseSelectors` for configuration, as miniprogram may not recognize the `:root` style.
 
-`@tailwind base` styles cannot run in miniprogram. Please use [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind), [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) or others to deal with it.
+`@tailwind base` styles cannot run in miniprogram. Please use [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind), [@uni-helper/vite-plugin-uni-tailwind](https://github.com/uni-helper/vite-plugin-uni-tailwind) or others to deal with it.
 
 #### `easyPreset`
 

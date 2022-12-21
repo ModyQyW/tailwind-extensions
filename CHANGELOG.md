@@ -32,10 +32,10 @@
 - feat!: update `elementPlusPreset`
   - `baseSelectors` default value `[':root', 'page']` -> `[':root']`
 - feat!: update `miniprogramPreset`
-  - No longer set key-value pairs related to special symbols like `.` and `/`. Use [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind) and [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) if you need.
+  - No longer set key-value pairs related to special symbols like `.` and `/`. Use [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind) and [@uni-helper/vite-plugin-uni-tailwind](https://github.com/uni-helper/vite-plugin-uni-tailwind) if you need.
 - feat!: remove `miniprogramScreensPreset`
 - feat!: remove `miniprogramSeparatorPreset`
-  - Use [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind) and [vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) if you need.
+  - Use [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind) and [@uni-helper/vite-plugin-uni-tailwind](https://github.com/uni-helper/vite-plugin-uni-tailwind) if you need.
 - fix: fix build
 - fix: fix `easyPreset` empty theme
 

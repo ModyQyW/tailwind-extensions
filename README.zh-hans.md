@@ -455,7 +455,7 @@ module.exports = {
 
 如果你使用了其它可以传入 `baseSelectors` 的预设，建议在 `baseSelectors` 内包含 `page` 元素，这是因为小程序可能不能识别 `:root` 样式，指定小程序的根元素 `page` 作为兜底。
 
-`@tailwind base` 生成的样式不能正常运行在小程序上，请使用 [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind)、[vite-plugin-uni-app-tailwind](https://github.com/ModyQyW/uni-helper/tree/main/packages/vite-plugin-uni-app-tailwind) 等处理。
+`@tailwind base` 生成的样式不能正常运行在小程序上，请使用 [mini-program-tailwind](https://github.com/dcasia/mini-program-tailwind)、[@uni-helper/vite-plugin-uni-tailwind](https://github.com/uni-helper/vite-plugin-uni-tailwind) 等处理。
 
 #### `easyPreset`
 
