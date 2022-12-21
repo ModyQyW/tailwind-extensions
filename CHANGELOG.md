@@ -4,6 +4,7 @@
 
 - feat!: require `node>=14.18`
 - feat!: `antDesignPreset` -> `antDesignV4Preset`
+- feat: add `antDesignPreset`
 
 ## 0.19.2 (2022-11-02)
 
