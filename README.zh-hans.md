@@ -40,19 +40,19 @@ module.exports = {
 
 如果你有更强的动态值需求，请查看 [UnoCss](https://github.com/unocss/unocss)。
 
-#### `antDesignPreset`
+#### `antDesignV4Preset`
 
 这个预设提供了和 `Ant Design` 适配的颜色配置。
 
 ```js
-const { basePreset, antDesignPreset } = require('tailwind-extensions');
+const { basePreset, antDesignV4Preset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
     basePreset,
-    antDesignPreset({
+    antDesignV4Preset({
       /** Base */
       baseSelectors = [':root'],
       baseMediaQuery = '',

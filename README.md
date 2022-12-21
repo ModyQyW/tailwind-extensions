@@ -40,19 +40,19 @@ module.exports = {
 
 Check out [UnoCss](https://github.com/unocss/unocss) if you have a stronger need for arbitrary values.
 
-#### `antDesignPreset`
+#### `antDesignV4Preset`
 
 This preset provides `Ant Design` colors compat config.
 
 ```js
-const { basePreset, antDesignPreset } = require('tailwind-extensions');
+const { basePreset, antDesignV4Preset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [...],
   presets: [
     basePreset,
-    antDesignPreset({
+    antDesignV4Preset({
       /** Base */
       baseSelectors = [':root'],
       baseMediaQuery = '',
