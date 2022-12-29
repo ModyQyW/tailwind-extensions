@@ -1,7 +1,7 @@
 {
   "name": "tailwind-extensions",
   "version": "0.20.0",
-  "description": "Extensions for tailwindcss@3.",
+  "description": "Opinionated TailwindCSS v3 extensions",
   "keywords": [
     "tailwind",
     "tailwindcss",
