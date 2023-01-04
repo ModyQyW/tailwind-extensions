@@ -29,8 +29,8 @@
   "type": "module",
   "exports": {
     ".": {
-      "require": "./dist/index.mjs",
-      "import": "./dist/index.cjs",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
   },
