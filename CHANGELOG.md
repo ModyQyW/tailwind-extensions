@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.21.1 (2023-01-04)
+
+- fix: fix exports
+
 ## 0.21.0 (2023-01-04)
 
 - build: switch to `rollup`
