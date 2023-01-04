@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.21.0 (2023-01-04)
+
+- build: switch to `rollup`
+- feat!: require `tailwindcss@^3.2.0`
+
 ## 0.20.0 (2022-12-21)
 
 - feat!: require `node>=14.18`
