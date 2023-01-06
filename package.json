@@ -46,7 +46,7 @@
     "commit": "git-cz",
     "dev": "pnpm run build --watch",
     "lint": "run-p lint:eslint lint:markdownlint check:types",
-    "lint:eslint": "eslint . --fix --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx --ignore-path=.gitignore --cache",
+    "lint:eslint": "eslint . --ext=.js,.cjs,.mjs,.jsx,.ts,.cts,.mts,.tsx,.vue --fix --cache --no-error-on-unmatched-pattern --ignore-path=.gitignore",
     "lint:markdownlint": "markdownlint . --fix --ignore-path=.gitignore",
     "prepare": "is-ci || husky install",
     "release-it": "release-it"
