@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error no types
 import themeSwapper from 'tailwindcss-theme-swapper';
 import { Config } from 'tailwindcss';
 
