@@ -53,7 +53,7 @@ module.exports = {
   presets: [
     basePreset,
     antDesignV4Preset({
-      /** Base */
+      /** base */
       baseSelectors = [':root'],
       baseMediaQuery = '',
 
@@ -78,7 +78,7 @@ module.exports = {
 
       baseBoxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
 
-      /** Dark */
+      /** dark */
       darkSelectors = ['.dark'],
       darkMediaQuery = '',
 
@@ -172,7 +172,7 @@ module.exports = {
   presets: [
     basePreset,
     antDesignV4Preset({
-      /** Base */
+      /** base */
       baseSelectors = [':root'],
       baseMediaQuery = '',
 
@@ -197,7 +197,7 @@ module.exports = {
 
       baseBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
 
-      /** Dark */
+      /** dark */
       darkSelectors = ['.dark'],
       darkMediaQuery = '',
 
@@ -296,7 +296,7 @@ module.exports = {
   presets: [
     basePreset,
     elementPlusPreset({
-      /** Base */
+      /** base */
       baseSelectors = [':root'],
       baseMediaQuery = '',
 
@@ -338,7 +338,7 @@ module.exports = {
 
       baseBoxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08)',
 
-      /** Dark */
+      /** dark */
       darkSelectors = ['.dark'],
       darkMediaQuery = '',
 
