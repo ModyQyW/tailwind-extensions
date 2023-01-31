@@ -60,7 +60,7 @@ const convert = <T extends ColorInput = ColorInput>({
 };
 
 export const elementPlusPreset = ({
-  /** Base */
+  /** base */
   baseSelectors = [':root'],
   baseMediaQuery = '',
 
@@ -102,7 +102,7 @@ export const elementPlusPreset = ({
 
   baseBoxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08)',
 
-  /** Dark */
+  /** dark */
   darkSelectors = ['.dark'],
   darkMediaQuery = '',
 
