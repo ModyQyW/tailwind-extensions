@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- build: switch to `unbuild`
+
 ## 0.21.1 (2023-01-04)
 
 - fix: fix exports
