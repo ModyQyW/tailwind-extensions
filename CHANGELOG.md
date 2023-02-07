@@ -1,8 +1,9 @@
 # Changelog
 
-## Unreleased
+## 0.21.2 (2023-02-07)
 
 - build: switch to `unbuild`
+- fix: fix target
 
 ## 0.21.1 (2023-01-04)
 
