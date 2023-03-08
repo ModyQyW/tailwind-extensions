@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.22.0 (2023-03-08)
+
+- feat: extends more
+
 ## 0.21.2 (2023-02-07)
 
 - build: switch to `unbuild`

@@ -33,7 +33,7 @@ const { basePreset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [...],
+  content: [], // 设置你的 content
   presets: [basePreset],
 };
 ```
@@ -49,59 +49,60 @@ const { basePreset, antDesignV4Preset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [...],
+  content: [], // 设置你的 content
   presets: [
     basePreset,
     antDesignV4Preset({
+      // 调整你需要的值
       /** base */
-      baseSelectors = [':root'],
-      baseMediaQuery = '',
+      baseSelectors: [':root'],
+      baseMediaQuery: '',
 
-      basePrimary = '#1677ff',
-      baseSecondary = '#666666',
-      baseSuccess = '#52c41a',
-      baseWarning = '#faad14',
-      baseError = '#ff4d4f',
-      baseDanger = '#ff4d4f',
-      baseInfo = '#1677ff',
+      basePrimary: '#1677ff',
+      baseSecondary: '#666666',
+      baseSuccess: '#52c41a',
+      baseWarning: '#faad14',
+      baseError: '#ff4d4f',
+      baseDanger: '#ff4d4f',
+      baseInfo: '#1677ff',
 
-      baseBg = '#ffffff',
-      baseMaskBg = 'rgba(0, 0, 0, 0.45)',
-      baseDisabledBg = 'rgba(0, 0, 0, 0.04)',
+      baseBg: '#ffffff',
+      baseMaskBg: 'rgba(0, 0, 0, 0.45)',
+      baseDisabledBg: 'rgba(0, 0, 0, 0.04)',
 
-      baseBorder = '#d9d9d9',
+      baseBorder: '#d9d9d9',
 
-      baseText = 'rgba(0, 0, 0, 0.85)',
-      basePrimaryText = 'rgba(0, 0, 0, 0.85)',
-      baseSecondaryText = 'rgba(0, 0, 0, 0.45)',
-      baseDisabledText = 'rgba(0, 0, 0, 0.25)',
+      baseText: 'rgba(0, 0, 0, 0.85)',
+      basePrimaryText: 'rgba(0, 0, 0, 0.85)',
+      baseSecondaryText: 'rgba(0, 0, 0, 0.45)',
+      baseDisabledText: 'rgba(0, 0, 0, 0.25)',
 
-      baseBoxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+      baseBoxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
 
       /** dark */
-      darkSelectors = ['.dark'],
-      darkMediaQuery = '',
+      darkSelectors: ['.dark'],
+      darkMediaQuery: '',
 
-      darkPrimary = '#1668dc',
-      darkSecondary = '#5a5a5a',
-      darkSuccess = '#49aa19',
-      darkWarning = '#d89614',
-      darkError = '#dc4446',
-      darkDanger = '#dc4446',
-      darkInfo = '#1668dc',
+      darkPrimary: '#1668dc',
+      darkSecondary: '#5a5a5a',
+      darkSuccess: '#49aa19',
+      darkWarning: '#d89614',
+      darkError: '#dc4446',
+      darkDanger: '#dc4446',
+      darkInfo: '#1668dc',
 
-      darkBg = '#141414',
-      darkMaskBg = 'rgba(0, 0, 0, 0.45)',
-      darkDisabledBg = 'rgba(255, 255, 255, 0.08)',
+      darkBg: '#141414',
+      darkMaskBg: 'rgba(0, 0, 0, 0.45)',
+      darkDisabledBg: 'rgba(255, 255, 255, 0.08)',
 
-      darkBorder = '#434343',
+      darkBorder: '#434343',
 
-      darkText = 'rgba(255, 255, 255, 0.85)',
-      darkPrimaryText = 'rgba(255, 255, 255, 0.85)',
-      darkSecondaryText = 'rgba(255, 255, 255, 0.45)',
-      darkDisabledText = 'rgba(255, 255, 255, 0.3)',
+      darkText: 'rgba(255, 255, 255, 0.85)',
+      darkPrimaryText: 'rgba(255, 255, 255, 0.85)',
+      darkSecondaryText: 'rgba(255, 255, 255, 0.45)',
+      darkDisabledText: 'rgba(255, 255, 255, 0.3)',
 
-      darkBoxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+      darkBoxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
     }),
   ],
 };
@@ -168,59 +169,60 @@ const { basePreset, antDesignV4Preset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [...],
+  content: [], // 设置你的 content
   presets: [
     basePreset,
     antDesignV4Preset({
+      // 调整你需要的值
       /** base */
-      baseSelectors = [':root'],
-      baseMediaQuery = '',
+      baseSelectors: [':root'],
+      baseMediaQuery: '',
 
-      basePrimary = '#1890ff',
-      baseSecondary = '#666666',
-      baseSuccess = '#52c41a',
-      baseWarning = '#faad14',
-      baseError = '#f5222d',
-      baseDanger = '#f5222d',
-      baseInfo = '#1890ff',
+      basePrimary: '#1890ff',
+      baseSecondary: '#666666',
+      baseSuccess: '#52c41a',
+      baseWarning: '#faad14',
+      baseError: '#f5222d',
+      baseDanger: '#f5222d',
+      baseInfo: '#1890ff',
 
-      baseBg = '#ffffff',
-      baseMaskBg = 'rgba(0, 0, 0, 0.45)',
-      baseDisabledBg = '#f5f5f5',
+      baseBg: '#ffffff',
+      baseMaskBg: 'rgba(0, 0, 0, 0.45)',
+      baseDisabledBg: '#f5f5f5',
 
-      baseBorder = '#d9d9d9',
+      baseBorder: '#d9d9d9',
 
-      baseText = 'rgba(0, 0, 0, 0.85)',
-      basePrimaryText = 'rgba(0, 0, 0, 0.85)',
-      baseSecondaryText = 'rgba(0, 0, 0, 0.45)',
-      baseDisabledText = 'rgba(0, 0, 0, 0.25)',
+      baseText: 'rgba(0, 0, 0, 0.85)',
+      basePrimaryText: 'rgba(0, 0, 0, 0.85)',
+      baseSecondaryText: 'rgba(0, 0, 0, 0.45)',
+      baseDisabledText: 'rgba(0, 0, 0, 0.25)',
 
-      baseBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
+      baseBoxShadow: '0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)',
 
       /** dark */
-      darkSelectors = ['.dark'],
-      darkMediaQuery = '',
+      darkSelectors: ['.dark'],
+      darkMediaQuery: '',
 
-      darkPrimary = '#177ddc',
-      darkSecondary = '#5a5a5a',
-      darkSuccess = '#49aa19',
-      darkWarning = '#d89614',
-      darkError = '#d32029',
-      darkDanger = '#d32029',
-      darkInfo = '#177ddc',
+      darkPrimary: '#177ddc',
+      darkSecondary: '#5a5a5a',
+      darkSuccess: '#49aa19',
+      darkWarning: '#d89614',
+      darkError: '#d32029',
+      darkDanger: '#d32029',
+      darkInfo: '#177ddc',
 
-      darkBg = '#141414',
-      darkMaskBg = 'rgba(0, 0, 0, 0.45)',
-      darkDisabledBg = 'rgba(255, 255, 255, 0.08)',
+      darkBg: '#141414',
+      darkMaskBg: 'rgba(0, 0, 0, 0.45)',
+      darkDisabledBg: 'rgba(255, 255, 255, 0.08)',
 
-      darkBorder = '#434343',
+      darkBorder: '#434343',
 
-      darkText = 'rgba(255, 255, 255, 0.85)',
-      darkPrimaryText = 'rgba(255, 255, 255, 0.85)',
-      darkSecondaryText = 'rgba(255, 255, 255, 0.45)',
-      darkDisabledText = 'rgba(255, 255, 255, 0.3)',
+      darkText: 'rgba(255, 255, 255, 0.85)',
+      darkPrimaryText: 'rgba(255, 255, 255, 0.85)',
+      darkSecondaryText: 'rgba(255, 255, 255, 0.45)',
+      darkDisabledText: 'rgba(255, 255, 255, 0.3)',
 
-      darkBoxShadow = '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
+      darkBoxShadow: '0 3px 6px -4px rgba(0, 0, 0, 0.48), 0 6px 16px 0 rgba(0, 0, 0, 0.32), 0 9px 28px 8px rgba(0, 0, 0, 0.2)',
     }),
   ],
 };
@@ -292,93 +294,94 @@ const { basePreset, elementPlusPreset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [...],
+  content: [], // 设置你的 content
   presets: [
     basePreset,
     elementPlusPreset({
+      // 调整你需要的值
       /** base */
-      baseSelectors = [':root'],
-      baseMediaQuery = '',
+      baseSelectors: [':root'],
+      baseMediaQuery: '',
 
-      basePrimary = '#409eff',
-      baseSecondary = '#909399',
-      baseSuccess = '#67c23a',
-      baseWarning = '#e6a23c',
-      baseError = '#f56c6c',
-      baseDanger = '#f56c6c',
-      baseInfo = '#909399',
+      basePrimary: '#409eff',
+      baseSecondary: '#909399',
+      baseSuccess: '#67c23a',
+      baseWarning: '#e6a23c',
+      baseError: '#f56c6c',
+      baseDanger: '#f56c6c',
+      baseInfo: '#909399',
 
-      baseFill = '#f0f2f5',
-      baseDarkerFill = '#e6e8eb',
-      baseDarkFill = '#ebedf0',
-      baseLightFill = '#f5f7fa',
-      baseLighterFill = '#fafafa',
-      baseExtraLightFill = '#fafcff',
-      baseBlankFill = '#ffffff',
+      baseFill: '#f0f2f5',
+      baseDarkerFill: '#e6e8eb',
+      baseDarkFill: '#ebedf0',
+      baseLightFill: '#f5f7fa',
+      baseLighterFill: '#fafafa',
+      baseExtraLightFill: '#fafcff',
+      baseBlankFill: '#ffffff',
 
-      baseText = '#303133',
-      basePrimaryText = '#303133',
-      baseRegularText = '#606266',
-      baseSecondaryText = '#909399',
-      basePlaceholderText = '#a8abb2',
-      baseDisabledText = '#c0c4cc',
+      baseText: '#303133',
+      basePrimaryText: '#303133',
+      baseRegularText: '#606266',
+      baseSecondaryText: '#909399',
+      basePlaceholderText: '#a8abb2',
+      baseDisabledText: '#c0c4cc',
 
-      baseBg = '#ffffff',
-      basePageBg = '#f2f3f5',
-      baseOverlayBg = '#ffffff',
-      baseMaskBg = 'rgba(0, 0, 0, 0.5)',
-      baseDisabledBg = '#f5f7fa',
+      baseBg: '#ffffff',
+      basePageBg: '#f2f3f5',
+      baseOverlayBg: '#ffffff',
+      baseMaskBg: 'rgba(0, 0, 0, 0.5)',
+      baseDisabledBg: '#f5f7fa',
 
-      baseBorder = '#dcdfe6',
-      baseDarkerBorder = '#cdd0d6',
-      baseDarkBorder = '#d4d7de',
-      baseLightBorder = '#e4e7ed',
-      baseLighterBorder = '#ebeef5',
-      baseExtraLightBorder = '#f2f6fc',
+      baseBorder: '#dcdfe6',
+      baseDarkerBorder: '#cdd0d6',
+      baseDarkBorder: '#d4d7de',
+      baseLightBorder: '#e4e7ed',
+      baseLighterBorder: '#ebeef5',
+      baseExtraLightBorder: '#f2f6fc',
 
-      baseBoxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08)',
+      baseBoxShadow: '0px 12px 32px 4px rgba(0, 0, 0, 0.04), 0px 8px 20px rgba(0, 0, 0, 0.08)',
 
       /** dark */
-      darkSelectors = ['.dark'],
-      darkMediaQuery = '',
+      darkSelectors: ['.dark'],
+      darkMediaQuery: '',
 
-      darkPrimary = '#409eff',
-      darkSecondary = '#909399',
-      darkSuccess = '#67c23a',
-      darkWarning = '#e6a23c',
-      darkError = '#f56c6c',
-      darkDanger = '#f56c6c',
-      darkInfo = '#909399',
+      darkPrimary: '#409eff',
+      darkSecondary: '#909399',
+      darkSuccess: '#67c23a',
+      darkWarning: '#e6a23c',
+      darkError: '#f56c6c',
+      darkDanger: '#f56c6c',
+      darkInfo: '#909399',
 
-      darkFill = '#303030',
-      darkDarkerFill = '#424243',
-      darkDarkFill = '#39393a',
-      darkLightFill = '#262727',
-      darkLighterFill = '#1d1d1d',
-      darkExtraLightFill = '#191919',
-      darkBlankFill = 'transparent',
+      darkFill: '#303030',
+      darkDarkerFill: '#424243',
+      darkDarkFill: '#39393a',
+      darkLightFill: '#262727',
+      darkLighterFill: '#1d1d1d',
+      darkExtraLightFill: '#191919',
+      darkBlankFill: 'transparent',
 
-      darkText = '#e5eaf3',
-      darkPrimaryText = '#e5eaf3',
-      darkRegularText = '#cfd3dc',
-      darkSecondaryText = '#a3a6ad',
-      darkPlaceholderText = '#8d9095',
-      darkDisabledText = '#6c6e72',
+      darkText: '#e5eaf3',
+      darkPrimaryText: '#e5eaf3',
+      darkRegularText: '#cfd3dc',
+      darkSecondaryText: '#a3a6ad',
+      darkPlaceholderText: '#8d9095',
+      darkDisabledText: '#6c6e72',
 
-      darkBg = '#141414',
-      darkPageBg = '#0a0a0a',
-      darkOverlayBg = '#1d1e1f',
-      darkMaskBg = 'rgba(0, 0, 0, 0.5)',
-      darkDisabledBg = 'transparent',
+      darkBg: '#141414',
+      darkPageBg: '#0a0a0a',
+      darkOverlayBg: '#1d1e1f',
+      darkMaskBg: 'rgba(0, 0, 0, 0.5)',
+      darkDisabledBg: 'transparent',
 
-      darkBorder = '#4c4d4f',
-      darkDarkerBorder = '#636466',
-      darkDarkBorder = '#58585b',
-      darkLightBorder = '#414243',
-      darkLighterBorder = '#363637',
-      darkExtraLightBorder = '#2b2b2c',
+      darkBorder: '#4c4d4f',
+      darkDarkerBorder: '#636466',
+      darkDarkBorder: '#58585b',
+      darkLightBorder: '#414243',
+      darkLighterBorder: '#363637',
+      darkExtraLightBorder: '#2b2b2c',
 
-      darkBoxShadow = '0px 12px 32px 4px rgba(0, 0, 0, 0.36), 0px 8px 20px rgba(0, 0, 0, 0.72)',
+      darkBoxShadow: '0px 12px 32px 4px rgba(0, 0, 0, 0.36), 0px 8px 20px rgba(0, 0, 0, 0.72)',
     }),
   ],
 };
@@ -445,7 +448,7 @@ const { basePreset, miniprogramBasePreset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [...],
+  content: [], // 设置你的 content
   presets: [
     basePreset,
     miniprogramBasePreset,
@@ -466,7 +469,7 @@ const { basePreset, easyPreset } = require('tailwind-extensions');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [...],
+  content: [], // 设置你的 content
   presets: [
     basePreset,
     easyPreset({
