@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.22.1 (2023-03-21)
+
+- fix: fix `element-plus` backgroundColor key
+
 ## 0.22.0 (2023-03-08)
 
 - feat: extends more
