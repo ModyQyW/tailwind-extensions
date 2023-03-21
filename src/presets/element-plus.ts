@@ -261,7 +261,7 @@ export const elementPlusPreset = ({
 
             backgroundColor: {
               DEFAULT: darkBg,
-              pageBg: darkPageBg,
+              page: darkPageBg,
               overlay: darkOverlayBg,
               mask: darkMaskBg,
               disabled: darkDisabledBg,
