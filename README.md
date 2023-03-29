@@ -22,6 +22,13 @@ npm install tailwind-extensions
 
 Then update your TailwindCSS config.
 
+```ts
+// support esm and cjs
+// esm requires tailwindcss 3.3.0 or upper
+import { basePreset } from 'tailwind-extensions';
+const { basePreset } = require('tailwind-extensions');
+```
+
 ### Presets
 
 #### `basePreset`

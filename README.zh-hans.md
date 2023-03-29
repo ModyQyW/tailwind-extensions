@@ -22,6 +22,13 @@ npm install tailwind-extensions
 
 然后更新你的 TailwindCSS 配置。
 
+```ts
+// 支持 esm 和 cjs
+// esm 需要 tailwindcss 3.3.0 或以上
+import { basePreset } from 'tailwind-extensions';
+const { basePreset } = require('tailwind-extensions');
+```
+
 ### 预设
 
 #### `basePreset`
