@@ -44,7 +44,7 @@
     "build": "unbuild",
     "check:deps": "taze",
     "check:types": "tsc --noEmit",
-    "check:dist": "tailwindcss -c tailwind.config.cjs --minify",
+    "check:dist": "tailwindcss -c tailwind.config.ts --minify",
     "commit": "git-cz",
     "dev": "unbuild --stub",
     "lint": "run-p lint:eslint lint:markdownlint lint:publint check:types check:dist",
